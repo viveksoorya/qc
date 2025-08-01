@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\begin{document}
+
+\subsection*{Proof cycle and related stuff}
+
+How do I prove this? How do I approach thinking about this in terms of proof; How do I go from this conjecture to thinking; we need to start from things we know to be true and arrive here; this method is known as direct proof; there are other methods too, but a proof generally needs an idea;
+\begin{enumerate}
+    \item Understand every term of the proof at a cursory level.
+    \item Understand what is being asked in those terms?
+    \item Now you understand the task at this point.
+    \item Ideate and attempt; sketch out promising avenues that look hopeful.
+    \item Once you have a promising sketch, write it in better detail.
+    \item Cycle until you reach a satisfactory proof.
+    \item Write down ideas while Ideating. Think on paper.
+\end{enumerate}
+
+\subsubsection{Pauli gates on $e_i$}
+
+\subsection{Pauli Gates}
+Quantum gates are simply operators. But since we are doing quantum computation, we adapt the term gate instead of operators.
+
+\[
+I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \quad
+X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \quad
+Y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \quad
+Z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+\]
+\begin{center}
+  \begin{tabular}{cccc}
+I & X & Y & Z \\
+  & bit flip    &   & phase flip \\
+  & quantum not &   &            \\
+\end{tabular}
+\end{center}
+
+\begin{align*}
+I |0\rangle &= |0\rangle \\
+I |1\rangle &= |1\rangle \\
+X |0\rangle &= |1\rangle \\
+X |1\rangle &= |0\rangle \\
+Y |0\rangle &= -i |1\rangle \\
+Y |1\rangle &= i |0\rangle \\
+Z |0\rangle &= |0\rangle \\
+Z |1\rangle &= -|1\rangle \\
+\end{align*}
+
+
+
+\end{document}

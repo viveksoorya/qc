@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{braket} % for \ket{} and \bra{}
+
+\begin{document}
+
+\section*{Solved Math Problems}
+
+\section{solved problems}
+\subsection*{Exercise 2.1: Linear dependence}
+We are asked to consider the linear independence of the vectors
+$$ \begin{pmatrix} -1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \begin{pmatrix} 2 \\ 1 \end{pmatrix} $$
+In a 2-dimensional space ($\mathbb{R}^2$), any set of three or more vectors is linearly dependent. Therefore, this set of four vectors is linearly dependent.
+
+As a proof by example, we can show one vector can be written as a linear combination of others. For instance:
+$$ \begin{pmatrix} -1 \\ 1 \end{pmatrix} = \alpha \begin{pmatrix} 1 \\ 2 \end{pmatrix} + \beta \begin{pmatrix} 2 \\ 1 \end{pmatrix} $$
+This gives us a system of two equations:
+\begin{align*} -1 &= \alpha + 2\beta \\ 1 &= 2\alpha + \beta \end{align*}
+Solving this system, we find $\alpha = 1$ and $\beta = -1$.
+$$ \begin{pmatrix} -1 \\ 1 \end{pmatrix} = (1) \begin{pmatrix} 1 \\ 2 \end{pmatrix} + (-1) \begin{pmatrix} 2 \\ 1 \end{pmatrix} 
+\blacksquare$$
+
+\subsection*{Exercise 2.2: Matrix Representation of an Operator}
+Let $A: V_0 \to V_0$ be a linear operator on the vector space spanned by the basis vectors $\ket{0}$ and $\ket{1}$. The action of the operator is given by:
+$$ A\ket{0} = \ket{1} \quad \text{and} \quad A\ket{1} = \ket{0} $$
+The matrix representation of $A$ in the basis $\{\ket{0}, \ket{1}\}$ is found by determining how $A$ acts on each basis vector. Let the matrix be $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$.
+\begin{itemize}
+    \item $A\ket{0} = A \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} a \\ c \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \implies a=0, c=1$.
+    \item $A\ket{1} = A \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} b \\ d \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \implies b=1, d=0$.
+\end{itemize}
+Thus, the matrix representation of $A$ is:
+$$ A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $$
+This matrix is known as the Pauli-X matrix, often denoted by $\sigma_x$.
+
+\subsubsection*{Exercise 2.2, rabbithole: Change of Basis}
+We have the same operator $A$ (the Pauli-X matrix), but we want to find a new output basis such that its matrix representation is diagonal, specifically:
+$$ A' = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $$
+This new basis, the eigenbasis of $A$, is composed of the eigenvectors of $A$. We can find them by solving the eigenvalue equation $A\ket{v} = \lambda\ket{v}$.
+$$ \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \lambda \begin{pmatrix} a \\ b \end{pmatrix} $$
+The characteristic equation is $\det(A - \lambda I) = 0$:
+$$ \det \begin{pmatrix} -\lambda & 1 \\ 1 & -\lambda \end{pmatrix} = \lambda^2 - 1 = 0 \implies \lambda = \pm 1 $$
+The eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = -1$.
+\begin{itemize}
+    \item For $\lambda_1 = 1$:
+    $$ \begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies -a+b=0 \implies b=a $$
+    The normalized eigenvector is $\ket{v_1} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$.
+    \item For $\lambda_2 = -1$:
+    $$ \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies a+b=0 \implies b=-a $$
+    The normalized eigenvector is $\ket{v_2} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$.
+\end{itemize}
+The new output basis is the set of eigenvectors $\{\ket{v_1}, \ket{v_2}\}$. The action of $A$ on these basis vectors is:
+$$ A\ket{v_1} = 1\ket{v_1} \quad \text{and} \quad A\ket{v_2} = -1\ket{v_2} $$
+In this new basis, the matrix representation of $A$ is indeed $\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
+
+
+
+
+\end{document}
