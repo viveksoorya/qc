@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{amsmath} % Required for align* environment and bmatrix
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amssymb} % Required for blacksquare (QED)
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{braket}
+\usepackage{xcolor}
+%\pagecolor{black}    % Sets the page background to black
+%\color{white}        % Sets the text color to white
+
+%\title{quantum computing and quantum information}
+%\author{Vivek Soorya}
+%\date{July 2025}
+
+\begin{document}
+
+%\maketitle
+
+\section{lemmas to prove and questions to answer}
+\begin{enumerate}
+    \item Show that
+    \begin{enumerate}
+
+	    \item Show that $$\forall U.  \exists H . U = e^{iH}$$ {\color[rgb]{0.9,0.9,0.9}where U: unitary, H:Hermitian operator} What woudl I need for this; 
+	\item Show how $ e^{i\theta} \approx (-1)^n $; assuming $ e^{i\theta} = \cos \theta + i \sin \theta $, and $ \theta = \pi $, we get $e^{i\theta} = -1$; \textbf{what is n here?}
+
+        \item Show that \\
+        $\langle\psi|M|\psi\rangle = \langle\psi|P_m|\psi\rangle = P(m) \text{ for } P_m $ 
+        fixed  
+
+
+	\item Show that all matrices/transformations in a Complex-valued Vector Space have at least one eigenvector
+	\item Show that all full rank matrices in a Complex-valued Vector Space have n eigenvalues, where n is the dimension of the vector space; It appears then that full-rank non-rotating matrices have all have n eigenvalues. Show the latter first; Prove or disprove the former;
+	\item Show that all transformation whether they are rotating transformations or not, have at least one complex eigenvalue; Show this especially for  rotating transformation;
+
+	\item Show that all transformation whether they are rotating transformations or not, have at least one complex eigenvalue; Show this especially for  rotating transformation;
+
+	\item Show that when a transformation is scaled so do its eigenvalues (and by the same scalar value)
+	\item Show that when you scale a matrix, so does its determinant by the scalar raised to n, the dimension of the vector space.
+
+
+	\item Show that a transformation into the same vector space is fixed as matrix composed of output bases given the input bases are bases ei and that the vector space is finite dimensional
+        \item Show that Given a transformation in finite dimensions from a vector space to itself, and the input basis $e_i$, the matrix columns are the output bases are the matrix columns. How can I systematically explore the prove for this
+
+        \item{Exercise 2.5: Inner Product on $\mathbb{C}^n$}
+    We need to show that $\langle \phi | \psi \rangle = \sum_{i=1}^n \phi_i^* \psi_i$ is a valid inner product on $\mathbb{C}^n$. An inner product must satisfy three properties:
+    \begin{enumerate}
+        \item \textbf{Conjugate symmetry}: $\langle \phi | \psi \rangle = \langle \psi | \phi \rangle^*$.
+        \item \textbf{Linearity in the second argument}: $\langle \phi | \alpha \psi + \beta \chi \rangle = \alpha \langle \phi | \psi \rangle + \beta \langle \phi | \chi \rangle$.
+        \item \textbf{Positive-definiteness}: $\langle \phi | \phi \rangle \ge 0$, and $\langle \phi | \phi \rangle = 0$ if and only if $\ket{\phi}$ is the zero vector.
+    \end{enumerate}
+    Let $\ket{\phi} = \begin{pmatrix} \phi_1 \\ \vdots \\ \phi_n \end{pmatrix}$ and $\ket{\psi} = \begin{pmatrix} \psi_1 \\ \vdots \\ \psi_n \end{pmatrix}$.
+
+    \end{enumerate}
+
+
+
+\item answer these
+    \begin{enumerate}
+	\item Is H decomposable into Pauli matrices X and Z.
+
+	\item How do you mathematically represent an overall global phase shift.
+
+	\item Why are the eigenstates of the Hamiltonian operator $1/2 (|0\rangle + |1\rangle)$, and  $1/2 (|0\rangle - |1\rangle)$ ; Why are the eigenvalues of the Hamiltonian operator $\hbar \omega$ and $-\hbar \omega$ 
+
+	\item If you raise $e^{i\theta}$ to iota times any given hermitian transformation, will you always get a unitary transformation.
+
+	\item Do eigenstates always have to presented normalized; or does it not matter, since “eigen-ness” of things is really in the direction.
+
+	\item A given observable has a collection of measurement operators; Is the cardinality of this set upper bound by the dimension of the vector space
+
+	\item Why are there a set of measurement operators, and not just one operator for an observable with the eigenvalues of the same corresponding to the measures; what does it mean to have multiple operators for the same observable
+
+	\item What is completeness; a full rank matrix is said to be complete; what is the completeness equation or relation;
+
+	\item Does the unitary operator depend on the initial timestamp and the final timestamp or does it depend on the initial state vector and the final state vector
+
+	\item What is the geometric interpretation of outer product
+
+	\item Why is spectral decomposition called so? Does it mean composed of sum of self outer products of eigenvectors scaled by eigenvalues? Yes but this needs a better way of putting it; spectral decomposition is related to the spectrum of the matrix; what is the spectrum of a matrix;
+
+	\item Energy eigen states Why are they called stationary states?
+
+	\item Are function spaces, spaces where each vector's components are functions? or is it that a vector in a function space is a function?
+
+	\item If eigenvalues can represent the different values of energy the state can be measured to have at any instant on measuring, what do eigenstates represent/signify?
+
+	\item How can there be a bijective from discrete-time dynamics (unitary operators), and continuous time dynamics of Hamiltonians. There isn't? states are discrete, evolution can happen continuously? 
+
+	\item There are two formulations of dynamics here: operators with discrete time dynamics \& that makes use of operators \& vectors. 
+
+	\item continuous time dynamics that makes use of function spaces \& then \& Hamiltonians. Ex: Energy is continuous classically, but discrete quantum mechanically.
+
+	\item Are vectors and wavefunctions equivalent representations of a closed quantum state? No? Just used for different properties?
+
+	\item How does the Hamiltonian of the system describe its dynamics?
+
+	\item Can we really just use any matrix as a Hamiltonian, in other words, do all matrices function as a Hamiltonian for some closed quantum mechanical system?
+
+	\item The derivative of the state vector is the Hamiltonian of the state vector, apart a scaling factor. No? The Hamiltonian of the state vector function together? its derivative, apart a scaling factor apart. An imaginary scaling factor apart. 
+
+	\item Why is the probability of getting m on measuring 
+    $$|\psi\rangle \langle \psi | M_m^+ M_m | \psi \rangle?$$ (Here, the vector could be measured by any matrix Mm. $m \in \{...\}$); Projection of the measured state on itself. 
+    \item Projection of a vector on itself gives you the magnitude of the vector. 
+
+	\item Do X and Z form a basis. In other words, are they linearly independent matrices?
+
+    \item What kind of transformation results when a matrix is transformed by its adjoint. 
+$$\left[ \begin{array}{cc} a & c \\ b & d \end{array} \right] \left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] = \left[ \begin{array}{cc} a^2+c^2 & ab+cd \\ ab+cd & b^2+d^2 \end{array} \right] $$ 
+        
+    \item Can a scalar have a matrix representation, can a vector have a matrix representation
+    \end{enumerate}
+    \begin{enumerate}    
+    \item Is the outer product like a projection onto the vector space itself, with the vector that outer product vector being a sort of light source and the vector being operated on being the object \& the resultant vector being the projection? It is essentially an additional left multiplication with the dual.
+    \item For quantum mechanics, we only need the vector space made of vectors whose norm is $\le 1$. Can we discard the rest of the vector space? (i.e. where the norm is $> 1$)
+    \item Given an isolated physical system, what is the state space?
+    \item Is negative like eigenvalue interpreted as phase?
+    \item What is a determinant, physically? Cuz they are used in characteristic equation to extract eigenvalues and eigenvectors
+    \item Derive the expectation values of a measurement operator
+    \item 
+
+    \end{enumerate}
+
+    \end{enumerate}
+    
+\section{verify these}
+
+Is the followig statement true? \\
+$$ \langle\psi|M|\psi\rangle = ? \langle\psi|P_m|\psi\rangle$$
+We know that, \\
+$$\langle\psi|M|\psi\rangle = \sum_m \langle\psi|P_m|\psi\rangle $$
+Now, for fixed $ m \equiv m_a $ every projector that is not $P_m$ will take $\langle\psi|P_m|\psi\rangle$ to the kernel, gives 0 as the expectation value for that projection, leaving $\langle\psi|P_{m_a}|\psi\rangle$ to result. Thus, for fixed $ m \equiv m_a $, \\
+$ \langle\psi|M|\psi\rangle = \langle\psi|P_{m_a}|\psi\rangle \\\blacksquare$
+
+
+
+
+
+\section{queries}
+$\int \delta(x, x_0) dx = 1$
+
+\begin{enumerate}
+    \item Time and energy have an uncertainty relation? This informs "why does knowing Hamiltonian tell us everything about dynamics of the system." 
+    \item spectral decomposition 
+    \item spectral measure 
+    \item How does knowing energy (Hamiltonian) alone tell us the dynamics of the system? 
+    \item Why are energy eigenstates referred to as stationary states? 
+    \item What is the significance of the time evolution operator in quantum mechanics?
+    \item How does energy generate time? 
+
+\end{enumerate}
+\section{never gonna practice}
+
+\subsection*{working on these}
+\begin{enumerate}
+    
+    \item A + B + C = inner product where 
+        \subitem A: $ \langle v_1 | v_2 \rangle = \langle v_2 | v_1 \rangle^*$ 
+        \subitem B: $ \langle v_1 | v_1 \rangle \ge 0 $ and is equal to 0 iff $ v_1 = 0 $
+        \subitem B: projection of a vector with itself are always positive complex values.
+        \subitem C: $ \langle v_1 | (\lambda v_2)\rangle = \lambda \langle v_1 | v_2 \rangle = $ linearity 
+    \item What happens if the inner product rule does not hold; why is inner product defined to have that rule
+
+    \item What situations compel one to put in the positive definiteness rule of inner product;
+
+\end{enumerate}
+
+    
+
+\end{document}

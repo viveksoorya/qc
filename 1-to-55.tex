@@ -1,0 +1,980 @@
+\documentclass{article}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+
+\section*{Ex 2.1}
+Show that (1, -1), (1, 2)
+and (2, 1) are linearly
+dependent.
+
+Three vectors are said
+to be linearly independent iff
+for $\alpha v_1 + \beta v_2 + \gamma v_3=0$
+iff $\alpha=0, \beta=0, \gamma=0$.
+Thus, if we show
+that for $\alpha \ne 0, \beta \ne 0, \gamma \ne 0$,
+we will have shown
+linear dependence of
+$v_1, v_2, v_3$.
+For $(2, 1), (1, 2)$ and
+$(1, -1)$ and $\alpha=1, \beta=-1$,
+$\gamma=-1$.
+$$
+1(2, 1) - 1(1, 2)
+$$
+$$
+-1(1, -1) = 0
+$$
+
+\newpage
+\section*{E 2.2}
+
+Given transformation $A$. 
+
+$A\ket{0} \to \ket{1}, A\ket{1} \to \ket{0}$. 
+
+Write matrix representation. 
+
+Let $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$. 
+
+$A\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} a \\ c \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \implies a=0, c=1$. 
+
+$A\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} b \\ d \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \implies b=1, d=0$. 
+
+So, $A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \sigma_x$. 
+
+
+Now, given matrix representation of A is some other basis. \\
+$A \ket{0} \to \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$, $A \ket{1} \to \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$. \\
+$A\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \implies \begin{pmatrix} a \\ c \end{pmatrix} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \implies a = \frac{1}{\sqrt{2}}, c = -\frac{1}{\sqrt{2}}$. \\
+$A\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} \implies \begin{pmatrix} b \\ d \end{pmatrix} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} \implies b = \frac{1}{\sqrt{2}}, d = \frac{1}{\sqrt{2}}$. \\
+So $A = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}$.
+
+
+\section*{Bonus}
+
+i) What is $A$ in $\ket{+} \to \ket{+}, \ket{-} \to \ket{-}$? \\
+This is the identity transformation. The matrix for this in the Hadamard basis is the identity matrix. \\
+The Hadamard basis is $\ket{+} = \frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$ and $\ket{-} = \frac{1}{\sqrt{2}}(\ket{0}-\ket{1})$. \\
+$A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+
+ii) What is $A$ in $\ket{+} \to \ket{0}, \ket{-} \to \ket{1}$? \\
+This is the Hadamard transformation, which is $H = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$. \\
+$H\ket{+} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 2 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \ket{0}$. \\
+$H\ket{-} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 0 \\ 2 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \ket{1}$. \\
+So the matrix representation in the Hadamard basis for the transformation that maps $\ket{+} \to \ket{0}$ and $\ket{-} \to \ket{1}$ is the Hadamard matrix.
+
+
+
+iii) What is A in
+$$
+|1\rangle, |-1\rangle \to |i0\rangle, |11\rangle
+$$
+This time we transform
+the A $|i0\rangle, |11\rangle \to |10\rangle, |11\rangle$
+by right multiplying it
+by the inverse of the
+Hadamard transformation:
+$$
+\frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}^{-1}
+$$
+Thus the transformation
+A (X) has the following
+representations:
+$$
+\begin{pmatrix} 0 & i \\ 1 & 1 \end{pmatrix}, \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -i \\ 1 & 1 \end{pmatrix}
+$$
+in input, output bases
+$$
+|10\rangle, |11\rangle \to |i0\rangle, |11\rangle
+$$
+$$
+|i0\rangle, |11\rangle \to |1+\rangle, |1-\rangle
+$$
+$$
+|1+\rangle, |1-\rangle \to |10\rangle, |11\rangle
+$$
+and $|1+\rangle, |1-\rangle \to |10\rangle, |11\rangle$.
+END OF BONUS QUESTION.
+
+\section*{Ex 2.3}
+
+Let $A: V \to W$ and $B: W \to X$. 
+
+Where $A$ and $B$ are linear operators and $V, W, X$ are vector spaces. 
+
+Let $\ket{v_j}, \ket{w_j}, \ket{x_k}$ be the basis vectors of $V, W, X$ respectively. 
+
+Show that the matrix representation for the linear transformation $BA$ is the matrix product of the matrix representations for $B$ and $A$, with respect to the appropriate bases. 
+
+
+\textbf{Sol)} For $A: V \to W$, 
+
+$A\ket{v_j} = \sum_i A_{ij}\ket{w_i}$ 
+
+where $A_{ij}$ is the matrix representation of $A$ with respect to input basis $\ket{v_j}$ and output basis $\ket{w_j}$. 
+
+For $B: W \to X$, 
+
+$B\ket{w_j} = \sum_k B_{jk}\ket{x_k}$ 
+
+where $B_{jk}$ is the matrix representation of $B$ with respect to the input basis $\ket{w_j}$ and output basis $\ket{x_k}$. 
+
+
+For the linear transformation $BA$'s matrix representation with respect to input basis $\ket{v_j}$ and output basis $\ket{x_k}$: \\
+$BA\ket{v_j} = B(A\ket{v_j}) = B(\sum_i A_{ij}\ket{w_i}) = \sum_i A_{ij}(B\ket{w_i}) = \sum_i A_{ij}\sum_k B_{ki}\ket{x_k} = \sum_k (\sum_i B_{ki}A_{ij})\ket{x_k}$ \\
+So, the matrix element for $BA$ is $(BA)_{kj} = \sum_i B_{ki}A_{ij}$. This is the matrix product of $B$ and $A$.
+
+\newpage
+
+\section*{Ex 2.4}
+
+Show that the identity operator on a vector space $V$ has a matrix representation which is one along the diagonal and zero everywhere else, if the matrix representation is taken with respect to the same input and output bases. (This matrix is known as the identity matrix).
+
+\textbf{Sol)} $I\ket{v_j} = \sum_i I_{ij}\ket{v_i} = \ket{v_j}$. \\
+For a transformation to leave a vector unchanged, (since operators don't affect coefficients), it needs to and need only leave the basis vectors unchanged. \\
+To leave each basis vector unchanged, it needs to leave each component of the basis vector unchanged. To do this, the components can't be scaled by anything other than 0 or 1. So all the entries in the matrix representation of the Identity transformation should be 0 or 1 if the input basis is the same as the output basis. \\
+To preserve the component and not adulterate it with other additive components, the $i$-th $j$ has to be 1, and all other $j$'s have to be 0 for all $i$'s. This, in effect, means when $i=j$, the entry is 1 and when $i \neq j$, the entry is 0. \\
+Essentially, the Kronecker delta $\delta_{ij}$. \\
+Thus $\delta_{ij}$ gives the matrix representation of $I$ when the output bases and the input bases are the same set.
+
+\newpage
+
+\section*{Ex 2.5}
+
+Verify that $f$ is an inner product on $\mathbb{C}^n$ where $f: \mathbb{C}^n \times \mathbb{C}^n \to \mathbb{R} \subset \mathbb{C}$ \\
+$f((y_1, ..., y_n), (z_1, ..., z_n)) = \sum_i y_i^* z_i$ \\
+\textbf{Sol)} Let $y = (y_1, ..., y_n)$, $z = (z_1, ..., z_n)$. \\
+we need to show: \\
+i) that $\langle y | z \rangle = \langle z | y \rangle^*$ \\
+consider $\langle z | y \rangle = \sum_i z_i^* y_i = (\sum_i z_i y_i^*)^* = \langle y | z \rangle^*$. \\
+ii) that $\langle v | v \rangle \ge 0$ for any $v \in \mathbb{C}^n$ \\
+Consider $v \ne 0$. $\langle v | v \rangle = \sum_i v_i^* v_i = \sum_i |v_i|^2$. \\
+Since $|v_i|^2$ are real squares of them, we get a positive real value. \\
+iii) Linearity in the second argument. \\
+$\langle y | \sum_i \alpha_i z_i \rangle = \sum_i \alpha_i \langle y | z_i \rangle$ \\
+We have $\langle y | \sum_i \alpha_i z_i \rangle = \sum_j y_j^* (\sum_i \alpha_i z_{ji})$.
+This seems to be a notation error. A more standard representation would be $\langle y | \alpha_1 z_1 + \alpha_2 z_2 \rangle = \alpha_1 \langle y | z_1 \rangle + \alpha_2 \langle y | z_2 \rangle$.
+$\langle y | \alpha z \rangle = \sum_i y_i^* (\alpha z_i) = \alpha \sum_i y_i^* z_i = \alpha \langle y | z \rangle$.
+So, it's linear in the second argument.
+
+\newpage
+
+\section*{Ex 2.6}
+
+Show that any inner product is conjugate linear in the first argument. 
+
+$\langle \sum_i \alpha_i w_i | v \rangle = \sum_i \alpha_i^* \langle w_i | v \rangle$ 
+
+\textbf{Sol)} Consider RHS: 
+
+$\sum_i \alpha_i^* \langle w_i | v \rangle = \sum_i \alpha_i^* (\sum_j w_{ij}^* v_{j})$ 
+
+This seems to be a notation error. A more standard approac
+
+$\langle \sum_i \alpha_i w_i | v \rangle = \langle v | \sum_i \alpha_i w_i \rangle^* = (\sum_i \alpha_i \langle v | w_i \rangle)^* = \sum_i \alpha_i^* \langle v | w_i \rangle^* = \sum_i \alpha_i^* \langle w_i | v \rangle$
+
+\textbf{What are the normalized forms of these vectors}
+Sol) normalized form of vector $a$: $\frac{a}{\|a\|}$ \\
+So, for $\ket{w} = (1,1)$, $\| \ket{w} \| = \sqrt{1^2+1^2} = \sqrt{2}$ \\
+For $\ket{v} = (1,-1)$, $\| \ket{v} \| = \sqrt{1^2+(-1)^2} = \sqrt{2}$ \\
+Normalized forms of $\ket{w}$ and $\ket{v}$ are $\frac{1}{\sqrt{2}}(1,1)$ and $\frac{1}{\sqrt{2}}(1,-1)$.
+
+\newpage
+
+\section*{Ex 2.7}
+
+i) Verify that $\ket{w} = (1,1)$ and $\ket{v} = (1,-1)$ are orthogonal. \\
+\textbf{Sol)} If $\langle w | v \rangle = 0$, they are orthogonal. \\
+$\langle w | v \rangle = (1,1) \begin{pmatrix} 1 \\ -1 \end{pmatrix} = 1 \cdot 1 + 1 \cdot (-1) = 1-1=0$.
+So they are orthogonal.
+
+\newpage
+
+\section*{Ex 2.8}
+Prove that the Gram-Schmidt process
+
+\newpage
+
+\section*{Ex 2.9}
+
+Express the Pauli operators in the outer product notation, using the orthonormal basis $\ket{0}, \ket{1}$. \\
+\textbf{Sol)} $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \ket{0}\bra{1} + \ket{1}\bra{0} = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} + \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ \\
+This seems incorrect. Let's re-evaluate.
+$\ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$.
+$\ket{0}\bra{1} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+$\ket{1}\bra{0} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$.
+$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \ket{0}\bra{1} + \ket{1}\bra{0}$.
+$\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = -i\ket{0}\bra{1} + i\ket{1}\bra{0}$.
+$\sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \ket{0}\bra{0} - \ket{1}\bra{1}$.
+$\sigma_I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \ket{0}\bra{0} + \ket{1}\bra{1}$.
+
+\newpage
+
+\section*{Ex 2.10}
+
+Suppose $\ket{v_j}$ is an orthonormal basis for an inner product space $V$. What is the matrix representation for the operator $\ket{v_j}\bra{v_k}$ with respect to the $\ket{v_j}$ basis? \\
+\textbf{Sol)} The matrix elements for an operator $O$ in the basis $\{\ket{v_a}\}$ are given by $O_{ab} = \bra{v_a} O \ket{v_b}$. \\
+Here, the operator is $O = \ket{v_j}\bra{v_k}$. \\
+So, the matrix elements are: $(\ket{v_j}\bra{v_k})_{ab} = \bra{v_a} \ket{v_j}\bra{v_k} \ket{v_b}$. \\
+Since the basis is orthonormal, $\bra{v_a}\ket{v_j} = \delta_{aj}$ and $\bra{v_k}\ket{v_b} = \delta_{kb}$. \\
+Thus, $(\ket{v_j}\bra{v_k})_{ab} = \delta_{aj} \delta_{kb}$.
+This means the matrix will have a 1 at the $(a,b) = (j,k)$ position and 0 everywhere else.
+
+\newpage
+
+\section*{Ex 2.11}
+
+Find the eigendecomposition of the Pauli matrices. \\
+i) $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ \\
+Characteristic equation: $\det(\sigma_x - \lambda I) = \begin{vmatrix} -\lambda & 1 \\ 1 & -\lambda \end{vmatrix} = \lambda^2 - 1 = 0 \implies \lambda = \pm 1$. \\
+Eigenvalues of $\sigma_x$ are $1, -1$. \\
+For $\lambda = 1$: $\begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies -a+b=0 \implies a=b$. \\
+The eigenvector is $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$. The normalized eigenvector is $\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} = \ket{+}$. \\
+For $\lambda = -1$: $\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies a+b=0 \implies b=-a$. \\
+The eigenvector is $\begin{pmatrix} 1 \\ -1 \end{pmatrix}$. The normalized eigenvector is $\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} = \ket{-}$. \\
+The eigendecomposition of $\sigma_x$ is $\sigma_x = 1\ket{+}\bra{+} - 1\ket{-}\bra{-}$.
+
+ii) $\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$ \\
+Characteristic equation: $\det(\sigma_y - \lambda I) = \begin{vmatrix} -\lambda & -i \\ i & -\lambda \end{vmatrix} = \lambda^2 - (-i)(i) = \lambda^2 - 1 = 0 \implies \lambda = \pm 1$. \\
+Eigenvalues of $\sigma_y$ are $1, -1$. \\
+For $\lambda = 1$: $\begin{pmatrix} -1 & -i \\ i & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies -a-ib=0 \implies a=-ib$. Let's set $b=1$, then $a=-i$. The unnormalized eigenvector is $\begin{pmatrix} -i \\ 1 \end{pmatrix}$. \\
+The normalized eigenvector is $\frac{1}{\sqrt{2}}\begin{pmatrix} -i \\ 1 \end{pmatrix}$. This is the eigenstate $\ket{y+}$. \\
+For $\lambda = -1$: $\begin{pmatrix} 1 & -i \\ i & 1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies a-ib=0 \implies a=ib$. Let's set $b=1$, then $a=i$. The unnormalized eigenvector is $\begin{pmatrix} i \\ 1 \end{pmatrix}$. \\
+The normalized eigenvector is $\frac{1}{\sqrt{2}}\begin{pmatrix} i \\ 1 \end{pmatrix}$. This is the eigenstate $\ket{y-}$. \\
+The eigendecomposition of $\sigma_y$ is $\sigma_y = 1\ket{y+}\bra{y+} - 1\ket{y-}\bra{y-}$.
+
+iii) Eigen Decomposition of $ \sigma_z $  
+Problem: Find the eigenvalues and eigenvectors of $ \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $.  
+
+Solution: The eigenvalues $ \lambda $ are found by solving the characteristic equation  
+$ \det(\sigma_z - \lambda I) = 0 $, which is  
+$$
+\det \begin{pmatrix} 1-\lambda & 0 \\ 0 & -1-\lambda \end{pmatrix} = (1-\lambda)(-1-\lambda) = \lambda^2 - 1 = 0.
+$$
+The eigenvalues are $ \lambda = \pm 1 $. For the eigenvector corresponding to $ \lambda = 1 $, we solve  
+$ (\sigma_z - I) |v_1 \rangle = 0 $:  
+$$
+\begin{pmatrix} 0 & 0 \\ 0 & -2 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+$$
+which gives $ b=0 $. The eigenvector is  
+$ |v_1 \rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} = |0 \rangle $.  
+
+For the eigenvector corresponding to $ \lambda = -1 $, we solve  
+$ (\sigma_z - (-1) I) |v_2 \rangle = 0 $:  
+$$
+\begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+$$
+which gives $ a=0 $. The eigenvector is  
+$ |v_2 \rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix} = |1 \rangle $.
+
+
+\newpage
+\section*{Ex 2.12  }
+Problem: Prove that the matrix $ \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} $ is not diagonalizable.  
+
+Solution: It suffices to show that the matrix is not normal, because a matrix is diagonalizable if and only if it is normal. Let $ G = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} $. Its adjoint (or Hermitian conjugate) is $ G^\dagger = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix} $. We calculate the products $ G^\dagger G = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix} $ and $ G G^\dagger = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix} $. Since $ G^\dagger G \neq G G^\dagger $, the matrix is not normal, and therefore not diagonalizable.
+
+\newpage
+\section*{Ex 2.13 } 
+Problem: Show that $ \langle w|v \rangle^* = \langle v|w \rangle $.  
+
+Solution: Let $ |v\rangle = \sum_i a_i |i\rangle $ and $ |w\rangle = \sum_j b_j |j\rangle $. Then we have $ \langle w| = \sum_j b_j^* \langle j| $ and $ \langle v| = \sum_i a_i^* \langle i| $. The inner product is  
+$ \langle w|v \rangle = \sum_j \sum_i b_j^* a_i \langle j|i \rangle = \sum_i b_i^* a_i $  
+since $ \langle j|i \rangle = \delta_{ij} $. The complex conjugate is  
+$ \langle w|v \rangle^* = \left(\sum_i b_i^* a_i\right)^* = \sum_i b_i a_i^* $. Similarly, the inner product  
+$ \langle v|w \rangle = \sum_i \sum_j a_i^* b_j \langle i|j \rangle = \sum_i a_i^* b_i $. Since the two expressions are equal, the statement is proven.
+
+\newpage
+\section*{Ex 2.14  }
+Problem: Show that $ \left(\sum_i a_i A_i\right)^\dagger = \sum_i a_i^* A_i^\dagger $.  
+
+Solution: The adjoint of a sum of operators is the sum of the adjoints:  
+$ \left(\sum_i a_i A_i\right)^\dagger = \sum_i (a_i A_i)^\dagger $.  
+The adjoint of a scalar multiplied by an operator is the complex conjugate of the scalar times the adjoint of the operator:  
+$ (a_i A_i)^\dagger = a_i^* A_i^\dagger $. Combining these properties, we get  
+$ \left(\sum_i a_i A_i\right)^\dagger = \sum_i a_i^* A_i^\dagger $.
+
+\newpage
+\section*{Ex 2.15  }
+Problem: Show that $ (A^\dagger)^T = A^* $.  
+
+Solution: The adjoint of an operator $A$ is its conjugate transpose, $ A^\dagger = (A^T)^* $. Taking the transpose of the adjoint, we get  
+$ (A^\dagger)^T = \big((A^T)^*\big)^T $. Since the transpose and complex conjugation operations commute, we can swap their order:  
+$ \big((A^T)^*\big)^T = \big((A^T)^T\big)^* $. Transposing a matrix twice returns the original matrix, so $ (A^T)^T = A $. Therefore,  
+$ (A^\dagger)^T = A^* $.
+
+\newpage
+\section*{Ex 2.16  }
+Problem: Show that $ P^2=P $ for a projection operator $ P = \sum_i |i \rangle \langle i| $.  
+
+Solution: We calculate  
+$ P^2 = \left(\sum_i |i \rangle \langle i|\right)\left(\sum_j |j \rangle \langle j|\right) = \sum_i \sum_j |i \rangle \langle i|j \rangle \langle j| $. Using the orthonormality relation $ \langle i|j \rangle = \delta_{ij} $, the expression simplifies to  
+$ P^2 = \sum_i \sum_j |i \rangle \delta_{ij} \langle j| = \sum_i |i \rangle \langle i| = P $.
+
+\newpage
+\section*{Ex 2.17  }
+Problem: Show that for a normal operator $A$, if it has real eigenvalues, then it is self-adjoint.  
+
+Solution: A normal operator with real eigenvalues can be written in the form  
+$ A = \sum_i \lambda_i |i \rangle \langle i| $, where the eigenvalues are real, so $ \lambda_i = \lambda_i^* $. We need to show that $ A = A^\dagger $. The adjoint is  
+$ A^\dagger = \left(\sum_i \lambda_i |i \rangle \langle i|\right)^\dagger = \sum_i \lambda_i^* |i \rangle \langle i| $. Since $ \lambda_i^* = \lambda_i $, we have  
+$ A^\dagger = \sum_i \lambda_i |i \rangle \langle i| = A $. Thus, $A$ is self-adjoint.
+
+\newpage
+\section*{Ex 2.18  }
+Problem: Show that all the eigenvalues of a unitary matrix have a modulus of 1.  
+
+Solution: Let $A$ be a unitary matrix, so $ A A^\dagger = I $. Let $ |v \rangle $ be an eigenvector with eigenvalue $ \lambda $, so $ A |v \rangle = \lambda |v \rangle $. The squared norm of $ A|v \rangle $ is  
+$ \|A|v \rangle\|^2 = \langle A|v \rangle | A|v \rangle \rangle = \langle v|A^\dagger A|v \rangle $. Since $A$ is unitary, $ A^\dagger A = I $, so this becomes  
+$ \langle v|I|v \rangle = \|v\|^2 $. Also, from the eigenvalue equation,  
+$ \|A|v \rangle\|^2 = \|\lambda|v \rangle\|^2 = |\lambda|^2 \|v\|^2 $. Equating the two results, we get  
+$ |\lambda|^2 \|v\|^2 = \|v\|^2 $. Since the eigenvector is non-zero, $ \|v\|^2 \neq 0 $, so we can divide to get  
+$ |\lambda|^2 = 1 $, which means $ |\lambda| = 1 $.
+
+\newpage
+\section*{Ex 2.19  }
+Problem: Show that $ \sigma_x $, $ \sigma_y $, and $ \sigma_z $ are self-adjoint and unitary.  
+
+Solution: We will demonstrate this for the Pauli matrix $ \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $. To show it is self-adjoint, we check if $ \sigma_z^\dagger = \sigma_z $. We have  
+$ \sigma_z^\dagger = \big(\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}^T\big)^* = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}^* = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \sigma_z $. It is self-adjoint. To show it is unitary, we check if $ \sigma_z \sigma_z^\dagger = I $. Since $ \sigma_z^\dagger = \sigma_z $, we calculate  
+$ \sigma_z^2 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I $. Since $ \sigma_z^2=I $, it is also unitary. The same procedure applies for $ \sigma_x $ and $ \sigma_y $.
+
+\newpage
+\section*{Ex 2.20 } 
+
+\newpage
+\section*{Ex 2.21 } 
+
+\newpage
+\section*{Ex 2.22 } 
+Show that two eigenvectors of a Hermitian operator with two different eigenvalues are orthogonal.  
+Sol: Let $A$ be an arbitrary Hermitian operator, fixed. $A=A^{\dagger} \implies A^{2}=A A^{\dagger}=A^{\dagger} A \implies A$ is normal $\implies A=\sum_{i} \lambda_i |i\rangle\langle i|$ for some orthonormal basis $\{|i\rangle, i=1,2,...,N\}$. Let $|j\rangle$ be an arbitrary vector from the orthonormal basis.  
+$A|j\rangle=(\sum_i \lambda_i |i\rangle\langle i|)|j\rangle = \sum_i \lambda_i |i\rangle\langle i|j\rangle = \sum_i \lambda_i |i\rangle \delta_{ij} = \lambda_j |j\rangle \implies A|j\rangle = \lambda_j |j\rangle$. Thus, eigenvectors of a Hermitian operator form an orthonormal set.
+
+\newpage
+\section*{Ex 2.23  }
+Problem: A projector is a normal operator.  
+
+Solution: A projector $P$ satisfies the properties $ P^2=P $ and $ P=P^\dagger $. An operator is normal if it commutes with its adjoint, i.e., $ A A^\dagger = A^\dagger A $. For a projector, we check this property:  
+$ P P^\dagger = P P = P^2 = P $ and $ P^\dagger P = P P = P^2 = P $. Since $ P P^\dagger = P^\dagger P $, a projector is a normal operator.
+
+\newpage
+\section*{Ex 2.24  }
+Problem: Let $A$ be an arbitrary positive operator. Show that $ \langle v | A | v \rangle \ge 0 $ for any vector $ |v \rangle $ in the vector space $V$.  
+
+Solution: An operator $A$ is positive if it can be written as $ A = B^\dagger B $ for some operator $B$. We can then write  
+$ \langle v | A | v \rangle = \langle v | B^\dagger B | v \rangle = \langle B|v \rangle | B|v \rangle \rangle = \|B|v \rangle\|^2 $. The norm squared of any vector is always a non-negative real number, so  
+$ \|B|v \rangle\|^2 \ge 0 $. Therefore, $ \langle v | A | v \rangle \ge 0 $.
+
+\newpage
+\section*{Ex 2.25  }
+Problem: Let $A$ be any operator. Show that $ A^\dagger A $ is a positive operator.  
+
+Solution: To show that $ A^\dagger A $ is a positive operator, we must demonstrate that  
+$ \langle v | A^\dagger A | v \rangle \ge 0 $ for an arbitrary vector $ |v \rangle $. We can rewrite this expression as  
+$ \langle (A|v \rangle) | (A|v \rangle) \rangle $, which is the squared norm of the vector $ A|v \rangle $, i.e.,  
+$ \|A|v \rangle\|^2 $. Since the squared norm is always a non-negative real number, we have  
+$ \|A|v \rangle\|^2 \ge 0 $. Thus, $ A^\dagger A $ is a positive operator.
+
+\newpage
+\section*{Ex 2.26  }
+Problem: Given the state vector $ |\psi \rangle = \frac{1}{\sqrt{2}} (|0 \rangle + |1 \rangle) $.   
+
+i) Calculate $ |\psi \rangle^{\otimes 2} $.   
+ii) Calculate $ |\psi \rangle^{\otimes 3} $.  
+Solution:  
+i) To calculate the tensor product $ |\psi \rangle^{\otimes 2} $, we multiply the state vector by itself:  
+$
+|\psi \rangle^{\otimes 2} = |\psi \rangle \otimes |\psi \rangle \\
+= \frac{1}{\sqrt{2}} (|0 \rangle + |1 \rangle) \otimes \frac{1}{\sqrt{2}} (|0 \rangle + |1 \rangle) \\
+= \frac{1}{2} (|0 \rangle \otimes |0 \rangle + |0 \rangle \otimes |1 \rangle + |1 \rangle \otimes |0 \rangle + |1 \rangle \otimes |1 \rangle) \\
+= \frac{1}{2} (|00 \rangle + |01 \rangle + |10 \rangle + |11 \rangle).
+$
+
+As a vector, this is  
+
+$ \frac{1}{2} \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \end{pmatrix} $.  
+
+ii) For $ |\psi \rangle^{\otimes 3} $, we take the result from part (i) and tensor it with $ |\psi \rangle $ again:  
+$
+|\psi \rangle^{\otimes 3} = |\psi \rangle^{\otimes 2} \otimes |\psi \rangle = \frac{1}{2} (|00 \rangle + |01 \rangle + |10 \rangle + |11 \rangle) \otimes \frac{1}{\sqrt{2}} (|0 \rangle + |1 \rangle) = \frac{1}{2\sqrt{2}} (|000 \rangle + |001 \rangle + |010 \rangle + |011 \rangle + |100 \rangle + |101 \rangle + |110 \rangle + |111 \rangle).
+$
+As a vector, this is  
+$ \frac{1}{\sqrt{8}} \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{pmatrix} $.
+
+\newpage
+\section*{Ex 2.27  }
+Problem: Calculate the following tensor products:  
+
+a) $ X \otimes Z $, b) $ I \otimes X $, c) $ X \otimes I $.  
+Solution: The matrices are  
+$ X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $,  
+$ Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $, and  
+$ I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $.  
+
+a) The tensor product is  
+$$
+X \otimes Z = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \begin{pmatrix} 0 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} & 1 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \\ 1 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} & 0 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \\ 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \end{pmatrix}.
+$$
+
+b) The tensor product is  
+$$
+I \otimes X = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 1 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 0 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\ 0 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 1 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}.
+$$
+
+c) The tensor product is  
+$$
+X \otimes I = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} & 1 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \\ 1 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} & 0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{pmatrix}.
+$$
+
+Note that $ X \otimes I \neq I \otimes X $, so the tensor product is not commutative.
+
+\newpage
+\section*{Ex 2.28 } 
+Show that the transpose, complex conjugate, and adjoint operations distribute over the tensor product.
+
+i) Show that $ (A \otimes B)^* = A^* \otimes B^* $.
+
+$( A \otimes B)^* = [A_{ij}[B_{ij}]^* \\
+= [A_{ij}^* [B_{ij}^*]] \\
+= A^* \otimes B^* $
+
+ii) Show that $ (A \otimes B)^T = A^T \otimes B^T $.
+
+$(A \otimes B)^T = [A_{ij}[B_{ij}]^T] \quad = [A_{ji} [B_{ji}]] \quad = [A_{ji} B^T] \quad = (A^T \otimes B^T)$
+
+iii) Show that $ (A \otimes B)^\dagger = A^\dagger \otimes B^\dagger $.
+
+$(A \otimes B)^\dag = ((A \otimes B)^T)^* \quad = (A^T \otimes B^T)^* \quad = (A^T)^* \otimes (B^T)^* \quad = A^\dag \otimes B^\dag$
+
+***
+
+\newpage
+\section*{Ex 2.29 } 
+
+Ex 2.29  
+Given that $UU^\dagger = U^\dagger U = I$ and $VV^\dagger = V^\dagger V = I$, show that  
+$$
+(U \otimes V)(U \otimes V)^\dagger = (U \otimes V)^\dagger (U \otimes V) = I.
+$$  
+$$
+(U \otimes V)(U \otimes V)^\dagger = (U \otimes V)(U^\dagger \otimes V^\dagger) = UU^\dagger \otimes VV^\dagger = I \otimes I = I.
+$$  
+This shows unitarity. Similarly,  
+$$
+(U \otimes V)^\dagger (U \otimes V) = (U^\dagger \otimes V^\dagger)(U \otimes V) = U^\dagger U \otimes V^\dagger V = I \otimes I = I.
+$$  
+This also shows unitarity.
+
+***
+
+\newpage
+\section*{Ex 2.30 } 
+Show that the tensor product of two Hermitian operators is Hermitian. Given $A = A^\dagger$ and $B = B^\dagger$. Consider  
+$$
+(A \otimes B)^\dagger = A^\dagger \otimes B^\dagger = A \otimes B.
+$$  
+Thus, $(A \otimes B)^\dagger = A \otimes B$, which means the tensor product is Hermitian.
+
+***
+
+\newpage
+\section*{Ex 2.31 } 
+Show that the tensor product of two positive operators is positive.
+For $A$ with $\langle v|A|v \rangle \ge 0$ and $B$ with $\langle w|B|w \rangle \ge 0$, show that  
+$$
+\langle v \otimes w|A \otimes B|v \otimes w \rangle \ge 0.
+$$  
+We need to show that  
+$$
+\langle v \otimes w|A \otimes B|v \otimes w \rangle \ge 0.
+$$  
+The inner product is given by:  
+$$
+\langle v \otimes w|A \otimes B|v \otimes w \rangle = (\langle v| \otimes \langle w|)(A \otimes B)(|v \rangle \otimes |w \rangle) = \langle v|A|v \rangle \langle w|B|w \rangle.
+$$  
+Since we are given that $\langle v|A|v \rangle \ge 0$ and $\langle w|B|w \rangle \ge 0$, and multiplication of non-negative real numbers results in a non-negative real number, we have:  
+$$
+\langle v|A|v \rangle \langle w|B|w \rangle \ge 0.
+$$  
+This proves the statement.
+
+***
+
+\newpage
+\section*{Ex 2.32 } 
+Show that the tensor product of two projectors is a projector.
+Show that $A \otimes B$ is a projector in $V \otimes W$. Let $A = \sum_i |i \rangle \langle i|$ be a projector in $V$ where $i \le N = \text{dim}(V)$, and $B = \sum_k |k \rangle \langle k|$ be a projector in $W$ where $k \le M = \text{dim}(W)$.  
+$$
+(A \otimes B) = \left( \sum_i |i \rangle \langle i| \right) \otimes \left( \sum_k |k \rangle \langle k| \right) = \sum_{i, k} (|i \rangle \otimes |k \rangle)(\langle i| \otimes \langle k|) = \sum_{i, k} |ik \rangle \langle ik|
+$$
+This describes a projector in $V \otimes W$. This shows that projectors are closed under the tensor product.
+
+***
+
+
+\newpage
+\section*{Ex 2.33 } 
+$H^{\otimes n} = \frac{1}{\sqrt{2}}\begin{pmatrix} |0\rangle + |1\rangle \\ |0\rangle - |1\rangle \end{pmatrix} \langle 0| + \frac{1}{\sqrt{2}}\begin{pmatrix} |0\rangle+|1\rangle \\ -|0\rangle+|1\rangle \end{pmatrix} \langle 1|$  
+Show that $H^{\otimes n} = \frac{1}{(\sqrt{2})^n} \sum_{x,y=0}^{2^n-1} (-1)^{x \cdot y} |x\rangle\langle y|$
+
+Consider $H^{\otimes 2}$:  
+$\left(\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle)\langle 0| + \frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)\langle 1|\right)^{\otimes 2} = \frac{1}{2}(|0\rangle\langle 0|+|1\rangle\langle 0|+|0\rangle\langle 1|+|1\rangle\langle 1|)$  
+$= \frac{1}{2} (|00\rangle\langle 00| + |01\rangle\langle 01| + |10\rangle\langle 10| + |11\rangle\langle 11|)$  
+Noting the pattern that only $x_i y_i$ has sign $x_i y_i$ indicated, the sign for $|x\rangle\langle y|$.  
+$H^{\otimes n} = \frac{1}{(\sqrt{2})^n} \sum_{x, y = 0}^{2^n-1} (-1)^{x_i y_i} |x\rangle\langle y|$
+
+Show that $H^{\otimes 2}$ explicitly:  
+$H^{\otimes 2} = \frac{1}{(\sqrt{2})^2} \sum_{x,y=0}^{3} (-1)^{x \cdot y} |x\rangle\langle y| = \frac{1}{2} \sum_{x, y = 0}^3 (-1)^{x \cdot y}|x\rangle\langle y|$  
+$= \frac{1}{2} (|00\rangle\langle 00| + |01\rangle\langle 01| + |10\rangle\langle 10| + |11\rangle\langle 11| + |01\rangle\langle 00| + |00\rangle\langle 01| + |11\rangle\langle 10| + |10\rangle\langle 11| + |10\rangle\langle 00| + |11\rangle\langle 01| + |00\rangle\langle 10| + |01\rangle\langle 11|)$
+
+
+
+***
+\newpage
+\section*{Ex 2.34}
+Eigenvectors and Normalization  
+
+Normalize the vectors:
+
+$|1\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix}$ ; $|7\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}$  
+$\implies \begin{bmatrix} 4 & 3 \\ 3 & 4 \end{bmatrix} = 1 \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -1 \end{pmatrix} + 7 \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \end{pmatrix}$  
+
+$\implies \sqrt{\begin{bmatrix} 4 & 3 \\ 3 & 4 \end{bmatrix}} = \sqrt{1} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -1 \end{pmatrix} + \sqrt{7} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \end{pmatrix} \\
+= \pm 1 \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -1 \end{pmatrix} + \pm \sqrt{7} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \end{pmatrix}$
+
+
+ii) Logarithm of $\begin{bmatrix} 4 & 3 \\ 3 & 4 \end{bmatrix} \\ 
+\log\begin{pmatrix} 4 & 3 \\ 3 & 4 \end{pmatrix} = \log_2(1) \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -1 \end{pmatrix} + \log_2(7) \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \end{pmatrix} \\
+= \log(2^7) \cdot \frac{1}{2} \begin{pmatrix} 1 \\ 1 \end{pmatrix}\begin{pmatrix} 1 & 1 \end{pmatrix} \\
+= \log(7) \cdot \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$
+
+***
+\newpage
+\section*{Ex 2.35 } 
+
+\newpage
+\section*{Ex 2.36 } 
+Show that the Pauli matrices except for $I$ have trace zero.
+
+$\sigma_X: tr \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = 0 + 0 = 0$
+
+$\sigma_Y: tr \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = 0 + 0 = 0$
+
+$\sigma_Z: tr \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = 1 - 1 = 0$
+
+
+\newpage
+\section*{Ex 2.37 } 
+Show that $\text{Tr}(AB) = \text{Tr}(BA)$.  
+$$
+\text{Tr}(AB) = \sum_i (AB)_{ii} = \sum_i \sum_j A_{ij} B_{ji}, \quad \text{and} \quad \text{Tr}(BA) = \sum_i (BA)_{ii} = \sum_i \sum_j B_{ij} A_{ji}.
+$$  
+Since $i$ and $j$ are summation variables over the same index set, the two traces are equal. Thus, the problem reduces to showing that  
+$$
+\text{Tr}(AB) = \sum_{i,j} A_{ij} B_{ji}.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.38 } 
+
+Show that $\text{Tr}(A+B) = \text{Tr}(A) + \text{Tr}(B)$.  
+$$
+\text{Tr}(A+B) = \sum_i (A+B)_{ii} = \sum_i (A_{ii} + B_{ii}) = \sum_i A_{ii} + \sum_i B_{ii} = \text{Tr}(A) + \text{Tr}(B).
+$$  
+Show that $\text{Tr}(zA) = z \text{Tr}(A)$.  
+$$
+\text{Tr}(zA) = \sum_i (zA)_{ii} = \sum_i z A_{ii} = z \sum_i A_{ii} = z \text{Tr}(A).
+$$
+
+***
+
+\newpage
+\section*{Ex 2.39 } 
+Inner product of operators. Let $L(V)$ be a vector space of all linear operators on $V$. For $\forall A, B \in L(V)$, show that  
+$$
+\langle A | B \rangle = \text{Tr}(A^\dagger B)
+$$
+satisfies the properties of an inner product.  
+
+Conjugate symmetry:  
+$$
+\langle A | B \rangle^* = \langle B | A \rangle, \quad \text{since} \quad \langle A|B \rangle^* = (\text{Tr}(A^\dagger B))^* = \text{Tr}((A^\dagger B)^\dagger) = \text{Tr}(B^\dagger (A^\dagger)^\dagger) = \text{Tr}(B^\dagger A) = \langle B|A \rangle.
+$$
+
+Linearity in the second argument: For $\alpha, \beta \in \mathbb{C}$,  
+$$
+\langle A | \alpha B + \beta C \rangle = \alpha \langle A| B \rangle + \beta \langle A | C \rangle,
+$$
+because  
+$$
+\langle A | \alpha B \rangle = \text{Tr}(A^\dagger (\alpha B)) = \text{Tr}(\alpha A^\dagger B) = \alpha \text{Tr}(A^\dagger B) = \alpha \langle A|B \rangle,
+$$
+and the linearity of the trace operator with respect to addition also confirms this.
+
+Positive definiteness:  
+$$
+\langle A|A \rangle \ge 0 \quad \text{and} \quad \langle A|A \rangle = 0 \iff A=0.
+$$  
+Indeed,  
+$$
+\langle A|A \rangle = \text{Tr}(A^\dagger A) = \sum_i (A^\dagger A)_{ii} = \sum_i \sum_j (A^\dagger)_{ij} A_{ji} = \sum_i \sum_j A^*_{ji} A_{ji} = \sum_{i,j} |A_{ji}|^2.
+$$  
+This sum of squares of the magnitudes of the matrix elements is always non-negative. It is equal to zero if and only if all matrix elements $A_{ji}$ are zero, which means $A=0$.
+
+***
+
+\newpage
+\section*{Ex 2.40 } 
+Verify that $[X,Y] = 2iZ$ for Pauli matrices $X, Y, Z$.  
+$$
+XY - YX = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} - \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} - \begin{bmatrix} -i & 0 \\ 0 & i \end{bmatrix} = \begin{bmatrix} 2i & 0 \\ 0 & -2i \end{bmatrix} = 2i \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = 2iZ.
+$$
+
+***
+
+
+\newpage
+\section*{Ex 2.41 } 
+Verify that $\sigma_i \sigma_j + \sigma_j \sigma_i = 2 \delta_{ij} I$.  
+
+For $i=j$: $\sigma_i^2 = I$.  
+$$
+\sigma_x^2 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I,
+$$
+$$
+\sigma_y^2 = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I,
+$$
+$$
+\sigma_z^2 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I.
+$$
+
+For $i \neq j$: $\sigma_i \sigma_j + \sigma_j \sigma_i = 0$.  
+
+Examples:  
+- For $i=1, j=2$:  
+$$
+XY + YX = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} + \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} + \begin{bmatrix} -i & 0 \\ 0 & i \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0.
+$$
+
+- For $i=2, j=3$:  
+$$
+YZ + ZY = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = \begin{bmatrix} 0 & i \\ i & 0 \end{bmatrix} + \begin{bmatrix} 0 & -i \\ -i & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0.
+$$
+
+- For $i=1, j=3$:  
+$$
+XZ + ZX = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.42 } 
+Verify that  
+$$
+AB = \frac{1}{2}([A,B] + \{A,B\}).
+$$  
+Consider the RHS:  
+$$
+\frac{1}{2}([A,B] + \{A,B\}) = \frac{1}{2}((AB - BA) + (AB + BA)) = \frac{1}{2}(AB - BA + AB + BA) = \frac{1}{2}(2AB) = AB.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.43 } 
+Show that for $j,k=1,2,3$,  
+$$
+\sigma_j \sigma_k = \delta_{jk} I + i \sum_{l=1}^3 \epsilon_{jkl} \sigma_l.
+$$
+
+a) For $j=k=1$:  
+$$
+\sigma_1 \sigma_1 = \sigma_x \sigma_x = I,
+$$
+RHS:  
+$$
+\delta_{11} I + i \sum_{l=1}^3 \epsilon_{11l} \sigma_l = I + i(0+0+0) = I.
+$$
+This holds.
+
+b) For $j=1, k=2$:  
+$$
+\sigma_1 \sigma_2 = \sigma_x \sigma_y = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} = i \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = i \sigma_z,
+$$
+RHS:  
+$$
+\delta_{12} I + i \sum_{l=1}^3 \epsilon_{12l} \sigma_l = 0 + i(\epsilon_{123} \sigma_3) = i \sigma_3 = i \sigma_z.
+$$
+This holds.
+
+c) For $j=1, k=3$:  
+$$
+\sigma_1 \sigma_3 = \sigma_x \sigma_z = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = i \begin{bmatrix} 0 & i \\ -i & 0 \end{bmatrix} = -i \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = -i \sigma_y,
+$$
+RHS:  
+$$
+\delta_{13} I + i \sum_{l=1}^3 \epsilon_{13l} \sigma_l = 0 + i(\epsilon_{132} \sigma_2) = i(-1) \sigma_2 = -i \sigma_y.
+$$
+This holds.
+
+***
+
+\newpage
+\section*{Ex 2.44 } 
+If $[A,B] = 0$ and $\{A,B\} = 0$, show that $B=0$ if $A \neq 0$.  
+$$
+AB - BA = 0 \implies AB = BA,
+$$
+$$
+AB + BA = 0 \implies AB = -BA.
+$$
+Combining the two equations, we get  
+$$
+AB = -AB \implies 2AB = 0 \implies AB = 0.
+$$  
+Since $A$ is an invertible matrix and $A \neq 0$, we can multiply by $A^{-1}$ to get  
+$$
+A^{-1} A B = A^{-1} 0 \implies B = 0.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.45 } 
+Show that  
+$$
+[A,B]^\dagger = [B^\dagger, A^\dagger].
+$$
+Proof:  
+$$
+[A,B]^\dagger = (AB - BA)^\dagger = (AB)^\dagger - (BA)^\dagger = B^\dagger A^\dagger - A^\dagger B^\dagger = [B^\dagger, A^\dagger].
+$$
+
+***
+
+\newpage
+\section*{Ex 2.46 } 
+Show that  
+$$
+[A,B] = -[B,A].
+$$
+Proof:  
+$$
+[A,B] = AB - BA = -(BA - AB) = -[B,A].
+$$
+
+***
+
+\newpage
+\section*{Ex 2.47 } 
+For $A = A^\dagger$ and $B = B^\dagger$, show that $i[A,B]$ is Hermitian.  
+$$
+(i [A,B])^\dagger = i^\dagger [A,B]^\dagger = -i [B^\dagger, A^\dagger] = -i [B,A] = i [A,B].
+$$  
+Thus, $i[A,B]$ is Hermitian.
+
+
+\newpage
+\section*{Ex 2.48}
+Polar decomposition of a normal matrix
+in the outer product representation. Let A
+$$
+A.AA^\dagger = A^\dagger A
+$$
+be a normal matrix.
+$$
+A=PU = (AA^\dagger)^{0.5} U \\
+= (A^\dagger A)^{0.5} U = UP
+$$
+$$
+\implies A=PU=UP,
+$$
+where U is unitary
+and P is positive
+$$
+\forall A \exists U \exists P.
+$$
+$$
+UU^\dagger=U^\dagger U=I
+$$
+$$
+(\forall v \in V. \langle v | P| v \rangle \ge 0) \\
+A=UP=PU \text{ for } AA^\dagger = A^\dagger A.
+$$
+
+\newpage
+\newpage
+\section*{Ex 2.49 }
+a) A=PU
+let the positive operator P be A.
+$$
+\implies A=AU \implies U=I.
+$$
+$$
+\implies A=AI \text{ is the right polar decomposition.}
+$$
+$$
+\& A=IA \text{ is the left polar decomposition.}
+$$
+
+b) find PU=A for $AA^\dagger = A^\dagger A = I$
+$$
+A = \sqrt{AA^\dagger} U = \sqrt{I} U = IU
+$$
+$$
+A = U\sqrt{A^\dagger A} = U\sqrt{I} = UI
+$$
+$$
+\implies A = IU = UI, \text{ where } I
+$$
+is the identity operator that
+is positive.
+
+c) A=$A^\dagger$; find P \& U for A=PU
+$$
+A=\sqrt{AA^\dagger} U = \sqrt{A^2} U = \pm AU
+$$
+$$
+A=U\sqrt{A^\dagger A} = U\sqrt{A^2} = U(\pm A)
+$$
+$$
+\implies A = AU = UA=A^\dagger = U(\pm A)
+$$
+where A is
+the positive operator
+But this shows that all hermitian operators
+are positive. Contradiction!
+
+
+\newpage
+\section*{Ex 2.50}
+Polar Decomposition  
+$50)$ $A=\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}$  
+$A$ is positive. $(\langle\psi|A|\psi\rangle = A_{ij} \geq 0)$  
+$\implies A=AU \implies U=I$  
+Thus, left polar decomposition:  
+$\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$  
+right polar decomposition:  
+$\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}$
+
+
+
+***
+\newpage
+\section*{Ex 2.51}
+Verify that $H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$ is unitary. 
+Sol: To show see: $HH^{\dagger}=H^{\dagger}H=I$  
+$HH^{\dagger} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \frac{1}{2}\begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} = I$
+
+\newpage
+\section*{Ex 2.52}
+Verify that $H^2=I$  
+Sol: $H^2 = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = I$
+
+\newpage
+\section*{Ex 2.53}
+Find eigenvalues and eigenvectors of $H$  
+Sol: $H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$  
+Consider $\begin{vmatrix} 1-\lambda & 1 \\ 1 & -1-\lambda \end{vmatrix}=0$  
+$\implies (1-\lambda)(-1-\lambda)-1=0$  
+$\implies -1-\lambda+\lambda+\lambda^2=1$  
+$\implies \lambda^2=2 \implies \lambda=\pm\sqrt{2}$  
+$H$ has eigenvalues $\pm\sqrt{2}$  
+$H$ has eigenvalues $\frac{1}{\sqrt{2}}\pm\sqrt{2}$  
+$\implies H$ has eigenvalues $\pm 1$
+
+
+***
+\newpage
+\section*{Ex 2.54}
+$(A,B)=0$, i.e., $AB=BA$.  
+Show that $e^{A}e^{B}=e^{A+B}$  
+$e^A e^B = \left(\sum_i e^{\lambda_i} |i\rangle\langle i|\right)\left(\sum_j e^{\lambda_j} |j\rangle\langle j|\right) = \sum_i e^{\lambda_A}e^{\lambda_B} |i\rangle\langle i| = \sum_i e^{\lambda_A+\lambda_B} |i\rangle\langle i| = e^{A+B}$
+
+\newpage
+\section*{Ex 2.55: } 
+
+Show that $U(t,t_0) = e^{\frac{-iH(t_2-t_1)}{\hbar}}$ is unitary.  
+Consider $U(t_2, t_1)U^{\dagger}(t_2, t_1) = e^{\frac{-iH(t_2-t_1)}{\hbar}}e^{[\frac{-iH(t_2-t_1)}{\hbar}]^{\dagger}} = e^0 = I $  
+Consider $U^{\dagger}(t_2, t_1) U(t_2,t_1) = e^{\frac{-iH^{\dagger}(t_2-t_1)}{\hbar}} e^{\frac{-iH(t_2-t_1)}{\hbar}} = e^0 = I$
+
+
+***
+
+Eigenvectors of $H$:  
+i) $\frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \sqrt{2}\begin{pmatrix} a \\ b \end{pmatrix}$  
+$\frac{1}{\sqrt{2}}(a+b) = \sqrt{2}a$  
+$\frac{1}{\sqrt{2}}(a-b) = \sqrt{2}b$  
+$\implies a+b=2a \implies a=b$  
+$a-b=2b \implies a=3b$  
+$\implies b = (\sqrt{2}-1)b, \ a = (\sqrt{2}+1)b, \ b=a(\sqrt{2}-1) \frac{\sqrt{2}+1}{\sqrt{2}+1} \implies a=2-1 \implies a=1$  
+$\implies (\sqrt{2}-1)a = b$  
+Set $a=1$, $b = \sqrt{2}-1$  
+$|1\rangle = \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix}$  
+Normalized:  
+$\frac{1}{\sqrt{1^2 + (\sqrt{2}-1)^2}} \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix} = \frac{1}{\sqrt{1 + 2 - 2\sqrt{2} + 1}} \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix} = \frac{1}{\sqrt{4 - 2\sqrt{2}}} \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix}$
+
+ii) $\frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} = -\sqrt{2} \begin{pmatrix} a \\ b \end{pmatrix}$  
+$\frac{1}{\sqrt{2}}(a+b) = -\sqrt{2} a$  
+$\implies a+b=-2a \implies a=-b$  
+Set $a=1$: $|1\rangle = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$  
+Normalized: $\frac{1}{\sqrt{1^2 + (-1)^2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix}$
+
+Consider: $\frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = 0 \begin{pmatrix} a \\ b \end{pmatrix}$  
+$\implies a+b=a$, $a-b=b$, $b=a-a$, and $a=2b$  Incomplete  
+
+***
+
+\section{List of Problems}
+
+Before going further, let me see. What all problems need I need help with.  
+Ex 2.1 to 2.7 solved.  
+Ex 2.8, I need help.  
+Ex 2.9 to 2.19 solved.  
+Ex 2.20 I need help.  
+Ex 2.21 I need help.  
+Ex 2.22 to Ex 2.30 solved.  
+Ex 2.31 I need help  
+Ex 2.32 solved  
+Ex 2.33 I need help  
+Ex 2.34 I need help  
+Ex 2.35 I need help  
+Ex 2.36 solved  
+Ex 2.37 to Ex 2.38 solved  
+Ex 2.39 I need help  
+Ex 2.40 to 2.47 solved  
+Ex 2.48 I need help  
+Ex 2.49 to 2.52 solved  
+Ex 2.53 I need help  
+Ex 2.54 to Ex 2.55 solved  
+Ex 2.56 I need help
+
+***
+
+
+\end{document}
+

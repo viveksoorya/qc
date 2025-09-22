@@ -1,0 +1,219 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
+\newcommand{\2}{\frac{1}{\sqrt{2}}} 
+\newcommand{\lam}{\lambda} 
+\newcommand{\psik}{|\psi\rangle}
+\newcommand{\psib}{\langle\psi|}
+\newcommand{\bpmx}{\begin{pmatrix}}
+\newcommand{\epmx}{\end{pmatrix}}
+\newcommand{\bbmx}{\begin{bmatrix}}
+\newcommand{\ebmx}{\end{bmatrix}}
+\newcommand{\bvmx}{\begin{vmatrix}}
+\newcommand{\evmx}{\end{vmatrix}}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\title{Nielsen and Chuang: Exercises 51-82}
+\section*{Exercise 56}
+Use the spectral decomposition to show that K $\equiv$ -i log(U) is Hermitian for any Unitary U, and thus U = exp(iK) for some Hermitian K.
+
+Suffices to show that -i log(U) = (-i log(U))$^\dag$
+
+Suffices to show that -i log(U) = i(log(U))$^\dag$
+
+Suffices to show that -i log(U) = i(log(U$^\dag$))
+
+Suffices to show that i log(U$^{-1}$) = i log(U$^\dag$)
+
+Suffices to show that U$^{-1}$ = U$^\dag$, but unitary operation is defined so. 
+$\blacksquare$
+
+\newpage
+\section*{Exercise 57}
+To show that cascaded measurements are single measurements, we would have to show two things, that the cascaded measurement takes any arbitrary state to the state state as the single measurement and tha the the probability distribution of eigenvalues of the cascaded measurement is the same as that of the single measurement:
+
+i) same eigenvector:
+Let $\psik$ be the initial arbitrary state
+
+post first measurement: $\frac{L_l \psik}{\sqrt{\psib L^\dag L \psik}}$
+
+post second measurement:
+
+numerator:
+
+$M_m (\frac{M_m (\frac{L_l |psik}{\sqrt{\psib L_l^\dag L_l \psib}})}{\sqrt{\frac{\psib L_l^\dag}{\psib L_l^\dag L_l \psik} M_m^\dag M_m \frac{L_l \psik}{\sqrt{\psib L_l^\dag L_l \psik}}}})$
+
+denominator:
+
+$ = \sqrt{\frac{\psib L_l^\dag M_m^\dag M_m L_l \psik}{\psib L_l^\dag L_l \psik}} $
+$ = \sqrt{\frac{\psib L_l^\dag M_m^\dag M_m L_l \psik}{\psib L_l^\dag L_l \psik}}$
+
+the state after second measurement:
+
+$\frac{M_m L_l \psik}{\sqrt{\psib L_l^\dag L \psik} \frac{\sqrt{\psib L_l^\dag M_m^\dag M_m L_l \psik}}{\sqrt{\psib L-l^\dag L \psik}}}$
+
+$ = \frac{M_m L_l \psik}{\cancel{\sqrt{\psib L_l^\dag L \psik}} \frac{\sqrt{\psib L_l^\dag M_m^\dag M_m L_l \psik}}{\cancel{\sqrt{\psib L-l^\dag L \psik}}}}$
+
+$ = \frac{M_m L_l \psik}{\sqrt{\psib L_l^\dag M_m^\dag M_m L_l \psik}}$ 
+$\blacksquare$
+
+\newpage
+\section*{Exercise 58}
+Suppose we prepare a quantum system in an eigenstate $\psik$ of some observable M,w with corresponding eigenvalue m.What is the average observed value of M, and the standard deviation?
+
+Average value = $\langle \phi | M | \phi \rangle$
+
+$\Rightarrow \frac{\psib M_m^\dag}{\sqrt{\psib M_m^\dag M_m \psik}} M \frac{M_m \psik}{\sqrt{\psib M_m^\dag M_m \psik}}$
+
+$ = \frac{\psib M_m^\dag M M_m \psik}{\psib M_m^\dag M_m \psik} $
+
+$ = \frac{\psib M_m^\dag M_m \psik}{\psib M_m^\dag M_m \psik} = 1?$
+
+Note that since the effect of the $M \text{ on } M_m$ was leave it unchanged, the same will happen with $M^2$, meaning $\sqrt{\langle M^2 \rangle - \langle M \rangle^2} = \sqrt{1 - 1} = 0$
+$\blacksquare$
+\section*{Bonus}
+Show that $\sqrt{\langle (M - \langle M \rangle)^2\rangle} =  \sqrt{\langle M^2 \rangle - \langle M \rangle ^2}$
+
+\newpage
+\section*{Ex 2.59}
+Suppose we have a qubit in the state \0, and we measure the observable X. What is the average value of X? What is the standard deviation of X?
+
+$\langle X \rangle = \langle 0 | X | 0 \rangle = \langle 0 | 1 \rangle = 0$
+
+$\sqrt{\langle X^2 \rangle = \langle X \rangle ^2} = \sqrt{\langle 0 | X | 0 \rangle  - (\langle 0 | X | 0 \rangle)^2}  = \sqrt{1 - 0} = \pm 1$
+$\blacksquare$
+
+\newpage
+\section*{Ex 2.60}
+i) Show that $\vec{v} \cdot \vec{\sigma}$ has eigenvalues $\pm$ 1. 
+
+Solution:
+
+Let $\vec{v}$ be $\begin{pmatrix} a \\ b \\ \sqrt{1 - a^2 -b^2} \end{pmatrix}$.
+
+$\Rightarrow \vec{v} \cdot \vec{\sigma} = a\sigma_1 + b\sigma_2 + c\sigma_3$
+
+$ = \begin{bmatrix} \sqrt{1 - a^2 - b^2} & a - ib \\ a + ib & -\sqrt{1 - a^2 - b^2} \end{bmatrix}$
+
+$\Rightarrow $ the characteristic equation is 
+$ (\sqrt{1 - a^2 -b^2} -\lam)(- \sqrt{1 - a^2 - b^2} - \lam) - (a-ib)(a+ib) = 0$
+
+$ \Rightarrow \lam ^2 - (1 -a^2 -b^2) -a^2 -b^2= 0$
+
+$ \Rightarrow \lam^2 = 1$
+
+$\Rightarrow \lam = \pm 1$
+$\blacksquare$
+
+ii) Show that the projectors onto the corresponding eigenspaces are given by $P_{\pm} = (I \pm \vec{v} \cdot \vec{\sigma})/2$
+
+So long as $\vec{v} \cdot \vec{\sigma}$ defines a measurement, 
+
+$\vec{v} \cdot \vec{\sigma} = \Sigma_i \lam_i P_i \text{ (where } P_i$ are the projectors.)
+
+$ = (+1 P_+) + (-1 P_-)$
+
+$ \Rightarrow \vec{v} \cdot \vec{\sigma} = P_+ - P_-$ (Let this be eq 1)
+
+$ I = \Sigma_i P_i$ (Let this be eq 2)
+
+$ \text{Using eq2 in eq 1} we have \vec{v} \cdot \vec{\sigma} = P_+ -(I + P_+)$
+
+$ \Rightarrow \vec{v} \cdot \vec{\sigma} = 2P_+ - I \Rightarrow P_+ = (I + \vec{v} \cdot \vec{\sigma})/2$
+
+Similarly,
+
+$ \text{Using eq2 in eq 1} we have \vec{v} \cdot \vec{\sigma} = P_+ -(I + P_+)$
+
+$ \Rightarrow \vec{v} \cdot \vec{\sigma} = I - 2P_- \Rightarrow P_- = (I - \vec{v} \cdot \vec{\sigma})/2$
+
+
+$ \text{Thus, } P_\pm = (I \pm \vec{v} \cdot \vec{\sigma})/2$
+$\blacksquare$
+
+
+\newpage
+\section*{Ex 2.61}
+Calculate the probability of obtaining the result +1 for a measurement of $\vec{v} \cdot \vec{\sigma}$, given that the state prior to measurement is \0. What is the state of the system after the measurement if +1 is obtained?
+
+Probability of measuring +1 when the system is in the state \0 is given by
+
+p(+1) 
+
+$ = \langle 0 | ( \vec{v} \cdot \vec{\sigma}) | 0 \rangle$
+
+$ = \bpmx 1 & 0 \epmx \bbmx \sqrt{1 - a^2 -b^2} & a-ib\\ a+ib & -\sqrt{1 -a^2 -b^2}\ebmx \bpmx 1 \\ 0 \epmx$ 
+
+$ = \bpmx 1 & 0 \epmx \bbmx \sqrt{1 - a^2 - b^2} \\ a+ib \ebmx $
+    
+$ = \sqrt{1 - a^2 -b^2}$
+
+The state of the system after the measurement is obatined is $P_+$ ie, $(I + \vec{v} \cdot \vec{\sigma}) /2$
+$\blacksquare$
+
+\newpage
+\section*{Ex 2.62}
+Show that any measurement where the Measurement opertors and the POVM elements coincide is a projective measurement.
+
+POVM elements: {$P_i$} such that $\Sigma_i P_i = I$
+
+Measurement Operators: {$M_m$} describe a measurement such that $\psib M_m \psik = pr(m)$
+
+Show that if these two coincide such that we have $\Sigma_m M_m = I$, then   
+
+$M_mM_n = 0$ , where m $\neq$ n
+
+Solution:
+
+Consider two projectors $M_m, M_n$ such that they are together complete
+
+$\Rightarrow M_m = I - M_n$
+
+Now consider  $M_m M_n \psik$:
+
+$ = M_m (M_n\psik)$
+
+$= (I - M_n) (M_n \psik)$
+
+$= (M_n \psik) - (M_n^2 \psik)$
+
+$= M_n \psik - M_n \psik$
+
+$= 0$
+
+Thus, $M_m M_n = 0$
+
+This solves it for the case where there are two projectors
+
+What about the case where there are 3 or n projectors?
+Is it that as long as a projector is orthogonal with its complement with Identity, every pair of projectors conceivable for that observable is orthogonal?
+
+This solution is not right
+\newpage
+\section*{Ex 2.63}
+
+
+
+
+
+
+
+\end{document} 

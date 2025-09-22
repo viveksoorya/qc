@@ -7,6 +7,11 @@
 \section*{Solved Math Problems}
 
 \section{solved problems}
+\subsection{problems designed by yours truly}
+	\begin{enumerate}
+            \item Show that Hermitian operators are normal operators; What is a normal operator; an operator A for which $AA^\dagger = A^\dagger A$; What is a hermitian operator: an operator B for which $ B = B^\dagger$ ; Let’s take a fixed, arbitrary operator $B_f$ for which $B_f = B_f^\dagger$, and show that $B_fB_f^\dagger = B_f^\dagger B_f$; $B_fB_f^\dagger = B_fB_f  = B_f^\dagger B_f$;$\blacksquare$ 
+    \end{enumerate}
+\subsection{exercises}
 \subsection*{Exercise 2.1: Linear dependence}
 We are asked to consider the linear independence of the vectors
 $$ \begin{pmatrix} -1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \begin{pmatrix} 2 \\ 1 \end{pmatrix} $$
@@ -27,10 +32,17 @@ The matrix representation of $A$ in the basis $\{\ket{0}, \ket{1}\}$ is found by
 \begin{itemize}
     \item $A\ket{0} = A \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} a \\ c \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \implies a=0, c=1$.
     \item $A\ket{1} = A \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} b \\ d \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \implies b=1, d=0$.
-\end{itemize}
+\end{itemize} 
 Thus, the matrix representation of $A$ is:
 $$ A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $$
 This matrix is known as the Pauli-X matrix, often denoted by $\sigma_x$.
+
+Show that all transformation whether they are rotating transformations or not, have at least one complex eigenvalue; Show this especially for  rotating transformation;
+
+Since virtually any input and output bases except precisely those pair of bases that are resultant from applying the exact same transformation to both the vector base input \& output bases, could give rise to a different matrix representation of A, I leave the problem here to be trivially solvable. Say you can take $\{|0\rangle, |1\rangle\}$ as input basis \& $\{|0\rangle+|1\rangle/\sqrt{2}, |0\rangle-|1\rangle/\sqrt{2}\}$ as output basis \& you would get a different representation. Well, even if you take same input basis \& change only one of the output basis vectors, you would still get a different matrix representation of A.
+Say you can take $\{|0\rangle, |1\rangle\}$ as input basis \& $\{|0\rangle+|1\rangle/\sqrt{2}, |0\rangle-|1\rangle/\sqrt{2}\}$ as output basis \& you would get a different representation. Well, even if you take same input basis \& change only one of the output basis vectors, you would still get a different matrix representation of A.
+
+
 
 \subsubsection*{Exercise 2.2, rabbithole: Change of Basis}
 We have the same operator $A$ (the Pauli-X matrix), but we want to find a new output basis such that its matrix representation is diagonal, specifically:

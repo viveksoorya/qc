@@ -14,6 +14,10 @@
 
     \begin{enumerate}
     
+    \item Changing either the input set alone or the output basis set alone changes the matrix representation of A even as the transformation remains the same. 
+    \item Would changing both, in any case, particular case, keep the matrix representation same? Given I change the input basis and the change is represented by a transformation (which is matrix eq of which can be extracted from the erstwhile input basis \& the new input basis) if the same transformation were to be applied to the erstwhile output basis \& if the resultant vector were take along with the new input basis then the (sentence cuts off) matrix representation would remain intact.
+Is measurement, principle of least action at work? Like if you make a measurement the state changes to an eigenstate of the operator which doesn't change until a new operator is applied. Looks like inertia, pola... 
+T
     
     \item A coordinate transformation is a linear operation.
     \item That a matrix can be composed of output bases is a property of input bases $e_i$, and that the requires input bases $e_i$ and the transformation to be into the same vector space.
@@ -25,23 +29,22 @@
     \item The number of columns of the right matrix gives the number of columns of the resultant matrix.
 
     
-    \item 'unitary transformation' of a "state vector" can be physically interpreted as the 'time evolution' of "an isolated quantum mechanical system":
-    \item Unitary transformation
-    \begin{enumerate} % This allows for sub-items with letters
-        \item Reversible transformation
-        \item inverse is adjoint
-    \end{enumerate}
-
-    \item Reversible operations are the only operations we concern ourselves with so far as quantum computation and quantum information is concerned
-    \item unitary operations are the only operations possible for evolution.
     \item We will deal with only finite-dimensional Hilbert space.
     \item projection of a vector on another vector can be obtained by an inner product. 
     \item linear means matrix (scalar (vector)) = scalar (matrix (vector))
     \item inner product needs linearity 
+    \item Positive operator and the unitary operator are operator counterparts of a complex number $z = re^{i\theta}$ in polar representation. $A=V\sqrt{D}U^\dagger$ (This looks incorrect, based on the notes it is $A=VU$, which is also wrong. $A = V D U^\dagger? A=V|D|U^\dagger? A = V|A|$ or something like this) $UDU^\dagger$ is the positive operator; V is the unitary operator
+
     \end{enumerate}
+    
 
 
     \subsection{unitary operator}
+    Orthogonal matrix O: $\mathbb{R} \rightarrow \mathbb{R}$
+    Unitary matrix U: $\mathbb{C} \rightarrow \mathbb{C}$ 
+    Both matrices have modulus of determinant = 1 
+    unitary operators are isometries; autosuggest recommonding adding "that preserve inner product"; are there isometries that do not preserve inner product
+
     \begin{enumerate}    
     \item Unitary transformation depends only on initial and final state.
     \item why does it not depend on the intermediary at time stamps or states? How do we know that it doesn't? Is it odd that it doesn't?
@@ -49,6 +52,81 @@
     \item Does the unitary operator depend on the initial timestamp or does it depend on the initial state vector and the final state vector?
     
     \item How to find all unitary operators of a given dimension.
+    
+    \item 'unitary transformation' of a "state vector" can be physically interpreted as the 'time evolution' of "an isolated quantum mechanical system":
+    \item Unitary transformation
+    \begin{enumerate} % This allows for sub-items with letters
+        \item Reversible transformation
+        \item inverse is adjoint
     \end{enumerate}
 
+    \item unitary operations are the only operations possible for evolution.
+    \item Unitary operator is a normal operator
+    \item The unitary evolution is characterized by only a shift in global phase factor; does this leave the probabilities, energy eigenvalues, and expectation values intact; if so show how
+
+    \end{enumerate}
+    
+    \subsection{Measurement operator}
+    \begin{enumerate}
+        \item Why would the measurement operator satisfy the completeness equation? 
+        \item You are not just adding them all. 
+        \item You are not scaling them up. 
+        \item You are adding a projection of a vector with its adjoint (or transformation). 
+        \item The measurement operator is not necessarily hermitian. 
+        \item What are projective measurements? Measurements with an orthonormal orthogonal basis. [The outer products of the basis vectors gives projection operators]. The observable spectral decomposes into the projection operators. The observable is a hermitian operator. 
+        \item The observable describes the projection measurement, while the projector operators project onto eigenvector $|E\rangle$ with eigenvalue E. \
+        \item $\{M_m\}$ satisfies the completeness relation. What else is necessary to go from operator to measurement operator. Does it say, D a) have to be hermitian? 
+        \item measurement $\neq$ operator + orthogonal operators(:= all operators are hermitian \& $ M_M M_{M'} = \delta_{MM'} M_M) = $ projectors. 
+        \item Does this hold: Operator + completeness relation = Measurement operator.
+        \item $\pi^2 = \pi$
+
+    \end{enumerate}
+    
+    \subsection{Hamiltonian operator}
+    \begin{enumerate}
+        \item The Hamiltonian operator is a hermitian operator
+        \item How does knowing energy (Hamiltonian) alone tell us the dynamics of the system? 
+        \item Why are energy eigenstates referred to as stationary states? 
+        \item Hamiltonian captures everything there is to be captured about the dynamics of the system. Hamiltonian is energy operator. How does knowing energy alone, tell its dynamics?
+        \item Energy and time have an uncertainty relationship
+        \item Time varying Hamiltonian, then would be a function of time, where the system itself is changing and thus the energy too. Note that its not evolving a closed system, but that the system itself is changing.
+        \item Why are energy eigenstates referred to as stationary states?
+        \item I would presume Hamiltonian is called the energy operator since it changes when the energy of the system charges. Or, rather, (since the energy of a given system doesn't ever charge) when the system changes.
+        \item $H = \bar{h}\omega X$
+        \item Here H and X are supposed to have the same energy eigenstates. Why? Does scaling a transformation not change its eigenstates?
+
+
+
+
+    \end{enumerate}
+
+    \subsection{Hermitian operator}
+    \begin{enumerate}
+        \item have spectral decomposition, meaning they decompose into additive factors made from outer product of eigenvectors scaled by eigenvalues 
+        \item The eigenvectors of a hermitian matrix form a basis? yes 
+        \item $A = A^\dagger$
+
+    \end{enumerate}
+    \subsection{normal operator}
+        \begin{enumerate}
+            \item spectral theorem: Normal operators have spectral decomposition
+        \end{enumerate}
+    \subsection{geometric interpretations}
+    \begin{enumerate}
+        \item Rows in a matrix contribute to their corresponding components in the vector they are transforming.
+        \item A matrix is a branchedly (multi-dimensional) ordered set of scalars. for a vector.
+        \item In a transformation, you are doing scaled vector addition of all components in the vector to get the resultant vector. To do this, the scaling factors are of $n^2$ complexity since there are $n$ sets of the same vector addition, with different weights for each component.
+        \item Why does a matrix with determinant 0, not have an inverse; a matrix with determinant 0, has incomplete rank, meaning it will take at least one of the components of the vector to zero; geometrically, a matrix with incomplete rank cannot have an inverse because, it is a transformation into a lower dimensional vector space what then is the rank of a matrix that takes a vector into a higher dimensional vector space; if rank does not capture this, is there another functional that could or perhaps could we define one and to what end;
+        \item If the determinant can tell you when the rank if not full, is there another functional that tells you the rank of the matrix give the matrix representation; what is the geometric interpretation or significance of a matrix having degenerate eigenvalues;
+        \item Full rank matrices have all have n eigenvalues since they take the vector from into the space vector space. perhaps except rotation matrices. Rotation matrices can't have any eigenvalues right? but they are full rank matrices, aren't they? 
+        \item 0 as determinant of the matrix indicates that the matrix is not full rank and a full rank matrix cannot have an inverse; A matrix with incomplete rank takes at least one of the components to 0; once the component vanishes with respect to the other components, transforming the vector in whichever way only transformers the components that have not vanished; the vanished component can be multiplied by anything but it still remains 0;  but what about the additive components; the vector component when transformed gets scaled components of other vectos; since that one component has vanished, its own additive component is zero and cannot be scaled back; but the additive factors derived from scaling the other components still remind and so the component can later taken on any real value, but it sort of becomes untangled from the rest of the vector and so loses information, and thus inverse is not possible;
+        \item Why does the determinant preserve scaling of the matrix; is this just linearity or is there more nuance; if you scale the matrix, the transformation of the vector scales and so the determinant scales equally; actually the determinant preserves scaling up to the power of the dimension of the vector space; for if you scale a matrix in V2, you scale the determinant by the scalar raised to 2; if you scale a matrix in V3, you scale the determinant by the scalar raised to 3; Show that this is the case
+        \item Coordinate transformation is a linear transformation
+
+
+
+
+
+
+    \end{enumerate}
 \end{document}
