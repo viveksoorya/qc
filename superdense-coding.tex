@@ -1,7 +1,9 @@
-\documentclass{article}
+\documentclass[a4paper,12pt]{amsbook}
 \usepackage{physics}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{microtype}
 \providecommand{\tb}{\textbackslash}
 \newcommand{\0}{{$|0\rangle$}}
 \newcommand{\1}{{$|1\rangle$}}
@@ -29,16 +31,15 @@
 \author{Vivek Soorya Maadoori}
 \date{\today}
 \maketitle
-
 Superdesnse coding is about transformations
 
 \section{setup}
-Task: Send 2 classical bits by sending 1 qubit\footnotemark[1] across
-\footnotetext[1]{is an entangled pair considered one qubit or two? If it is considered one, why is it considered one and how do you refer to the information in the subsystems? If it is considered two qubits, why does the text say that superdense coding is about sending 2 classical bits by sending \textit{1} qubit?}
+\begin{enumerate}
+    \item \textbf{Task}: Send 2 classical bits by sending 1 qubit across
 
-To carry out this task we use an entangled pair and transform it to encode information;
+\item To carry out this task we use an entangled pair and transform it to encode information;
 
-There are four entangled pairs:
+\item There are four entangled pairs:
 
 \bellstates,
 
@@ -51,80 +52,85 @@ and the possibilities of four values of 2 classical bits:
 01: $\frac{|01\rangle + |10\rangle}{\sqrt{2}}$,
 10: $\frac{|01\rangle - |10\rangle}{\sqrt{2}}$
 
-The four entangles pairs are I, X, Z and XZ transformations apart \footnotemark[2] \footnotemark[3]
+\item The four entangles pairs are I, X, Z and XZ transformations apart \footnotemark[2] 
 
-\footnotetext[2]{XZ = -2iY, but -2 is global amplitude scalar, and this does not affect our bell state to classical doublt-bit encoding; the phase is global and so can be ignored and the  magnitude disappears upon renormalization}
+    \footnotetext[2]{XZ = -2iY, but -2 is global amplitude scalar, and this does not affect our bell state to classical doublt-bit encoding; the phase is global and so can be ignored and the  magnitude disappears upon renormalization}\footnotemark[1]
+    \footnotetext[1]{permutational invariance for bell states and transformations}
 
-\footnotetext[3]{The transformations are wrt to the qubit of the second subsystem}
+\item Using these transformations Alice can send her two classical bits to Bob by sending over a tranformed qubit. Upon receipt of the qubit, Bob can measure it in the Bell basis\footnotemark[3] since it forms an orthonormal basis \footnotemark[4].
 
-Using these transformations Alice can send her two classical bits to Bob by sending over a tranformed qubit. Upon receipt of the qubit, Bob can measure it in the Bell basis\footnotemark[4] since it forms an orthonormal basis \footnotemark[5].
 
-\footnotetext[5]{Refer to appendix B, to see how bell basis forms an orthonormal basis.}
+\footnotetext[3]{Appendix C}
+\footnotetext[4]{Refer to appendix B, to see how bell basis forms an orthonormal basis.}
 
-\footnotetext[4]{You have to measure it in the bell basis and not any other basis like the computational basis, since measuring it in other bases would not return any bell state with probability 1, but when measured int he bell basis, one of the four bell states is returned with probability 1 and the other three with probability 0, accomodating determinstic communication.
-
-In a thought experiment, if you are Bob and trying to decode the information Alice sent (assuming you have the mapping from qubit state to classical information), you might be tempted to measure it in the computational basis, but you will quickly (or taking your time) realize that you will lose information about relative phase and will only be able to the information down to one of two camps of the bell states, where members of the camp only differ by a relative phase. Note then that you want to extract phase information. If you want to extract any information you will have to measure, or do it before measurement. All we can done before the measuremen, is unitary transformations and so to recover/extract the relative phase, perform a unitary transformation. It turns out the unitary transformation (for there could be any number of unitary transformations) that does the job is basis change transformation. Or you could just shorten the process and directly measure it in the bell basis. But if you want to measure it in the computational basis, first perform the necessary unitary transformation.}
-
+\end{enumerate}
 
 \section{solution}
 steps:
 \begin{enumerate}
-    \item Alice and Bob share the mapping from classical information of 2 bits to quantum information of entangled pairs
-    \item Alice performs the necessary transformation to reflect her choice
-    \item Transfer the entangled pair through a quantum channel 
-    \item Bob measures the qubit in bell basis and uses the map to get the classical information.
+    \item Alice prepares two qubits in an EPR state, and sends one of the qubits to Bob
+    \item Bob performs the necessary transformation to reflect his choice and sends it back
+    \item Alice measures the two qubits in bell basis and uses the map to obtain the classical information that is Bob's choice.
 \end{enumerate}
-Note that it cannot be a shared system with each person carrying one subsystem since the receiver needs both subsystems to ascertaint both the classical bits
-
 
 
 
 \section{Appendix A}
-When there are 32 superpositions, why are the 4 states so special that they get their own two names (EPR pairs and bell states)? 
+\begin{enumerate}
+    \item When there are 32 superpositions, why are the 4 states so special that they get their own two names (EPR pairs and bell states)? 
 
-There are 32 equally weighted superpositions of $|10\rangle, |01\rangle, |10\rangle, |11\rangle.$
+    \item There are 32 equally weighted superpositions of $|10\rangle, |01\rangle, |10\rangle, |11\rangle.$
 Square the cardinality of the set of equally weighted superpositions. Taking into account negative relative phase, we double that number.
-$\Rightarrow 2 \times 4^2 = 32.$ 
+    $\Rightarrow 2 \times 4^2 = 32.$ 
 
-Of these 8 are not actually superpositions\footnotemark[5]:
+    \item Of these 8 are not actually superpositions\footnotemark[5]:
 
-$\frac{|00\rangle + |00\rangle}{2},\frac{ |00\rangle - |00\rangle}{2},\frac{ |01\rangle + |01\rangle}{2}, \frac{ |01\rangle - |01\rangle}{2}, $
+        \begin{itemize}
+    \item     $\frac{|00\rangle + |00\rangle}{2},\frac{ |00\rangle - |00\rangle}{2},\frac{ |01\rangle + |01\rangle}{2}, \frac{ |01\rangle - |01\rangle}{2}, $
 
-$\frac{ |10\rangle + |10\rangle}{2},\frac{ |10\rangle - |10\rangle}{2},\frac{ |11\rangle + |11\rangle}{2},\frac{ |11\rangle - |11\rangle}{2}, $
+    \item     $\frac{ |10\rangle + |10\rangle}{2},\frac{ |10\rangle - |10\rangle}{2},\frac{ |11\rangle + |11\rangle}{2},\frac{ |11\rangle - |11\rangle}{2}, $
+        \end{itemize}
 
-Of the remaining 12 are duplicates:
+    \item Of the remaining 12 are duplicates owing to commutativity of addition:
 
-$\frac{1}{\sqrt{2}}(|00\rangle + |10\rangle)  \text{ and } \frac{1}{\sqrt{2}}(|10\rangle + |00\rangle)$
+        $\{\{\frac{1}{\sqrt{2}}(|00\rangle + |10\rangle),  \frac{1}{\sqrt{2}}(|10\rangle + |00\rangle)\}, \dots\}$
 
-and so on; they may at most differ by global phase like in
+    where each pair differ at most by global phase like in
 
-$\frac{1}{\sqrt{2}}(|100\rangle - |110\rangle)$ \text{ and }$\frac{1}{\sqrt{2}}(|110\rangle - |100\rangle)$
+    $\frac{1}{\sqrt{2}}(|00\rangle - |10\rangle)$ \text{ and }$\frac{1}{\sqrt{2}}(|10\rangle - |00\rangle)$
 
-Of the remaining, 8 are not entangled.
+    \item Of the remaining, 8 are not entangled, meaning they are tensor product decomposable.
 
-This leaves us with $2\times4^2 - 12 - 8 = 32 - 20 = 4$ which are
+    \item This leaves us with $2\times4^2 - 12 - 8 = 32 - 20 = 4$ which are
 
-$\frac{|100\rangle + |110\rangle}{\sqrt{2}}, 
-\frac{|100\rangle - |111\rangle}{\sqrt{2}}, 
-\frac{|101\rangle + |111\rangle}{\sqrt{2}},
-\frac{|101\rangle - |110\rangle}{\sqrt{2}}$
+        \begin{itemize}
+    \item $\frac{|100\rangle + |110\rangle}{\sqrt{2}}$ 
+    \item $\frac{|100\rangle - |111\rangle}{\sqrt{2}}$ 
+    \item $\frac{|101\rangle + |111\rangle}{\sqrt{2}}$
+    \item $\frac{|101\rangle - |110\rangle}{\sqrt{2}}$
+\end{itemize}
 
 \footnotetext[5]{consider $\frac{|00\rangle - |00\rangle}{2}$, what would phase mean here? especially since differing by relative phase does not yield orthogonality in this case. That is, when $\frac{|00\rangle - |00\rangle}{2} = \frac{|00\rangle + |00\rangle}{2}$ what does relative phase signify then?}
+
+\end{enumerate}
+
+
 \section{Appendix B}
-Bell states are pair wise orthogonal\footnotemark[6]a
+\begin{enumerate}
+    \item Bell states are pair wise orthogonal\footnotemark[6]a
 $\frac{|00\rangle + |11\rangle}{\sqrt{2}} \text{ and }
 \frac{|00\rangle - |11\rangle}{\sqrt{2}}$ 
 are orthogonal since they differ by relative phase
 
-Same with 
+    \item Same with 
 $\frac{|01\rangle + |10\rangle}{\sqrt{2}} \text{ and }
 \frac{|01\rangle - |10\rangle}{\sqrt{2}}$
 
-Now consider 
+    \item Now consider 
 $\frac{|00\rangle + |11\rangle}{\sqrt{2}} \text{ and }
 \frac{|01\rangle - |10\rangle}{\sqrt{2}}$
 
-These two are also orthogonal since,
+    \item These two are also orthogonal since,
 $(\frac{\langle00|+ \langle11|}{\sqrt{2}}) 
 (\frac{|01\rangle - |10\rangle}{\sqrt{2}})$
 
@@ -138,6 +144,24 @@ $ = \frac{0 - 0 + 0 - 0}{2}$
 
 $= 0$
 
-By transitivity all the bell states are orthogonal to each other
+    \item By transitivity all the bell states are orthogonal to each other
 \footnotetext[6]{Where inner product is defined as product of inner product of qubits in the respective subsystems ie constituent Hilbert spaces of the tensor product hilbert space}
+
+\end{enumerate}
+
+
+\section{Appendix C}
+\begin{enumerate}
+    \item You have to measure it in the bell basis and not any other basis like the computational basis, since measuring it in other bases would not return any bell state with probability 1, but when measured int he bell basis, one of the four bell states is returned with probability 1 and the other three with probability 0, accomodating determinstic communication.
+
+    \item Consider the following scenario:
+\begin{enumerate}
+    \item If you are Bob and trying to decode the information Alice sent (assuming you have the mapping from qubit state to classical information), you might be tempted to measure it in the computational basis, but you will quickly (or taking your time) realize that you will lose information about relative phase and will only be able to pin the information down to one of two camps of the bell states, where members of the camp only differ by a relative phase.
+   \item  Note then that at this point you want to extract phase information.
+   \item  Also note that if you want to extract any information at all, you will have to measure, or do it before measurement.
+   \item  All we can done before the measurement, is unitary transformations and so to recover/extract the relative phase, perform a unitary transformation. It turns out that \textit{the} unitary transformation (for there could be any number of unitary transformations) that does the job is basis change transformation. Or you could just shorten the process and directly measure it in the bell basis. But if you want to measure it in the computational basis, first perform the necessary unitary transformation.
+\end{enumerate}
+\end{enumerate}
+
+
 \end{document}

@@ -1,0 +1,40 @@
+\documentclass[a4paper,12pt]{amsbook}
+\usepackage{physics}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\section{inquiry}
+
+\begin{enumerate}
+\item Density matrices are a way to represent states. A density matrix is used to represent mixed states ie if you dont know the state of a system but you know that it is one among a bunch of states, you can weight the projectors of each state and sum them up to get their corresponding density matrix. This raises a few questions: \begin{enumerate} \item why projectors \item why sum the scaled projectors \item why scale them probabilities \end{enumerate} 
+\item The density matrix of a pure state with probability 1 is just the projector of that state. The entries in the projectors of such states get us information about the probability of that basis state occuring; this interpretation works for the diagonal elements, but what about the off diagonal elements which are coefficients of outer product of orthogonal basis states?
+\item Why sum the projectors? because it is a linear combination? why? because they are all the different possibilities? Then how is the linearity in the superposition of a pure state distinct from the linearity in the different pure states of a mixed state?
+    \item Why is the first bell state so peculiar? Why is the whole system in a pure state but the subsystems in mixed states. Is the mixedness then a resource, an inalienable part of entanglement? Is it that we may choose where the mixedness will appear in the system, by making a trade off (with purity), but can never get rid of it? 
+\end{enumerate}
+
+\section{notes}
+\begin{enumerate}
+    \item What are density matrices? Alternative forumlation to represent quantum states.
+    \item Properties of density matrices:\begin{enumerate} \item hermiticity \item positive semi definite \item trace 1 \item projector \end{enumerate}
+\end{enumerate}
+
+\end{document}
