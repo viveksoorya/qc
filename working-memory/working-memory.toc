@@ -1,0 +1,29 @@
+\contentsline {chapter}{\tocchapter {Chapter}{1}{Matrices and Operators}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{0.1}{More Notes}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{0.2}{unitary operator}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{0.3}{Measurement operator}}{6}{}%
+\contentsline {subsection}{\tocsubsection {}{0.4}{Hamiltonian operator}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{0.5}{Hermitian operator}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{0.6}{normal operator}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{0.7}{geometric interpretations}}{7}{}%
+\contentsline {section}{\tocsection {}{1}{bloch sphere}}{8}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{2}{The narrative: keeping the bird's eye view, organized}}{9}{}%
+\contentsline {section}{\tocsection {}{1}{the story of qubits}}{9}{}%
+\contentsline {section}{\tocsection {}{2}{the story of a composite system}}{10}{}%
+\contentsline {section}{\tocsection {}{3}{the story of measurement}}{10}{}%
+\contentsline {section}{\tocsection {}{4}{the story of the density operator}}{10}{}%
+\contentsline {section}{\tocsection {}{5}{the story of the reduced density matrix}}{11}{}%
+\contentsline {section}{\tocsection {}{6}{the story of the Schmidt decomposition}}{11}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{3}{Diagonalizability and orthogonal bases}}{13}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{4}{Decompositions of linear operators}}{15}{}%
+\contentsline {section}{\tocsection {}{1}{Polar decomposition}}{15}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{5}{Classical bit ot quantum bit}}{17}{}%
+\contentsline {section}{\tocsection {}{1}{Understanding the need for a Hilbert Space to model an isolated quantum system}}{17}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{6}{quantum mechanics}}{19}{}%
+\contentsline {section}{\tocsection {}{1}{'Non-linearity' in quantum mechanics}}{19}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{7}{Operator - sum formulation}}{21}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Understanding the Measurement Postulates and the limitation of our knowledge on Measurement}}{23}{}%
+\contentsline {section}{\tocsection {}{1}{Understanding Measurement Statistics of Qubits}}{23}{}%
+\contentsline {section}{\tocsection {}{2}{Measurement breaks unitary evolution}}{23}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{POVM formalism}}{25}{}%
+\contentsline {chapter}{\tocchapter {Chapter}{10}{Measurement of an isolated quantum system}}{27}{}%

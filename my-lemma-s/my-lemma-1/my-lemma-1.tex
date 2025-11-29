@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{amsbook}
+\usepackage{physics}
+\usepackage{amsthm}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\author{Vivek Soorya Maadoori}
+\title{Density Operators cant have non-zero elements in all diagonal positions}
+\maketitle
+\begin{lemma}
+A density operator of a pure state cannot have non-zero elements in all diagonal positions.
+\end{lemma}
+\begin{proof}
+
+    \footnote{Density operators of a pure state are projectors}
+    Density operators are positive operators and so are diagonalizable. 
+    Assume the diagonalized density matrix $\rho_D$. Assume one nonzero entry. 
+
+    Let $\rho_D = |\psi\rangle\langle\psi| \text{ for some } |\psi\rangle $.
+    For the state $|\psi\rangle$, let the entries be $x_n, n \in \mathcal{N}$.
+    For any indices i, j such that i $\neq$ j, either $x_i$ is 0 or $x_j$ is zero, since all off diagonal elements are zero. Thus, at least one of $x_i$ and $x_j$ are zero for any distinct pair of indices. 
+    $\Rightarrow$ There is only one index i such that $x_i \neq 0$
+    $\Rightarrow$ There is only one positive diagonal element in $\rho_D$
+
+    Thus, given the non diagonal elements of a projector are 0 and that the projector is a positive matrix, There can only be one non-zero diagonal element. 
+\end{proof}
+\end{document}

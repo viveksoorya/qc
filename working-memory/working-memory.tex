@@ -1,15 +1,38 @@
-\documentclass{article}
-
-% Packages from solved.tex (assuming typical ones)
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath, amssymb}
+\documentclass[a4paper,12pt]{amsbook}
+\usepackage{physics}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.6\textwidth}
+\setlength{\epigraphrule}{0pt}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{calc}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{geometry}
-\usepackage{enumitem}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
 
 \begin{document}
+\author{Vivek Soorya Maadoori}
+\title{Working Memory}
+\maketitle
+\tableofcontents
 
+\chapter{Matrices and Operators}
 \subsection{More Notes}
 
     \begin{enumerate}
@@ -122,11 +145,382 @@ T
         \item 0 as determinant of the matrix indicates that the matrix is not full rank and a full rank matrix cannot have an inverse; A matrix with incomplete rank takes at least one of the components to 0; once the component vanishes with respect to the other components, transforming the vector in whichever way only transformers the components that have not vanished; the vanished component can be multiplied by anything but it still remains 0;  but what about the additive components; the vector component when transformed gets scaled components of other vectos; since that one component has vanished, its own additive component is zero and cannot be scaled back; but the additive factors derived from scaling the other components still remind and so the component can later taken on any real value, but it sort of becomes untangled from the rest of the vector and so loses information, and thus inverse is not possible;
         \item Why does the determinant preserve scaling of the matrix; is this just linearity or is there more nuance; if you scale the matrix, the transformation of the vector scales and so the determinant scales equally; actually the determinant preserves scaling up to the power of the dimension of the vector space; for if you scale a matrix in V2, you scale the determinant by the scalar raised to 2; if you scale a matrix in V3, you scale the determinant by the scalar raised to 3; Show that this is the case
         \item Coordinate transformation is a linear transformation
-
-
-
-
-
-
     \end{enumerate}
+
+    \section{bloch sphere}
+    \begin{enumerate}
+        \item Bloch sphere of multiple qubits has more than 3 dimensions and so is hard to visualize
+        \item Pure states exist on the sphere surface
+        \item Mixed states exist inside the sphere
+        \item what does coherence mean, as represented on the block shpere by the azimuthal angle. If there were no coherence, then we would not need a bloch sphre to represent the state of the qubit. 
+    \end{enumerate}
+
+    \chapter{The narrative: keeping the bird's eye view, organized}
+    \begin{enumerate}
+        \item The state of a system as a vector contains amplitudes of the system along each dimension in the Hilbert space. The modulus squared of these amplitudes give the probability of the state being found in the corresponding basis state.
+        \item amplitudes are given by complex numbers. 
+    \end{enumerate}
+    \section{the story of qubits}
+    \begin{enumerate}
+        \item Hilbert space describes a quantum system: Lets start at the beginning, a very good place to start. You have an isolated quantum system. This is described by a Hilbert space. The Hilbert space could be a tensor product space or an ordinary Hilbert space depending on whether the system is considered composite or not. 
+
+    \item Now the system could be represented by a state vector in the Hilbert space at a given instant of time. (Time and energy have an uncertainity relationship, but let's set that aside for now).  But we dont know the state of the system. It could be in any state in the Hilbert space. Now, since we dont know the state of the system, it is in a mixed state of infinite possibilities. This is best described [for convenience] by a density matrix. 
+
+    \item Now, as we move along the time dimension, the system changes. The isolated system has unitary evolution. In that, the system itself changes. If it is in a Pure state, it remains a pure state, but the amplitudes change. 
+
+    \item Can we say that the density matrix has a unitary evolution? The state certainly has unitary freedom. The density matrix has unitary freedom. These two freedoms are not the same. But are they related? The unitary evolution is strictly temporal. Time is the quantity that changes. When the pure state evolves unitarily, the state is still described in the same Hilbert space, but it is not described by the same state anymore; meaning, in unitary evolution we are not dealing with \textit{a} state, but states as a function of a continuum of time. The states themselves need not evolve continuously. 
+
+    \item Now, unitary freedom is perhaps an entirely different concept. Firstly, I suppose that it does not require a time dimension. 
+
+
+    \item Simply way to understand the distinction is to look at a density matrix that describes a pure state with full probability and consider its unitary evolution and unitary freedom. Unitary evolution means the density matrix itself [here, a projector] will change. Unitary freedom means the state at any time could be different by a unitary transformation. Now, if the latter were true, it has to have some stipulation, lest the idea of a state modelling an isolated quantum system, falls apart.
+
+    \item Then, consider a fully mixed state with two possibilities: equally weighted superpositions of the bases sets $\{|0\rangle, |1\rangle \} \text{ and } \{ |+\rangle, |-\rangle \} $
+    \end{enumerate}
+    \section{the story of a composite system}
+    Can you define a tensor product space between Hilbert spaces of different sizes?
+    \begin{enumerate}
+        \item how do you define a tensor product space? Define a vector space on the cartesian product of the underlying sets of the Hilbert spaces of the constituent systems.
+    \end{enumerate}
+    \section{the story of measurement}
+
+    \begin{enumerate}
+        \item Measurement statistics are described by measurement operators. For every possible measure, there is a measurement operator. To get the state after measurement, you apply the measurement operator corresponding to the measure, to the the state before measurement. 
+        \item Note that the measurement operator itself does not tell you what you are going to measure. 
+        \item What it does is, if you know the it (the measurement operator) and the corresponding measure, then you can find the state after the measurement, and the probability of getting that measure.
+        \item How then do you find the measures and the measurement operators corresponding to them?
+    \end{enumerate}
+
+    \section{the story of the density operator}
+    \begin{enumerate}
+        \item The state of a system is sometimes known with a certain probability. In these cases, we represent the state using a sum of all the outer products of the states scaled by their probabilities. This is called the density operator or density matrix.
+        \item we scale the outer product of the state with itself by the probability of the state. Note that this is probability multiplication, as is appropriate simulataneous occurence of independent events. Think of it as scaling down the density matrix of each pure state by the probability of that pure state.
+        \item the basis state is described by a vector, each component representing amplitude in an orthogonal direction. When you take the outer product, you are essentially getting probabilities associated with those amplitudes. 
+        \item Now, something interesting happens here:
+            \begin{enumerate}
+
+                \item along the diagonal, you get proper probabilites, that is, the probability of measuring this basis state or that, since the product of amplitudes (expressed as a complex number) there, is with their conjugates itself.
+                \item but when it comes to the off diagonal elements, you are multiplying the amplitude along a dimension, with the amplitude conjugate along another direction. What exactly is this information. They call it 'coherence' but what is it?
+                    \begin{enumerate}
+                        \item amplitudes are given by complex numbers
+                        \item to get probabilities (diagonal elements of density matrix, and to get coherences (off-diagonal elements of a density matrix), we multiply a complex number with its or some other complex number's conjugate. 
+                        \item note that outer product of a state with itself is Hermitian.
+                        \item what does the imaginary part of the complex number represent, in the context of the complex number being the amplitude of a state along a basis dimension?
+                    \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
+    \section{the story of the reduced density matrix}
+    \begin{enumerate}
+        \item It is the partial trace of the density matrix of the composite system
+        \item It appears that in the definition of the reduced density operator, those are outer products of different arbitrary states, not projections of the same vector
+    \end{enumerate}
+    \section{the story of the Schmidt decomposition}
+    \begin{enumerate}
+        \item schmidt rank
+        \item schmidt decomposition
+        \item purification
+    \end{enumerate}
+    Schmidt decomposition is for composite systems. Is it defined for a mixed state? I would assume so. 
+    Okay take a system and show its Schmidt Decomposition. 
+    
+    \begin{enumerate}
+        \item First a pure state system
+        \item Then a mixed state system
+    \end{enumerate}
+
+    \begin{enumerate}
+        \item Let's consider the simple case of $|+\rangle$. This is a single system. The Schmidt decomposition is $ 1 |+ \rangle$.
+        \item Let's consider an entangled system. The first bell state: $\frac{ |00\rangle + |11\rangle }{ \sqrt2 } $. This is a pure state and so the Schmidt decomposition is $ 1 \frac{ |00\rangle + |11\rangle }{ \sqrt2 } $
+        \item Let's consider a mixed state: $\{(|0\rangle, 1/2), (\frac{ |0\rangle + |1\rangle }{ \sqrt2 }, 1/2) \}$. Is the Schmidt decomposition just $ 1/2 |0\rangle + 1/2 \frac{ |0\rangle + |1\rangle }{ \sqrt2 } $ ?
+        \item And in the case of $\{ {( \frac{ |00\rangle + |11\rangle }{ \sqrt2 }, 1/2), ( \frac{ |00\rangle - |11\rangle }{ \sqrt2 }, 1/2)} \}$, is it just $ 1/2  \frac{ |00\rangle + ||11\rangle }{ \sqrt2 }  + 1/2  \frac{ |00\rangle - ||11\rangle }{ \sqrt2 } $ ?
+    \end{enumerate}
+    The above attempt seems to have gone awry. But is this some special decomposition?
+    
+    The Schmidt decomposition is defined for a pure state of a composite system, and the kets are orthonormal vectors. 
+    \begin{enumerate}
+        \item composite system 
+        \item pure state
+    \end{enumerate}
+    \begin{enumerate}
+        \item There are two Hilbert Spaces, and only one set of eigenvalues in the decomposition 
+        \item there are infinite sets of orthonormal bases in each Hilbert Space. Which pair of orthonormal bases ought one take? Will any pair do? 
+        \item There are two possibilites
+            \begin{enumerate}
+                \item The Schmidt decomposition is only defined for tensor product space with Hilbert Spaces of equal dimension. This way there will at least be equal number of eigenvalues in each Hilbert space. There is still the problem of understanding which Hilbert Space's eigenvalues are being considered. Again there are two possibilities 
+            \end{enumerate}
+            \begin{enumerate}
+                \item  Schmidt decomposition is defined for tensor product spacess of unqual dimensions. I just don't understand how the decomposition is defined.
+            \end{enumerate}
+    \end{enumerate}
+    
+    Alright, if the Schmidt Decomposition is indeed defined for the pure state of a composite system. There should be an elegant multiple term decomposition for the bell states. 
+    \textbf{Exercise 1}
+    What then is the Schmidt decomposition of $ \frac{ |00\rangle + |11\rangle  }{ \sqrt2 } $  ? 
+
+
+    \chapter{Diagonalizability and orthogonal bases}
+
+    \epigraph{We can't talk about diagonalizability without talking about orthogonal bases.}{\textit{Vivek Soorya Maadoori}}
+
+
+
+
+Larger questions
+
+    \begin{enumerate}
+    \item Why do we need a matrix to be diagonalizable to use it in quantum mechanics? In other words, why is spectral decomposition necessary to model the dynamics [be ituninterfered time evolution, or measurement] of a closed quantum system.
+
+    \item Do all diagonalizable matrices (even those apart from hermitian and unitary) play a role in quantum mechanics? and especially in quantum computatoin and quantum information?
+        \begin{enumerate}
+            \item Measurements are described by hermitian operators. Hermitian operators are diagonalizable.
+            \item Uninterfered time evolution of closed quantum systems are described by unitary operators. Unitary operators are diagonalizable.
+            \item What about non-hermitian, non-unitary, normal operators ?
+            \item A clue might be to look at the other end of the spectrum: Unitary, hermitian, normal operators: the pauli operators. By virtue of being unitary, they are supposed to describe uninterfered time evolution of closed quantum systems. By virtue of being hermitian, they are supposed to describe measurements. But the post measurement state is an eigenstate - a non-surjective mapping. \underline{\textbf{So how is it unitary?}} For unitaries are just surjective isometries.
+        \end{enumerate}
+    \end{enumerate}
+
+Threads
+    \begin{enumerate}
+        \item Show that any diagonalizable linear operator has a singular value decomposition.
+        \item Show that not all square linear matrices are diagonalizable
+        \item How many equivalent represenataions of normal operators exist?
+        \begin{enumerate}
+            \item $NN^\dagger = N^\dagger N$, where N is a normal operator
+            \item $N = \Sigma_i \lambda_i |i\rangle \langle i|$, Spectral representation
+        \end{enumerate}
+        \item What is the distinction between $$ A = U'PU \text{ (i.e., singular value decomposition),}$$ and $$A = UPU^\dag\text{ (i.e., spectral decomposition)}$$
+        \item Do all operators send any input vector to their eigenvector? Projectors in a hermitian operator do.\footnotemark[1] Is self-adjointness a necessary and/or a sufficient condition for an operator to take any input vector to its eigenvector? For after all, All operators have eigenvectors and all full rank square matrices of n by n dimensions have n eigenvectors. This part is not special of a hermitian matrix. If quantum mechanics specifies hermiticity to describe an observable there must be something special about it.
+            \footnotetext[1]{Note that Hermitian operators are never operated on anything in quantum mechanics. They are just a terse way to represent the projectors that describe the differenet possible states post measurement. But it is not that simple either, for it does say \textit{something} that the projectors \textit{can} be represented tersely by just a non-operating hermitian matrix.}
+    \end{enumerate}
+    \chapter{Decompositions of linear operators}
+    \textbf{Arbitrary Operator: }
+    Arbitrary operators can be decomposed into a positive transoformation of a linear unitary operator.
+
+    \textbf{Diagonalizable operator: }
+    Diagonalizable operators can be decomposed into a unitary transformation of a linear arbitrary operator.
+    \underline{\textbf{Corollary: }} Any arbitrary operator is a unitary transfomration away from being a normal operator. Beautiful :)
+
+    \section{Polar decomposition}
+    Why do write polar decompositions as A = U$\sqrt{A^\dag A}$, and not A = U$\sqrt A$? Because operator functions are defined only on normal operators, and A here is an arbitrary operator. 
+
+    Okay, how do you know that $A^\dag A$ (for left polar decomposition, and $AA^\dag$ for right polar decomposition) are normal, since you are using their postive square roots as the positive operators in polar decompositions? Well, $$ (AA^\dag) (AA^\dag)^\dag = (AA^\dag) (AA^\dag) = (AA^\dag)^\dag (AA^\dag). $$
+$$ (A^\dag A) (A^\dag A)^\dag = (A^\dag A) (A^\dag A) = (A^\dag A)^\dag (A^\dag A). $$
+$\blacksquare$
+
+    \footnote{a silly way to relate polar and singular value decompositions is to say polar decomposition times a left unitary transformation, is singular value decomposition: N = UA = UPU', where N is a diagonalizable operator (or normal operator), U and U' are unitary transformations and P is a positive transfomration. Have to find a way to write this more elegently.}
+
+    Thus, note that unitary operator is a funadamental operator. Positive operators are also fundamental operators. 
+    Since arbitrary operators can be wrought by positive transformations of unitary operators or unitary transformations of positive operators, they are not fundamental transformations.
+
+    Since diagonalizable (or normal) operators can be wrought by unitary transformations of arbitrary operators, diagonalizable (or normal) operators are also derived operators.
+
+    But the fundamental operators unitary and positive are themselve normal. \textit{Contradiction!}. What gives?
+
+
+    \chapter{Classical bit ot quantum bit}
+    Understanding why a Hilbert Space is ncessary and sufficient to model an isolated quantum system
+    \begin{enumerate}
+        \item Wat dow a quantum bit do that a classical bit doesn't
+    \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+    To understand this, let's list the properties of a vector space as reference
+    
+    \begin{enumerate}
+        \item Set of elements
+            \begin{enumerate}
+                \item linear independence of elements
+                \item orthogonality of the linearly independent elements \footnote{Orthogonality is not necessary for quantum mechanics. Orthogonality is necessary for quantum computation. Orthogonality helps distinguish states, and is thus necessary for any level of computation with isolated quantum systems or closed, composite quantum systems}
+            \end{enumerate}
+        \item set of scalars that form a field
+        \item a binary multiplication on the set of scalars and the set of elements 
+        \item a binary addition on the set of elements with
+            \begin{enumerate}
+                \item closure
+                \item associativity
+                \item commutativity
+                \item existence of zero element for the set of elements
+                \item existence of additive inverses for each element in the set of elements
+                \item uniqueness of zero element for the set of elements
+                \item uniqueness of additive inverse for each element in the set of elements 
+            \end{enumerate}
+        \item a unary operation on the set of elements to itself with the following property:
+            \begin{enumerate}
+                \item action on sum of elements is equal to sum of actions on each element
+            \end{enumerate}
+    \end{enumerate}
+
+   
+    \vspace{1in}
+
+
+    \section{Understanding the need for a Hilbert Space to model an isolated quantum system}
+
+    Consider the stern gerlach experiment that generates the same qubits; (quantum state tomography).
+    Let's use this experiment to build our understanding of how we go from something as simple as a classical bit to something as heavy as a Hilbert space and a quantum bit.
+
+\begin{center}
+\begin{figure}[ht]
+\begin{tikzpicture}[>=latex, thick]
+
+  % ==== Boxes ====
+  \node[draw, rectangle, minimum width=1cm, minimum height=1cm] (Z1) at (0,0) {$Z_1$};
+  \node[draw, rectangle, minimum width=1cm, minimum height=1cm] (Z2) at (2,0.7) {$Z_2$};
+
+ % ==== Define custom east-side points (¼ and ¾ along right side) ====
+  \path let \p1 = (Z1.north east), \p2 = (Z1.south east) in
+    coordinate (Z1outTop) at ($(\p1)!0.1!(\p2)$)
+    coordinate (Z1outBottom) at ($(\p1)!0.9!(\p2)$);
+
+    \path let \p5 = (Z2.north east), \p6 = (Z2.south east) in
+    coordinate (Z2outTop) at ($(\p5)!0.1!(\p6)$)
+    coordinate (Z2outBottom) at ($(\p5)!0.9!(\p6)$);
+
+  % ==== Input ====
+  \draw[->] (-2,0) -- (Z1.west) node[midway, above] {0, 1};
+
+  % ==== From Z1 ====
+  \draw[->] (Z1outTop) -- ++(1,0) node[midway, above] {$0$};
+  \draw[->] (Z1outBottom) -- ++(1,0) node[midway, below] {$1$};
+
+  % ==== From Z2 ====
+  \draw[->] (Z2outTop) -- ++(1,0) node[midway, above] {$0$};
+  \draw[->] (Z2outBottom) -- ++(1,0) node[midway, below] {$1$};
+
+ \end{tikzpicture}
+ \caption{Stern Gerlach experiment without observable X}
+ \label{fig: SG ZZ}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[ht]
+\begin{tikzpicture}[>=latex, thick]
+
+  % ==== Boxes ====
+  \node[draw, rectangle, minimum width=1cm, minimum height=1cm] (Z1) at (0,0) {$Z_1$};
+  \node[draw, rectangle, minimum width=1cm, minimum height=1cm] (X) at (2,0.7) {$X$};
+  \node[draw, rectangle, minimum width=1cm, minimum height=1cm] (Z2) at (4,1.4) {$Z_2$};
+
+ % ==== Define custom east-side points (¼ and ¾ along right side) ====
+  \path let \p1 = (Z1.north east), \p2 = (Z1.south east) in
+    coordinate (Z1outTop) at ($(\p1)!0.1!(\p2)$)
+    coordinate (Z1outBottom) at ($(\p1)!0.9!(\p2)$);
+
+  \path let \p3 = (X.north east), \p4 = (X.south east) in
+    coordinate (XoutTop) at ($(\p3)!0.1!(\p4)$)
+    coordinate (XoutBottom) at ($(\p3)!0.9!(\p4)$);
+
+  \path let \p5 = (Z2.north east), \p6 = (Z2.south east) in
+    coordinate (Z2outTop) at ($(\p5)!0.1!(\p6)$)
+    coordinate (Z2outBottom) at ($(\p5)!0.9!(\p6)$);
+
+  % ==== Input ====
+  \draw[->] (-2,0) -- (Z1.west) node[midway, above] {0, 1};
+
+  % ==== From Z1 ====
+  \draw[->] (Z1outTop) -- ++(1,0) node[midway, above] {$0$};
+  \draw[->] (Z1outBottom) -- ++(1,0) node[midway, below] {$1$};
+
+  % ==== X box connections ====
+
+  % ==== From X ====
+  \draw[->] (XoutTop) -- ++(1,0) node[midway, above] {$0_X$};
+  \draw[->] (XoutBottom) -- ++(1,0) node[midway, below] {$1_X$};
+
+  % ==== From Z2 ====
+  \draw[->] (Z2outTop) -- ++(1,0) node[midway, above] {$0$};
+  \draw[->] (Z2outBottom) -- ++(1,0) node[midway, below] {$1$};
+
+ \end{tikzpicture}
+ \caption{Stern Gerlach experiment with observable X}
+ \label{SG ZXZ}
+\end{figure}
+\end{center}
+
+In this experiment, the X operator is changing half the paricles to spin down and half it keeps as spin up. this would explain the set up classically as well.
+
+
+\textbf{Independence of observables: } If observables X and Z are inpendent, $Z_2$ would only give 0. Defend this.
+
+\textbf{} If 0 and 1 were independent, we may justify using a Hilbert space. 
+\begin{enumerate}
+    \item Why do we need 0 and 1 to be indpendent?
+    \item Why do we need 0 and 1 to be linearly independent?
+\end{enumerate}
+    \chapter{quantum mechanics}
+    Is quantum mechanics a complete theory? 
+    
+    \section{'Non-linearity' in quantum mechanics}
+    \begin{enumerate}
+        \item Entanglement introduces non-linearity
+        \item Measuremnet introduces non-linearity
+    \end{enumerate}
+    Does entaglement cause Measurement? Does Measurement cause enetanglement?  To answer either questions, you would need to defined Measurement. 
+    Quantum Mechanics deos not define what measurement is though. It does define what happens to a given isolated system [as specified before measurement], post-measurement.
+
+    \chapter{Operator - sum formulation}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+
+    \chapter{Understanding the Measurement Postulates and the limitation of our knowledge on Measurement}
+    \section{Understanding Measurement Statistics of Qubits}
+    If the dynamics and the state of a system are the same for two systems, both described by $|psi\rangle$, why do they yield different values upon measurement. Since they are yielding different resutls,
+    \begin{enumerate}
+        \item the states must be different. If not then,
+        \item the dynamics must be different. 
+    \end{enumerate}
+    If you disagree, disprove one of the above two. Or resolve the contradiction by noting the assumption that went wrong.
+    
+I need to come back with more knowledge and flair, for this. For now, note that Measurement is not defined by quantum mechanics, but what measurmenet does to a state is defined: collapse (for physicists) or projection (for mathematicians).
+
+Answer to this quesiton might emerge upon completion of  the chapte noting the transition of mathematical framework from classical bits to quantum bits.
+    \section{Measurement breaks unitary evolution}
+    the transition from the the pre-measurement to the post-measurement state cannot be described a unitary transformation of the vector state. What about unitarity is breaking then? Unitary operations are surjective isometries. Let's see which of the two breaks:
+    \begin{enumerate}
+        \item Surjectivity. If we were to take the copenhagen interpretation of quantum mechanics, then surjectivity certainly breaks because, we see a projection onto a basis state. Note that the perception of a projection here is because of a fixed basis. The so called projected state is still in superposition if you were to look at the state in some other basis. This is certainly true for any non-zero vector in the vector space. Any given vector is a superposition vector [in some basis].
+        \item isometry: Show that the inner product of any vector with the null vector is 0. If you can show this, then the inner products fo the vectors are preserved, since in a projection, the orthogonal subspace is just the singleton set of null vector.
+    \end{enumerate}
+    But measurement cannot necessarily break unitarity, since there exist operators that are both unitary and isometry, viz. the pauli operators $\sigma_X, \sigma_Y, \sigma_Z, \sigma_I$
+
+    Resolve the contradiction and show that measurement does not break unitarity. Subsequently show tha unitarity and Hermiticity are independent properties of a normal operator. Having one neither guarantees, nor precludes the other. 
+
+    \chapter{POVM formalism}
+    \begin{enumerate}
+        \item Are measurmeent non-surjective in the POVM formalism?
+    \end{enumerate}
+    
+    \chapter{Measurement of an isolated quantum system}
+    \begin{enumerate}
+        \item An isolated quantum system is modelled by a Hilbert space 
+        \item Is the systemn still isolated upon measurement?
+            \begin{enumerate}
+                \item on the one hand, by one of the postulates of quantum mechanics, the post measurmeent state of a given state is an eigenvector of the hermitian operator that describes the observable measured.
+                \item on the other hand, It is observed, meaning it is interfered with. Meaning the system is not isolated anymore. 
+            \end{enumerate}
+    \end{enumerate}
+            The resolution to this dilemma comes in many forms. The two most common ones are the copenhagen interpretation and the many world interpretation of quantum mechanics
+            \begin{enumerate}
+                \item Copehagen interpretation: Takes the measuring device as a classical object
+                \item many world interpretation: takes the measuring device as a quantum mechanical object
+            \end{enumerate}
+
+
+    But this whole shebang can also be resolved by looking at the sytem together with the measurement apparatus as composite system. The system of interest and the measuring device are supposed to be in tensor product state before measurement and in entangled state after measurement.
+    How does this comply with copenhagen interpretation?
+    How does it comply with many world interpretation?
+    
+    Does the many world intepretation not adhere to the notion that the system post measurement is still described by the same Hilbert Space? Does the mathematical formulation differ in many world interpretation as compared to copenhagen interpretation.
+
+    I will have to learn more to come back to this question.
 \end{document}

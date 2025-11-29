@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{amsbook}
+\usepackage{physics}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\author{Vivek Soorya Maadoori}
+\title{Quantun Operations, Quantum Noise}
+\maketitle
+\tableofcontents
+
+\section{Quantum Operations}
+
+\vspace{1cm}
+\textbf{\underline{Exercise 8.1}: (Unitary evolution as a quantum operation)} Pure states evolve under unitary transforms as $|\psi\rangle \rightarrow U|\psi\rangle$. Show that, equivalently, we may write $\rho \rightarrow \varepsilon (\rho) \equiv U\rho U^\dag \text{, for } \rho = |\psi\rangle\langle \psi|$.
+
+\underline{Solution}:
+\begin{enumerate}
+    \item If pure states evolve as $|\psi\rangle \rightarrow U|\psi\rangle$, then their duals evolve like so $\langle \psi| \rightarrow \langle \psi| U^\dag$.
+
+    \item Now conider how $\rho$ would evolve:
+
+    $ \rho = |psi\rangle\langle psi| \rightarrow U |psi\rangle \langle psi | U^\dag = U \rho U^\dag$.
+\end{enumerate}
+
+$\blacksquare$
+
+\vspace{1cm}
+\textbf{\underline{Exercise 8.2}: (Measurement as a quantum operation)}
+
+Recall from Section 2.2.3 (on page 84) that a quantum measurement with outcomes labeled by \textit{m} is described by a set of measurement operators $M_m$ such that $$\Sigma_m M^\dag_m M_m = I.$$ Let the state of the system immediately before the measurement be $\rho$. Show that for $$\varepsilon_m(\rho) \equiv M_m \rho M_m^\dag,$$ the state of the system immediately after the measurement is $$\frac{\varepsilon_m (\rho)}{tr(\varepsilon(\rho))}.$$ Also show that the probability of obtaining this measurement result is p(m) = tr$(\varepsilon_m (\rho))$.
+
+\vspace{0.5cm}
+\underline{Solution}:
+First lets show the post measurement state of the density operator,
+\begin{enumerate}
+
+    \item Note that $\varepsilon_m(\rho) \equiv M_m \rho M_m^\dag = M_m |\psi\rangle\langle\psi|M_m^\dag $
+
+    \item Post measurement state is $\frac{M_m |\psi\rangle}{\sqrt{\langle\psi| M_m^\dag M_m |\psi\rangle}}$
+
+    \item Post measurement stat of the dual is  $\frac{\langle \psi | M_m^\dag}{\sqrt{\langle\psi| M_m M_m^\dag |\psi\rangle}}$
+
+    \item Thus, the post measurement state of $\rho$ is $\frac{M_m |\psi\rangle\langle \psi | M_m^\dag}{\langle\psi| M_m^\dag M_m |\psi\rangle}$ \footnote{Assuming the measurement operator commutes with its adjoint. Does it?}
+
+    \item Note that the numerator is $\varepsilon_m(\rho)$ and that the denominator is $tr(\varepsilon_m(\rho))$.
+\end{enumerate}
+
+\vspace{0.5cm}
+Now, lets see the probability
+\begin{enumerate}
+    \item Note that the probability of measuring m after measurement is given by $p(m) = \langle\psi| M_m^\dag M_m |\psi\rangle$
+    \item Note that this is $tr(\varepsilon(\rho))$
+\end{enumerate}
+$\blacksquare$
+\end{document}

@@ -1,0 +1,173 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\providecommand{\tb}{\textbackslash}
+\newcommand{\0}{{$|0\rangle$}}
+\newcommand{\1}{{$|1\rangle$}}
+\newcommand{\2}{\frac{1}{\sqrt{2}}} 
+\newcommand{\lam}{\lambda} 
+\newcommand{\psik}{|\psi\rangle}
+\newcommand{\psib}{\langle\psi|}
+\newcommand{\bpmx}{\begin{pmatrix}}
+\newcommand{\epmx}{\end{pmatrix}}
+\newcommand{\bbmx}{\begin{bmatrix}}
+\newcommand{\ebmx}{\end{bmatrix}}
+\newcommand{\bvmx}{\begin{vmatrix}}
+\newcommand{\evmx}{\end{vmatrix}}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 1.1: (Feynman-Gates conversation) Construct a friendly imaginary discussion of about 2000 words between Bill Gates and Richard Feynman, set in the present, on the future of computation. (Comment: You might like to try waiting until you’ve read the rest of the book before attempting this question. See the ‘History and further reading’ below for pointers to one possible answer for this question.)
+
+Problem 1.2: What is the most significant discovery yet made in quantum computation and quantum information? Write an essay of about 2000 words for an educated lay audience about the discovery. (Comment: As for the previous problem, you might like to try waiting until you’ve read the rest of the book before attempting this question.)
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 2.1: (Functions of the Pauli matrices) Let f (·) be any function from complex numbers to complex numbers. Let be a normalized vector in three dimensions, and let θ be real. Show that
+
+Problem 2.2: (Properties of the Schmidt number) Suppose |ψ〉 is a pure state of a composite system with components A and B. (1) Prove that the Schmidt number of |ψ〉 is equal to the rank of the reduced density matrix ρA ≡ trB (|ψ〉 〈ψ|). (Note that the rank of a Hermitian operator is equal to the dimension of its support.) (2) Suppose |ψ〉 = Σ j |αj〉 |βj〉 is a representation for |ψ〉, where |αj〉 and |βj〉 are (un-normalized) states for systems A and B, respectively. Prove that the number of terms in such a decomposition is greater than or equal to the Schmidt number of |ψ〉, Sch(ψ). (3) Suppose |ψ〉 = |αj〉 + |βj〉. Prove that
+
+Problem 2.3: (Tsirelson’s inequality) Suppose where and are real unit vectors in three dimensions. Show that Use this result to prove that so the violation of the Bell inequality found in Equation (2.230) is the maximum possible in quantum mechanics.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 3.1: (Minsky machines) A Minsky machine consists of a finite set of registers, r1, r2, ··· , rk, each capable of holding an arbitrary non-negative integer, and a program, made up of orders of one of two types. The first type has the form: The interpretation is that at point m in the program register rj is incremented by one, and execution proceeds to point n in the program. The second type of order has the form: The interpretation is that at point m in the program, register rj is decremented if it contains a positive integer, and execution proceeds to point n in the program. If register rj is zero then execution simply proceeds to point p in the program. The program for the Minsky machine consists of a collection of such orders, of a form like: The starting and all possible halting points for the program are conventionally labeled zero. This program takes the contents of register r1 and adds them to register r2, while decrementing r1 to zero. (1) Prove that all (Turing) computable functions can be computed on a Minsky machine, in the sense that given a computable function f(·) there is a Minsky machine program that when the registers start in the state (n, 0, … , 0) gives as output (f(n), 0, … , 0). (2) Sketch a proof that any function which can be computed on a Minsky machine, in the sense just defined, can also be computed on a Turing machine.
+
+Problem 3.2: (Vector games) A vector game is specified by a finite list of vectors, all of the same dimension, and with integer co-ordinates. The game is to start with a vector x of non-negative integer co-ordinates and to add to x the first vector from the list which preserves the non-negativity of all the components, and to repeat this process until it is no longer possible. Prove that for any computable function f(·) there is a vector game which when started with the vector (n, 0, … , 0) reaches (f(n), 0, … , 0). (Hint: Show that a vector game in k + 2 dimensions can simulate a Minsky machine containing k registers.)
+
+Problem 3.3: (Fractran) A Fractran program is defined by a list of positive rational numbers q1, · · · , qn. It acts on a positive integer m by replacing it by qim, where i is the least number such that qim is an integer. If there is ever a time when there is no i such that qim is an integer, then execution stops. Prove that for any computable function f(·) there is a Fractran program which when started with 2n reaches 2f(n) without going through any intermediate powers of 2. (Hint: use the previous problem.)
+
+Problem 3.4: (Undecidability of dynamical systems) A Fractran program is essentially just a very simple dynamical system taking positive integers to positive integers. Prove that there is no algorithm to decide whether such a dynamical system ever reaches 1.
+
+Problem 3.5: (Non-universality of two bit reversible logic) Suppose we are trying to build circuits using only one and two bit reversible logic gates, and ancilla bits. Prove that there are Boolean functions which cannot be computed in this fashion. Deduce that the Toffoli gate cannot be simulated using one and two bit reversible gates, even with the aid of ancilla bits.
+
+Problem 3.6: (Hardness of approximation of TSP) Let r ≥ 1 and suppose that there is an approximation algorithm for TSP which is guaranteed to find the shortest tour among n cities to within a factor r. Let G = (V,E) be any graph on n vertices. Define an instance of TSP by identifying cities with vertices in V , and defining the distance between cities i and j to be 1 if (i, j) is an edge of G, and to be r|V| + 1 otherwise. Show that if the approximation algorithm is applied to this instance of TSP then it returns a Hamiltonian cycle for G if one exists, and otherwise returns a tour of length more than r|V|. From the NP-completeness of HC it follows that no such approximation algorithm can exist unless P = NP.
+
+Problem 3.7: (Reversible Turing machines) (1) Explain how to construct a reversible Turing machine that can compute the same class of functions as is computable on an ordinary Turing machine. (Hint: It may be helpful to use a multi-tape construction.) (2) Give general space and time bounds for the operation of your reversible Turing machine, in terms of the time t(x) and space s(x) required on an ordinary single-tape Turing machine to compute a function f(x).
+
+Problem 3.8: (Find a hard-to-compute class of functions (Research)) Find a natural class of functions on n inputs which requires a super-polynomial number of Boolean gates to compute.
+
+Problem 3.9: (Reversible PSPACE = PSPACE) It can be shown that the problem ‘quantified satisfiability’, or QSAT, is PSPACE-complete. That is, every other language in PSPACE can be reduced to QSAT in polynomial time. The language QSAT is defined to consist of all Boolean formulae φ in n variables x1, … , xn, and in conjunctive normal form, such that: Prove that a reversible Turing machine operating in polynomial space can be used to solve QSAT. Thus, the class of languages decidable by a computer operating reversibly in polynomial space is equal to PSPACE.
+
+Problem 3.10: (Ancilla bits and efficiency of reversible computation) Let pm be the mth prime number. Outline the construction of a reversible circuit which, upon input of m and n such that n > m, outputs the product pmpn, that is (m, n) → (pmpn, g(m, n)), where g(m, n) is the final state of the ancilla bits used by the circuit. Estimate the number of ancilla qubits your circuit requires. Prove that if a polynomial (in log n) size reversible circuit can be found that uses O(log(log n)) ancilla bits then the problem of factoring a product of two prime numbers is in P.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 4.1: (Computable phase shifts) Let m and n be positive integers. Suppose f : {0, . . ., 2m − 1} → {0, . . ., 2n − 1} is a classical function from m to n bits which may be computed reversibly using T Toffoli gates, as described in Section 3.2.5. That is, the function (x, y) → (x, y ⊕ f(x)) may be implemented using T Toffoli gates. Give a quantum circuit using 2T + n (or fewer) one, two, and three qubit gates to implement the unitary operation defined by
+
+Problem 4.2: Find a depth O(log n) construction for the Cn(X) gate. (Comment: The depth of a circuit is the number of distinct timesteps at which gates are applied; the point of this problem is that it is possible to parallelize the Cn(X) construction by applying many gates in parallel during the same timestep.)
+
+Problem 4.3: (Alternate universality construction) Suppose U is a unitary matrix on n qubits. Define H ≡ i In(U). Show that (1) H is Hermitian, with eigenvalues in the range 0 to 2π. (2) H can be written where hg are real numbers and the sum is over all n-fold tensor products g of the Pauli matrices {I, X, Y, Z}. (3) Let Δ = 1/k, for some positive integer k. Explain how the unitary operation exp−ihggΔ) may be implemented using O(n) one and two qubit operations. (4) Show that       where the product is taken with respect to any fixed ordering of the n-fold tensor products of Pauli matrices, g. (5) Show that (6) Explain how to approximate U to within a distance ? 0 using O(n16n/) one and two qubit unitary operations.
+
+Problem 4.4: (Minimal Toffoli construction) (Research) (1) What is the smallest number of two qubit gates that can be used to implement the Toffoli gate? (2) What is the smallest number of one qubit gates and CNOT gates that can be used to implement the Toffoli gate? (3) What is the smallest number of one qubit gates and controlled-Z gates that can be used to implement the Toffoli gate?
+
+Problem 4.5: (Research) Construct a family of Hamiltonians, {Hn}, on n qubits, such that simulating Hn requires a number of operations super-polynomial in n. (Comment: This problem seems to be quite difficult.)
+
+Problem 4.6: (Universality with prior entanglement) Controlled-NOT gates and single qubit gates form a universal set of quantum logic gates. Show that an alternative universal set of resources is comprised of single qubit unitaries, the ability to perform measurements of pairs of qubits in the Bell basis, and the ability to prepare arbitrary four qubit entangled states.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 5.1: Construct a quantum circuit to perform the quantum Fourier transform where p is prime.
+
+Problem 5.2: (Measured quantum Fourier transform) Suppose the quantum Fourier transform is performed as the last step of a quantum computation, followed by a measurement in the computational basis. Show that the combination of quantum Fourier transform and measurement is equivalent to a circuit consisting entirely of one qubit gates and measurement, with classical control, and no two qubit gates. You may find the discussion of Section 4.4 useful.
+
+Problem 5.3: (Kitaev’s algorithm) Consider the quantum circuit where |u〉 is an eigenstate of U with eigenvalue e2πiϕ. Show that the top qubit is measured to be 0 with probability p = cos2(πϕ). Since the state |u〉 is unaffected by the circuit it may be reused; if U can be replaced by Uk, where k is an arbitrary integer under your control, show that by repeating this circuit and increasing k appropriately, you can efficiently obtain as many bits of p as desired, and thus, of ϕ. This is an alternative to the phase estimation algorithm.
+
+Problem 5.4: The runtime bound O(L3) we have given for the factoring algorithm is not tight. Show that a better upper bound of O(L2 log Llog log L) operations can be achieved.
+
+Problem 5.5: (Non-Abelian hidden subgroups – Research) Let f be a function on a finite group G to an arbitrary finite range X, which is promised to be constant and distinct on distinct left cosets of a subgroup K. Start with the state and prove that picking m = 4log|G| + 2 allows K to be identified with probability at least 1 − 1/|G|. Note that G does not necessarily have to be Abelian, and being able to perform a Fourier transform over G is not required. This result shows that one can produce (using only O(log |G|) oracle calls) a final result in which the pure state outcomes corresponding to different possible hidden subgroups are nearly orthogonal. However, it is unknown whether a POVM exists or not which allows the hidden subgroup to be identified efficiently (i.e. using poly(log |G|) operations) from this final state.
+
+Problem 5.6: (Addition by Fourier transforms) Consider the task of constructing a quantum circuit to compute |x〉 → |x + y mod 2n〉, where y is a fixed constant, and 0 ≤ x < 2n. Show that one efficient way to do this, for values of y such as 1, is to first perform a quantum Fourier transform, then to apply single qubit phase shifts, then an inverse Fourier transform. What values of y can be added easily this way, and how many operations are required?
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 6.1: (Finding the minimum) Suppose x1, . . . , xN is a database of numbers held in memory, as in Section 6.5. Show that only O(log(N)) accesses to the memory are required on a quantum computer, in order to find the smallest element on the list, with probability at least one-half.
+
+Problem 6.2: (Generalized quantum searching) Let |ψ〉 be a quantum state, and define U|ψ〉 ≡ I − 2|ψ〉〈ψ|. That is, U|ψ〉 gives the state |ψ〉 a −1 phase, and leaves states orthogonal to |ψ〉 invariant. (1) Suppose we have a quantum circuit implementing a unitary operator U such that U|0〉⊗n = |ψ〉. Explain how to implement U|ψ〉. (2) Let |ψ1〉 = |1〉, |ψ2〉 = (|0〉 – |1〉)/, |ψ3〉 = (|0〉 – i|1〉)/. Suppose an unknown oracle O is selected from the set U|ψ1〉, U|ψ2〉, U|ψ3〉. Give a quantum algorithm which identifies the oracle with just one application of the oracle. (Hint: consider superdense coding.) (3) Research: More generally, given k states |ψ1〉,. . ., |ψk〉, and an unknown oracle O selected from the set U|ψ1〉,. . .,U|ψk〉,how many oracle applications are required to identify the oracle, with high probability?
+
+Problem 6.3: (Database retrieval) Given a quantum oracle which returns |k,y ⊕ Xk〉 given an n qubit query (and one scratchpad qubit) |k, y〉, show that with high probability, all N = 2n bits of X can be obtained using only N/2 + queries. This implies the general upper bound Q2(F) ≤N/2 + for any F.
+
+Problem 6.4: (Quantum searching and cryptography) Quantum searching can, potentially, be used to speed up the search for cryptographic keys. The idea is to search through the space of all possible keys for decryption, in each case trying the key, and checking to see whether the decrypted message makes ‘sense’. Explain why this idea doesn’t work for the Vernam cipher (Section 12.6). When might it work for cryptosystems such as DES? (For a description of DES see, for example, [MvOV96] or [Sch96a].)
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 7.1: (Efficient temporal labeling) Can you construct efficient circuits (which require only O(poly(n)) gates) to cyclically permute all diagonal elements in a 2n × 2n diagonal density matrix except the |0n〉 〈0n | term?
+
+Problem 7.2: (Computing with linear optics) In performing quantum computation with single photons, suppose that instead of the dual rail representation of Section 7.4.1 we use a unary representation of states, where |00 …01〉 is 0, |00 …010〉 is 1, |00 …0100〉 is 2, and so on, up to 110 …0〉 being 2n – 1. 1. Show that an arbitrary unitary transformation on these states can be constructed completely from just beamsplitters and phase shifters (and no nonlinear media). 2. Construct a circuit of beamsplitters and phase shifters to perform the one qubit Deutsch–Jozsa algorithm. 3. Construct a circuit of beamsplitters and phase shifters to perform the two qubit quantum search algorithm. 4. Prove that an arbitrary unitary transform will, in general, require an exponential number (in n) of components to realize.
+
+Problem 7.3: (Control via Jaynes–Cummings interactions) Robust and accurate control of small quantum systems – via an external classical degree of freedom – is important to the ability to perform quantum computation. It is quite remarkable that atomic states can be controlled by applying optical pulses, without causing superpositions of atomic states to decohere very much! In this problem, we see what approximations are necessary for this to be the case. Let us begin with the Jaynes–Cummings Hamiltonian for a single atom coupled to a single mode of an electromagnetic field, where σ± act on the atom, and a, act on the field. 1.    For , compute      where |α〉 and |n〉 are coherent states and number eigenstates of the field, respectively; An is an operator on atomic states, and you should obtain      The results of Exercise 7.17 may be helpful. 2.    It is useful to make an approximation that α is large (without loss of generality, we may choose α real). Consider the probability distribution      which has mean 〈n〉 = x, and standard deviation . Now change variables to and use Stirling’s approximation      to obtain 3.    The most important term is An for n =|α|2. Define n = α2 + Lα, and for      where y = 1 /α, show that      using . Also verify that      as expected. 4.    The ideal unitary transform which occurs to the atom is      How close is AL to U? See if you can estimate the fidelity      as a Taylor series in y.
+
+Problem 7.4: (Ion trap logic with two-level atoms) The controlled-NOT gate described in Section 7.6.3 used a three-level atom for simplicity. It is possible to do without this third level, with some extra complication, as this problem demonstrates.      Let denote the operation accomplished by pulsing light at the blue sideband frequency, of the jth particle for time and similarly for the red sideband. denotes the axis of the rotation in the plane, controlled by setting the phase of the incident light. The superscript j may be omitted when it is clear which ion is being addressed. Specifically,      where and the two labels in the ket represent the internal and the motional states, respectively, from left to right. The factor comes from the fact that for bosonic states. (1)    Show that performs a swap between the internal and motional states of ion j when the motional state is initially |0〉 (2)    Find a value of θ such that acting on any state in the computational subspace, spanned by |00〉, |01〉, | 10〉, and | 11〉, leaves it in that subspace. This should work for any axis . (3)    Show that if stays within the computational subspace, then also stays within the computational subspace, for any choice of rotation angle β and axis α. (4)    Find values of α and β such that U is diagonal. Specifically, it is useful to obtain an operator such as (5) Show that (7.187) describes a non-trivial gate, in that a controlled–NOT gate between the internal states of two ions can be constructed from it and single qubit operations. Can you come up with a composite pulse sequence for performing a CNOT without requiring the motional state to initially be |0〉?
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 8.1: (Lindblad form to quantum operation) In the notation of Section 8.4.1, explicitly work through the steps to solve the differential equation      for ρ(t). express the map
+
+Problem 8.2: (Teleportation as a quantum operation) suppose alice is in possession of a single qubit, denoted as system 1, which she wishes to teleport to Bob. Unfortunately, she and Bob only share an imperfectly entangled pair of qubits. Alice’s half of this pair is denoted system 2, and Bob’s half is denoted system 3. Suppose Alice performs a measurement described by a set of quantum operations εm with result m on systems 1 and 2. Show that this induces an operation Sm relating the initial state of system 1 to the final state of system 3, and that teleportation is accomplished if Bob can reverse this operation using a trace-preserving quantum operation Rm, to obtain      where ρ is the initial state of system 1.
+
+Problem 8.3: (Random unitary channels) It is tempting to believe that all unital channels, that is, those for which ε(I) = I, result from averaging over random unitary operations, that is, ε(p) = ∑k pk UkρUk,† where Uk are unitary operators and the pk form a probability distribution. Show that while this is true for single qubits, it is untrue for larger systems.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 9.1: (Alternate characterization of the fidelity) Show that where the infimum is taken over all invertible positive matrices P.
+
+Problem 9.2: Let be a trace-preserving quantum operation. Show that for each ρ there is a set of operation elements {Ei} for E such that
+
+Problem 9.3: Prove fact (5) on this page.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 10.1: Channels ε1 and ε2 are said to be equivalent if there exist unitary channels u and v such that ε2 = u º ε1 º v. (1) Show that the relation of channel equivalence is an equivalence relation. (2) Show how to turn an error-correcting code for ε1 into an error-correcting code for ε2. Assume that the error-correction procedure for ε1 is performed as a projective measurement followed by a conditional unitary operation, and explain how the error-correction procedure for ε2 can be performed in the same fashion.
+
+Problem 10.2: (Gilbert–Varshamov bound) Prove the Gilbert–Varshamov bound for CSS codes, namely, that an [n, k] CSS code correcting t errors exists for some k such that As a challenge, you may like to try proving the Gilbert–Varshamov bound for a general stabilizer code, namely, that there exists an [n, k] stabilizer code correcting errors on t qubits, with
+
+Problem 10.3: (Encoding stabilizer codes) Suppose we assume that the generators for the code are in standard form, and that the encoded Z and X operators have been constructed in standard form. Find a circuit taking the n×2n check matrix corresponding to a listing of all the generators for the code together with the encoded Z operations from to the standard form
+
+Problem 10.4: (Encoding by teleportation) Suppose you are given a qubit |ψ〉 to encode in a stabilizer code, but you are not told anything about how |ψ〉 was constructed: it is an unknown state. Construct a circuit to perform the encoding in the following manner: (1) Explain how to fault-tolerantly construct the partially encoded state by writing this as a stabilizer state, so it can be prepared by measuring stabilizer generators. (2) Show how to fault-tolerantly perform a Bell basis measurement with |ψ〉 and the unencoded qubit from this state. (3) Give the Pauli operations which you need to fix up the remaining encoded qubit after this measurement, so that it becomes |ψ〉, as in the usual quantum teleportation scheme. Compute the probability of error of this circuit. Also show how to modify the circuit to perform fault-tolerant decoding.
+
+Problem 10.5: Suppose C(S) is an [n, 1] stabilizer code capable of correcting errors on a single qubit. Explain how a fault-tolerant implementation of the controlled-NOT gate may be implemented between two logical qubits encoded using this code, using only fault-tolerant stabilizer state preparation, fault-tolerant measurement of elements of the stabilizer, and normalizer gates applied transversally.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 11.1: (Generalized Klein’s inequality) Suppose f(⋅) is a convex function from real numbers to real numbers. Then f induces a natural function f(⋅) on Hermitian operators, as described in Section 2.1.8 on page 75. Prove that Use this result to show that the relative entropy is non-negative.
+
+Problem 11.2: (Generalized relative entropy) The definition of the relative entropy may be extended to apply to any two positive operators r and s, The earlier argument proving joint convexity of the relative entropy goes directly through for this generalized definition: (1) For α, β > 0 show that (2) Prove that the joint convexity of the relative entropy implies the subadditivity of the relative entropy, (3) Prove that subadditivity of the relative entropy implies joint convexity of the relative entropy. (4) Let pi and qi be probability distributions over the same set of indices. Show that In the case where the ri are density operators so tr(ri) = 1, this reduces to the pretty formula where H(⋅||⋅) is the Shannon relative entropy.
+
+Problem 11.3: (Analogue of the triangle inequality for conditional entropy) (1) Show that H(X,Y|Z) ≥ H(X|Z). (2) Show that it is not always true that S(A,B|C) ≥ S(A|C). (3) Prove the conditional version of the triangle inequality,
+
+Problem 11.4: (Conditional forms of strong subadditivity) (1) Prove that S(A,B,C|D) + S(B|D) ≤ S(A,B|D) + S(B,C|D). (2) Show by explicit example that it is not always true that H(D|A,B,C) + H(D|B) ≤ H(D|A,B) + H(D|B,C).
+
+Problem 11.5: (Strong subadditivity – Research) Find a simple proof of the strong subadditivity inequality for quantum entropies.
+==========
+Quantum Computation and Quantum Information (Michael A. Nielsen, Isaac L. Chuang)
+
+Problem 12.1: In this problem we will work through an alternate proof of the Holevo bound. Define the Holevo chi quantity, (1) Suppose the quantum system consists of two parts, A and B. Show that (Hint: Introduce an extra system which is correlated with AB, and apply strong subadditivity.) (2) Let be a quantum operation. Use the previous result to show that That is, the Holevo chi quantity decreases under quantum operations. This is an important and useful fact in its own right. (3) Let Ey be a set of POVM elements. Augment the quantum system under consideration with an ‘apparatus’ system, M, with an orthonormal basis |y〉. Define a quantum operation by where |0〉 is some standard pure state of M. Prove that after the action of , . Use this and the previous two results to show that which is the Holevo bound.
+
+Problem 12.2: This result is an extension of the previous problem. Provide a proof of the no-cloning theorem by showing that a cloning process for non-orthogonal pure states would necessarily increase .
+
+Problem 12.3: For a fixed quantum source and rate R > S(ρ), design a quantum circuit implementing a rate R compression scheme.
+
+Problem 12.4: (Linearity forbids cloning) Suppose we have a quantum machine with two slots, A and B. Slot A, the data slot, starts out in an unknown quantum state ρ. This is the state to be copied. Slot B, the target slot, starts out in some standard quantum state, σ. We will assume that any candidate copying procedure is linear in the initial state,       where is some linear function. Show that if ρ1 ≠ ρ2 are density operators such that       then any mixture of ρ1 and ρ2 is not copied correctly by this procedure.
+
+Problem 12.5: (Classical capacity of a quantum channel – Research) Is the product state capacity (12.71) the true capacity of a noisy quantum channel for classical information, that is, the capacity when entangled inputs to the channel are allowed?
+
+Problem 12.6: (Methods for achieving capacity – Research) Find an efficient construction for codes achieving rates near the product state capacity (12.71) of a noisy quantum channel for classical information.
+
+Problem 12.7: (Quantum channel capacity – Research) Find a method to evaluate the capacity of a given quantum channel for the transmission of quantum information.
+==========
+\end{document}
