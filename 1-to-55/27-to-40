@@ -1,0 +1,234 @@
+\newpage
+\section*{Ex 2.27  }
+Problem: Calculate the following tensor products:  
+
+a) $ X \otimes Z $, b) $ I \otimes X $, c) $ X \otimes I $.  
+Solution: The matrices are  
+$ X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $,  
+$ Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $, and  
+$ I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $.  
+
+a) The tensor product is  
+$$
+X \otimes Z = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \begin{pmatrix} 0 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} & 1 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \\ 1 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} & 0 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \\ 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \end{pmatrix}.
+$$
+
+b) The tensor product is  
+$$
+I \otimes X = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 1 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 0 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\ 0 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 1 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}.
+$$
+
+c) The tensor product is  
+$$
+X \otimes I = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} & 1 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \\ 1 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} & 0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{pmatrix}.
+$$
+
+Note that $ X \otimes I \neq I \otimes X $, so the tensor product is not commutative.
+
+\newpage
+\section*{Ex 2.28 } 
+Show that the transpose, complex conjugate, and adjoint operations distribute over the tensor product.
+
+i) Show that $ (A \otimes B)^* = A^* \otimes B^* $.
+
+$( A \otimes B)^* = [A_{ij}[B_{ij}]^* \\
+= [A_{ij}^* [B_{ij}^*]] \\
+= A^* \otimes B^* $
+
+ii) Show that $ (A \otimes B)^T = A^T \otimes B^T $.
+
+$(A \otimes B)^T = [A_{ij}[B_{ij}]^T] \quad = [A_{ji} [B_{ji}]] \quad = [A_{ji} B^T] \quad = (A^T \otimes B^T)$
+
+iii) Show that $ (A \otimes B)^\dagger = A^\dagger \otimes B^\dagger $.
+
+$(A \otimes B)^\dag = ((A \otimes B)^T)^* \quad = (A^T \otimes B^T)^* \quad = (A^T)^* \otimes (B^T)^* \quad = A^\dag \otimes B^\dag$
+
+***
+
+\newpage
+\section*{Ex 2.29 } 
+
+Ex 2.29  
+Given that $UU^\dagger = U^\dagger U = I$ and $VV^\dagger = V^\dagger V = I$, show that  
+$$
+(U \otimes V)(U \otimes V)^\dagger = (U \otimes V)^\dagger (U \otimes V) = I.
+$$  
+$$
+(U \otimes V)(U \otimes V)^\dagger = (U \otimes V)(U^\dagger \otimes V^\dagger) = UU^\dagger \otimes VV^\dagger = I \otimes I = I.
+$$  
+This shows unitarity. Similarly,  
+$$
+(U \otimes V)^\dagger (U \otimes V) = (U^\dagger \otimes V^\dagger)(U \otimes V) = U^\dagger U \otimes V^\dagger V = I \otimes I = I.
+$$  
+This also shows unitarity.
+
+***
+
+\newpage
+\section*{Ex 2.30 } 
+Show that the tensor product of two Hermitian operators is Hermitian. Given $A = A^\dagger$ and $B = B^\dagger$. Consider  
+$$
+(A \otimes B)^\dagger = A^\dagger \otimes B^\dagger = A \otimes B.
+$$  
+Thus, $(A \otimes B)^\dagger = A \otimes B$, which means the tensor product is Hermitian.
+
+***
+
+\newpage
+\section*{Ex 2.31 } 
+Show that the tensor product of two positive operators is positive.
+For $A$ with $\langle v|A|v \rangle \ge 0$ and $B$ with $\langle w|B|w \rangle \ge 0$, show that  
+$$
+\langle v \otimes w|A \otimes B|v \otimes w \rangle \ge 0.
+$$  
+We need to show that  
+$$
+\langle v \otimes w|A \otimes B|v \otimes w \rangle \ge 0.
+$$  
+The inner product is given by:  
+$$
+\langle v \otimes w|A \otimes B|v \otimes w \rangle = (\langle v| \otimes \langle w|)(A \otimes B)(|v \rangle \otimes |w \rangle) = \langle v|A|v \rangle \langle w|B|w \rangle.
+$$  
+Since we are given that $\langle v|A|v \rangle \ge 0$ and $\langle w|B|w \rangle \ge 0$, and multiplication of non-negative real numbers results in a non-negative real number, we have:  
+$$
+\langle v|A|v \rangle \langle w|B|w \rangle \ge 0.
+$$  
+This proves the statement.
+
+***
+
+\newpage
+\section*{Ex 2.32 } 
+Show that the tensor product of two projectors is a projector.
+Show that $A \otimes B$ is a projector in $V \otimes W$. Let $A = \sum_i |i \rangle \langle i|$ be a projector in $V$ where $i \le N = \text{dim}(V)$, and $B = \sum_k |k \rangle \langle k|$ be a projector in $W$ where $k \le M = \text{dim}(W)$.  
+$$
+(A \otimes B) = \left( \sum_i |i \rangle \langle i| \right) \otimes \left( \sum_k |k \rangle \langle k| \right) = \sum_{i, k} (|i \rangle \otimes |k \rangle)(\langle i| \otimes \langle k|) = \sum_{i, k} |ik \rangle \langle ik|
+$$
+This describes a projector in $V \otimes W$. This shows that projectors are closed under the tensor product.
+
+***
+
+
+\newpage
+\section*{Ex 2.33 } 
+$H^{\otimes n} = \frac{1}{\sqrt{2}}\begin{pmatrix} |0\rangle + |1\rangle \\ |0\rangle - |1\rangle \end{pmatrix} \langle 0| + \frac{1}{\sqrt{2}}\begin{pmatrix} |0\rangle+|1\rangle \\ -|0\rangle+|1\rangle \end{pmatrix} \langle 1|$  
+Show that $H^{\otimes n} = \frac{1}{(\sqrt{2})^n} \sum_{x,y=0}^{2^n-1} (-1)^{x \cdot y} |x\rangle\langle y|$
+
+Consider $H^{\otimes 2}$:  
+$\left(\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle)\langle 0| + \frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)\langle 1|\right)^{\otimes 2} = \frac{1}{2}(|0\rangle\langle 0|+|1\rangle\langle 0|+|0\rangle\langle 1|+|1\rangle\langle 1|)$  
+$= \frac{1}{2} (|00\rangle\langle 00| + |01\rangle\langle 01| + |10\rangle\langle 10| + |11\rangle\langle 11|)$  
+Noting the pattern that only $x_i y_i$ has sign $x_i y_i$ indicated, the sign for $|x\rangle\langle y|$.  
+$H^{\otimes n} = \frac{1}{(\sqrt{2})^n} \sum_{x, y = 0}^{2^n-1} (-1)^{x_i y_i} |x\rangle\langle y|$
+
+Show that $H^{\otimes 2}$ explicitly:  
+$H^{\otimes 2} = \frac{1}{(\sqrt{2})^2} \sum_{x,y=0}^{3} (-1)^{x \cdot y} |x\rangle\langle y| = \frac{1}{2} \sum_{x, y = 0}^3 (-1)^{x \cdot y}|x\rangle\langle y|$  
+$= \frac{1}{2} (|00\rangle\langle 00| + |01\rangle\langle 01| + |10\rangle\langle 10| + |11\rangle\langle 11| + |01\rangle\langle 00| + |00\rangle\langle 01| + |11\rangle\langle 10| + |10\rangle\langle 11| + |10\rangle\langle 00| + |11\rangle\langle 01| + |00\rangle\langle 10| + |01\rangle\langle 11|)$
+
+
+
+***
+\newpage
+\section*{Ex 2.34}
+Eigenvectors and Normalization  
+
+Normalize the vectors:
+
+$|1\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix}$ ; $|7\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}$  
+$\implies \begin{bmatrix} 4 & 3 \\ 3 & 4 \end{bmatrix} = 1 \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -1 \end{pmatrix} + 7 \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \end{pmatrix}$  
+
+$\implies \sqrt{\begin{bmatrix} 4 & 3 \\ 3 & 4 \end{bmatrix}} = \sqrt{1} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -1 \end{pmatrix} + \sqrt{7} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \end{pmatrix} \\
+= \pm 1 \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & -1 \end{pmatrix} + \pm \sqrt{7} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \end{pmatrix}$
+
+
+ii) Logarithm of $\begin{bmatrix} 4 & 3 \\ 3 & 4 \end{bmatrix} \\ 
+\log\begin{pmatrix} 4 & 3 \\ 3 & 4 \end{pmatrix} = \log_2(1) \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -1 \end{pmatrix} + \log_2(7) \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \end{pmatrix} \\
+= \log(2^7) \cdot \frac{1}{2} \begin{pmatrix} 1 \\ 1 \end{pmatrix}\begin{pmatrix} 1 & 1 \end{pmatrix} \\
+= \log(7) \cdot \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$
+
+***
+\newpage
+\section*{Ex 2.35 } 
+
+\newpage
+\section*{Ex 2.36 } 
+Show that the Pauli matrices except for $I$ have trace zero.
+
+$\sigma_X: tr \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = 0 + 0 = 0$
+
+$\sigma_Y: tr \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = 0 + 0 = 0$
+
+$\sigma_Z: tr \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = 1 - 1 = 0$
+
+
+\newpage
+\section*{Ex 2.37 } 
+Show that $\text{Tr}(AB) = \text{Tr}(BA)$.  
+$$
+\text{Tr}(AB) = \sum_i (AB)_{ii} = \sum_i \sum_j A_{ij} B_{ji}, \quad \text{and} \quad \text{Tr}(BA) = \sum_i (BA)_{ii} = \sum_i \sum_j B_{ij} A_{ji}.
+$$  
+Since $i$ and $j$ are summation variables over the same index set, the two traces are equal. Thus, the problem reduces to showing that  
+$$
+\text{Tr}(AB) = \sum_{i,j} A_{ij} B_{ji}.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.38 } 
+
+Show that $\text{Tr}(A+B) = \text{Tr}(A) + \text{Tr}(B)$.  
+$$
+\text{Tr}(A+B) = \sum_i (A+B)_{ii} = \sum_i (A_{ii} + B_{ii}) = \sum_i A_{ii} + \sum_i B_{ii} = \text{Tr}(A) + \text{Tr}(B).
+$$  
+Show that $\text{Tr}(zA) = z \text{Tr}(A)$.  
+$$
+\text{Tr}(zA) = \sum_i (zA)_{ii} = \sum_i z A_{ii} = z \sum_i A_{ii} = z \text{Tr}(A).
+$$
+
+***
+
+\newpage
+\section*{Ex 2.39 } 
+Inner product of operators. Let $L(V)$ be a vector space of all linear operators on $V$. For $\forall A, B \in L(V)$, show that  
+$$
+\langle A | B \rangle = \text{Tr}(A^\dagger B)
+$$
+satisfies the properties of an inner product.  
+
+Conjugate symmetry:  
+$$
+\langle A | B \rangle^* = \langle B | A \rangle, \quad \text{since} \quad \langle A|B \rangle^* = (\text{Tr}(A^\dagger B))^* = \text{Tr}((A^\dagger B)^\dagger) = \text{Tr}(B^\dagger (A^\dagger)^\dagger) = \text{Tr}(B^\dagger A) = \langle B|A \rangle.
+$$
+
+Linearity in the second argument: For $\alpha, \beta \in \mathbb{C}$,  
+$$
+\langle A | \alpha B + \beta C \rangle = \alpha \langle A| B \rangle + \beta \langle A | C \rangle,
+$$
+because  
+$$
+\langle A | \alpha B \rangle = \text{Tr}(A^\dagger (\alpha B)) = \text{Tr}(\alpha A^\dagger B) = \alpha \text{Tr}(A^\dagger B) = \alpha \langle A|B \rangle,
+$$
+and the linearity of the trace operator with respect to addition also confirms this.
+
+Positive definiteness:  
+$$
+\langle A|A \rangle \ge 0 \quad \text{and} \quad \langle A|A \rangle = 0 \iff A=0.
+$$  
+Indeed,  
+$$
+\langle A|A \rangle = \text{Tr}(A^\dagger A) = \sum_i (A^\dagger A)_{ii} = \sum_i \sum_j (A^\dagger)_{ij} A_{ji} = \sum_i \sum_j A^*_{ji} A_{ji} = \sum_{i,j} |A_{ji}|^2.
+$$  
+This sum of squares of the magnitudes of the matrix elements is always non-negative. It is equal to zero if and only if all matrix elements $A_{ji}$ are zero, which means $A=0$.
+
+***
+
+\newpage
+\section*{Ex 2.40 } 
+Verify that $[X,Y] = 2iZ$ for Pauli matrices $X, Y, Z$.  
+$$
+XY - YX = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} - \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} - \begin{bmatrix} -i & 0 \\ 0 & i \end{bmatrix} = \begin{bmatrix} 2i & 0 \\ 0 & -2i \end{bmatrix} = 2i \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = 2iZ.
+$$
+
+***
+
+

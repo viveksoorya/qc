@@ -1,0 +1,337 @@
+#set page(
+  paper: "a4",
+  margin: 1in,
+  fill: black,
+)
+
+// Standard font setup
+#set text(fill: white, font: "New Computer Modern", size: 10pt)
+#set par(justify: true, first-line-indent: 0pt)
+
+// --- Definitions ---
+#let ket(content) = $lr(| #content angle)$
+#let bra(content) = $lr(angle #content |)$
+#let braket(l, r) = $lr(angle #l | #r angle)$
+#let outer(l, r) = $ket(#l) bra(#r)$
+#let tr = "tr"
+
+// Common math operators
+#let comm(a, b) = $[#a, #b]$
+#let acomm(a, b) = ${#a, #b}$
+#let otimes = sym.times.o
+#let hbar = sym.planck
+#let dagger = sym.dagger
+
+// -----------------------------------------------------------
+
+#align(center)[
+  #text(size: 1.5em, weight: "bold")[Working Memory] \
+  #v(0.5em)
+  Vivek Soorya Maadoori
+]
+
+#outline(indent: auto)
+
+= Matrices and Operators
+== More Notes
+
+1. Changing either the input set alone or the output basis set alone changes the matrix representation of A even as the transformation remains the same.
+2. Would changing both, in any case, particular case, keep the matrix representation same? Given I change the input basis and the change is represented by a transformation (which is matrix eq of which can be extracted from the erstwhile input basis & the new input basis) if the same transformation were to be applied to the erstwhile output basis & if the resultant vector were take along with the new input basis then the (sentence cuts off) matrix representation would remain intact.
+   Is measurement, principle of least action at work? Like if you make a measurement the state changes to an eigenstate of the operator which doesn't change until a new operator is applied. Looks like inertia, pola... T
+3. A coordinate transformation is a linear operation.
+4. That a matrix can be composed of output bases is a property of input bases $e_i$, and that the requires input bases $e_i$ and the transformation to be into the same vector space.
+5. In matrix multiplication, the number of columns out of the left matrix and the number of rows in the right matrix have to be equal.
+6. Also, the number of rows of the left matrix gives the number of rows of the resultant matrix.
+7. The number of columns of the right matrix gives the number of columns of the resultant matrix.
+8. We will deal with only finite-dimensional Hilbert space.
+9. projection of a vector on another vector can be obtained by an inner product.
+10. linear means matrix (scalar (vector)) = scalar (matrix (vector))
+11. inner product needs linearity
+12. Positive operator and the unitary operator are operator counterparts of a complex number $z = r e^(i theta)$ in polar representation. $A=V sqrt(D) U^dagger$ (This looks incorrect, based on the notes it is $A=V U$, which is also wrong. $A = V D U^dagger? A=V|D|U^dagger? A = V|A|$ or something like this) $U D U^dagger$ is the positive operator; V is the unitary operator
+
+== unitary operator
+Orthogonal matrix O: $bb(R) arrow bb(R)$
+Unitary matrix U: $bb(C) arrow bb(C)$
+Both matrices have modulus of determinant = 1
+unitary operators are isometries; autosuggest recommonding adding "that preserve inner product"; are there isometries that do not preserve inner product
+
+1. Unitary transformation depends only on initial and final state.
+2. why does it not depend on the intermediary at time stamps or states? How do we know that it doesn't? Is it odd that it doesn't?
+3. Does the unitary operator depend on the initial timestamp or does it depend on the initial state vector and the final state vector?
+4. How to find all unitary operators of a given dimension.
+5. 'unitary transformation' of a "state vector" can be physically interpreted as the 'time evolution' of "an isolated quantum mechanical system":
+6. Unitary transformation
+   a. Reversible transformation
+   b. inverse is adjoint
+7. unitary operations are the only operations possible for evolution.
+8. Unitary operator is a normal operator
+9. The unitary evolution is characterized by only a shift in global phase factor; does this leave the probabilities, energy eigenvalues, and expectation values intact; if so show how
+
+== Measurement operator
+1. Why would the measurement operator satisfy the completeness equation?
+2. You are not just adding them all.
+3. You are not scaling them up.
+4. You are adding a projection of a vector with its adjoint (or transformation).
+5. The measurement operator is not necessarily hermitian.
+6. What are projective measurements? Measurements with an orthonormal orthogonal basis. [The outer products of the basis vectors gives projection operators]. The observable spectral decomposes into the projection operators. The observable is a hermitian operator.
+7. The observable describes the projection measurement, while the projector operators project onto eigenvector $ket(E)$ with eigenvalue E.
+8. ${M_m}$ satisfies the completeness relation. What else is necessary to go from operator to measurement operator. Does it say, D a) have to be hermitian?
+9. measurement $!=$ operator + orthogonal operators(:= all operators are hermitian & $M_M M_(M') = delta_(M M') M_M) =$ projectors.
+10. Does this hold: Operator + completeness relation = Measurement operator.
+11. $pi^2 = pi$
+
+== Hamiltonian operator
+1. The Hamiltonian operator is a hermitian operator
+2. How does knowing energy (Hamiltonian) alone tell us the dynamics of the system?
+3. Why are energy eigenstates referred to as stationary states?
+4. Hamiltonian captures everything there is to be captured about the dynamics of the system. Hamiltonian is energy operator. How does knowing energy alone, tell its dynamics?
+5. Energy and time have an uncertainty relationship
+6. Time varying Hamiltonian, then would be a function of time, where the system itself is changing and thus the energy too. Note that its not evolving a closed system, but that the system itself is changing.
+7. Why are energy eigenstates referred to as stationary states?
+8. I would presume Hamiltonian is called the energy operator since it changes when the energy of the system charges. Or, rather, (since the energy of a given system doesn't ever charge) when the system changes.
+9. $H = hbar omega X$
+10. Here H and X are supposed to have the same energy eigenstates. Why? Does scaling a transformation not change its eigenstates?
+
+== Hermitian operator
+1. have spectral decomposition, meaning they decompose into additive factors made from outer product of eigenvectors scaled by eigenvalues
+2. The eigenvectors of a hermitian matrix form a basis? yes
+3. $A = A^dagger$
+
+== normal operator
+1. spectral theorem: Normal operators have spectral decomposition
+
+== geometric interpretations
+1. Rows in a matrix contribute to their corresponding components in the vector they are transforming.
+2. A matrix is a branchedly (multi-dimensional) ordered set of scalars. for a vector.
+3. In a transformation, you are doing scaled vector addition of all components in the vector to get the resultant vector. To do this, the scaling factors are of $n^2$ complexity since there are $n$ sets of the same vector addition, with different weights for each component.
+4. Why does a matrix with determinant 0, not have an inverse; a matrix with determinant 0, has incomplete rank, meaning it will take at least one of the components of the vector to zero; geometrically, a matrix with incomplete rank cannot have an inverse because, it is a transformation into a lower dimensional vector space what then is the rank of a matrix that takes a vector into a higher dimensional vector space; if rank does not capture this, is there another functional that could or perhaps could we define one and to what end;
+5. If the determinant can tell you when the rank if not full, is there another functional that tells you the rank of the matrix give the matrix representation; what is the geometric interpretation or significance of a matrix having degenerate eigenvalues;
+6. Full rank matrices have all have n eigenvalues since they take the vector from into the space vector space. perhaps except rotation matrices. Rotation matrices can't have any eigenvalues right? but they are full rank matrices, aren't they?
+7. 0 as determinant of the matrix indicates that the matrix is not full rank and a full rank matrix cannot have an inverse; A matrix with incomplete rank takes at least one of the components to 0; once the component vanishes with respect to the other components, transforming the vector in whichever way only transformers the components that have not vanished; the vanished component can be multiplied by anything but it still remains 0; but what about the additive components; the vector component when transformed gets scaled components of other vectos; since that one component has vanished, its own additive component is zero and cannot be scaled back; but the additive factors derived from scaling the other components still remind and so the component can later taken on any real value, but it sort of becomes untangled from the rest of the vector and so loses information, and thus inverse is not possible;
+8. Why does the determinant preserve scaling of the matrix; is this just linearity or is there more nuance; if you scale the matrix, the transformation of the vector scales and so the determinant scales equally; actually the determinant preserves scaling up to the power of the dimension of the vector space; for if you scale a matrix in V2, you scale the determinant by the scalar raised to 2; if you scale a matrix in V3, you scale the determinant by the scalar raised to 3; Show that this is the case
+9. Coordinate transformation is a linear transformation
+
+= bloch sphere
+
+1. Bloch sphere of multiple qubits has more than 3 dimensions and so is hard to visualize
+2. Pure states exist on the sphere surface
+3. Mixed states exist inside the sphere
+4. what does coherence mean, as represented on the block shpere by the azimuthal angle. If there were no coherence, then we would not need a bloch sphre to represent the state of the qubit.
+
+= The narrative: keeping the bird's eye view, organized
+
+#pad(x: 2em)[
+  _We can't talk about diagonalizability without talking about orthogonal bases._
+  #align(right)[--- Vivek Soorya Maadoori]
+]
+
+1. The state of a system as a vector contains amplitudes of the system along each dimension in the Hilbert space. The modulus squared of these amplitudes give the probability of the state being found in the corresponding basis state.
+2. amplitudes are given by complex numbers.
+
+= the story of qubits
+1. Hilbert space describes a quantum system: Lets start at the beginning, a very good place to start. You have an isolated quantum system. This is described by a Hilbert space. The Hilbert space could be a tensor product space or an ordinary Hilbert space depending on whether the system is considered composite or not.
+2. Now the system could be represented by a state vector in the Hilbert space at a given instant of time. (Time and energy have an uncertainity relationship, but let's set that aside for now). But we dont know the state of the system. It could be in any state in the Hilbert space. Now, since we dont know the state of the system, it is in a mixed state of infinite possibilities. This is best described [for convenience] by a density matrix.
+3. Now, as we move along the time dimension, the system changes. The isolated system has unitary evolution. In that, the system itself changes. If it is in a Pure state, it remains a pure state, but the amplitudes change.
+4. Can we say that the density matrix has a unitary evolution? The state certainly has unitary freedom. The density matrix has unitary freedom. These two freedoms are not the same. But are they related? The unitary evolution is strictly temporal. Time is the quantity that changes. When the pure state evolves unitarily, the state is still described in the same Hilbert space, but it is not described by the same state anymore; meaning, in unitary evolution we are not dealing with a state, but states as a function of a continuum of time. The states themselves need not evolve continuously.
+5. Now, unitary freedom is perhaps an entirely different concept. Firstly, I suppose that it does not require a time dimension.
+6. Simply way to understand the distinction is to look at a density matrix that describes a pure state with full probability and consider its unitary evolution and unitary freedom. Unitary evolution means the density matrix itself [here, a projector] will change. Unitary freedom means the state at any time could be different by a unitary transformation. Now, if the latter were true, it has to have some stipulation, lest the idea of a state modelling an isolated quantum system, falls apart.
+7. Then, consider a fully mixed state with two possibilities: equally weighted superpositions of the bases sets ${ket(0), ket(1) } " and " { ket(+), ket(-) } $
+
+= the story of a composite system
+Can you define a tensor product space between Hilbert spaces of different sizes?
+1. how do you define a tensor product space? Define a vector space on the cartesian product of the underlying sets of the Hilbert spaces of the constituent systems.
+
+= the story of measurement
+1. Measurement statistics are described by measurement operators. For every possible measure, there is a measurement operator. To get the state after measurement, you apply the measurement operator corresponding to the measure, to the the state before measurement.
+2. Note that the measurement operator itself does not tell you what you are going to measure.
+3. What it does is, if you know the it (the measurement operator) and the corresponding measure, then you can find the state after the measurement, and the probability of getting that measure.
+4. How then do you find the measures and the measurement operators corresponding to them?
+
+= the story of the density operator
+1. The state of a system is sometimes known with a certain probability. In these cases, we represent the state using a sum of all the outer products of the states scaled by their probabilities. This is called the density operator or density matrix.
+2. we scale the outer product of the state with itself by the probability of the state. Note that this is probability multiplication, as is appropriate simulataneous occurence of independent events. Think of it as scaling down the density matrix of each pure state by the probability of that pure state.
+3. the basis state is described by a vector, each component representing amplitude in an orthogonal direction. When you take the outer product, you are essentially getting probabilities associated with those amplitudes.
+4. Now, something interesting happens here:
+   a. along the diagonal, you get proper probabilites, that is, the probability of measuring this basis state or that, since the product of amplitudes (expressed as a complex number) there, is with their conjugates itself.
+   b. but when it comes to the off diagonal elements, you are multiplying the amplitude along a dimension, with the amplitude conjugate along another direction. What exactly is this information. They call it 'coherence' but what is it?
+      i. amplitudes are given by complex numbers
+      ii. to get probabilities (diagonal elements of density matrix, and to get coherences (off-diagonal elements of a density matrix), we multiply a complex number with its or some other complex number's conjugate.
+      iii. note that outer product of a state with itself is Hermitian.
+      iv. what does the imaginary part of the complex number represent, in the context of the complex number being the amplitude of a state along a basis dimension?
+
+= the story of the reduced density matrix
+1. It is the partial trace of the density matrix of the composite system
+2. It appears that in the definition of the reduced density operator, those are outer products of different arbitrary states, not projections of the same vector
+
+= the story of the Schmidt decomposition
+1. schmidt rank
+2. schmidt decomposition
+3. purification
+
+decomposition is for composite systems. Is it defined for a mixed state? I would assume so.
+take a system and show its Schmidt Decomposition.
+1. First a pure state system
+2. Then a mixed state system
+
+1. Let's consider the simple case of $ket(+)$. This is a single system. The Schmidt decomposition is $ 1 ket(+) $.
+2. Let's consider an entangled system. The first bell state: $( ket(00) + ket(11) ) / sqrt(2) $. This is a pure state and so the Schmidt decomposition is $ 1 ( ket(00) + ket(11) ) / sqrt(2) $
+3. Let's consider a mixed state: ${(ket(0), 1/2), (( ket(0) + ket(1) ) / sqrt(2), 1/2) }$. Is the Schmidt decomposition just $ 1/2 ket(0) + 1/2 ( ket(0) + ket(1) ) / sqrt(2) $ ?
+4. And in the case of ${ {( ( ket(00) + ket(11) ) / sqrt(2), 1/2), ( ( ket(00) - ket(11) ) / sqrt(2), 1/2)} }$, is it just $ 1/2 ( ket(00) + ket(11) ) / sqrt(2) + 1/2 ( ket(00) - ket(11) ) / sqrt(2) $ ?
+The above attempt seems to have gone awry. But is this some special decomposition?
+
+The Schmidt decomposition is defined for a pure state of a composite system, and the kets are orthonormal vectors.
+1. composite system
+2. pure state
+
+1. There are two Hilbert Spaces, and only one set of eigenvalues in the decomposition
+2. there are infinite sets of orthonormal bases in each Hilbert Space. Which pair of orthonormal bases ought one take? Will any pair do?
+3. There are two possibilites
+   a. The Schmidt decomposition is only defined for tensor product space with Hilbert Spaces of equal dimension. This way there will at least be equal number of eigenvalues in each Hilbert space. There is still the problem of understanding which Hilbert Space's eigenvalues are being considered. Again there are two possibilities
+   b. Schmidt decomposition is defined for tensor product spacess of unqual dimensions. I just don't understand how the decomposition is defined.
+
+Alright, if the Schmidt Decomposition is indeed defined for the pure state of a composite system. There should be an elegant multiple term decomposition for the bell states.
+
+*Exercise 1*
+What then is the Schmidt decomposition of $ ( ket(00) + ket(11) ) / sqrt(2) $ ?
+
+= Diagonalizability and orthogonal bases
+#pad(x: 2em)[
+  _We can't talk about diagonalizability without talking about orthogonal bases._
+  #align(right)[--- Vivek Soorya Maadoori]
+]
+
+questions
+1. Why do we need a matrix to be diagonalizable to use it in quantum mechanics? In other words, why is spectral decomposition necessary to model the dynamics [be ituninterfered time evolution, or measurement] of a closed quantum system.
+2. Do all diagonalizable matrices (even those apart from hermitian and unitary) play a role in quantum mechanics? and especially in quantum computatoin and quantum information?
+   a. Measurements are described by hermitian operators. Hermitian operators are diagonalizable.
+   b. Uninterfered time evolution of closed quantum systems are described by unitary operators. Unitary operators are diagonalizable.
+   c. What about non-hermitian, non-unitary, normal operators ?
+   d. A clue might be to look at the other end of the spectrum: Unitary, hermitian, normal operators: the pauli operators. By virtue of being unitary, they are supposed to describe uninterfered time evolution of closed quantum systems. By virtue of being hermitian, they are supposed to describe measurements. But the post measurement state is an eigenstate - a non-surjective mapping. #underline[*So how is it unitary?*] For unitaries are just surjective isometries.
+
+Threads
+1. Show that any diagonalizable linear operator has a singular value decomposition.
+2. Show that not all square linear matrices are diagonalizable
+3. How many equivalent represenataions of normal operators exist?
+   a. $N N^dagger = N^dagger N$, where N is a normal operator
+   b. $N = sum_i lambda_i outer(i, i)$, Spectral representation
+4. What is the distinction between $ A = U' P U " (i.e., singular value decomposition)," $ and $ A = U P U^dagger " (i.e., spectral decomposition)" $
+5. Do all operators send any input vector to their eigenvector? Projectors in a hermitian operator do.#footnote[Note that Hermitian operators are never operated on anything in quantum mechanics. They are just a terse way to represent the projectors that describe the differenet possible states post measurement. But it is not that simple either, for it does say _something_ that the projectors _can_ be represented tersely by just a non-operating hermitian matrix.] Is self-adjointness a necessary and/or a sufficient condition for an operator to take any input vector to its eigenvector? For after all, All operators have eigenvectors and all full rank square matrices of n by n dimensions have n eigenvectors. This part is not special of a hermitian matrix. If quantum mechanics specifies hermiticity to describe an observable there must be something special about it.
+
+= Decompositions of linear operators
+*Arbitrary Operator:*
+
+Arbitrary operators can be decomposed into a positive transoformation of a linear unitary operator.
+*Diagonalizable operator:*
+operators can be decomposed into a unitary transformation of a linear arbitrary operator.
+#underline[*Corollary:*] Any arbitrary operator is a unitary transfomration away from being a normal operator. Beautiful :)
+
+= Polar decomposition
+do write polar decompositions as $A = U sqrt(A^dagger A)$, and not $A = U sqrt(A)$? Because operator functions are defined only on normal operators, and A here is an arbitrary operator.
+Okay, how do you know that $A^dagger A$ (for left polar decomposition, and $A A^dagger$ for right polar decomposition) are normal, since you are using their postive square roots as the positive operators in polar decompositions? Well,
+$ (A A^dagger) (A A^dagger)^dagger = (A A^dagger) (A A^dagger) = (A A^dagger)^dagger (A A^dagger). $
+$ (A^dagger A) (A^dagger A)^dagger = (A^dagger A) (A^dagger A) = (A^dagger A)^dagger (A^dagger A). $
+$ #sym.square.filled $
+
+#footnote[a silly way to relate polar and singular value decompositions is to say polar decomposition times a left unitary transformation, is singular value decomposition: N = UA = UPU', where N is a diagonalizable operator (or normal operator), U and U' are unitary transformations and P is a positive transfomration. Have to find a way to write this more elegently.]
+Thus, note that unitary operator is a funadamental operator. Positive operators are also fundamental operators.
+arbitrary operators can be wrought by positive transformations of unitary operators or unitary transformations of positive operators, they are not fundamental transformations.
+Since diagonalizable (or normal) operators can be wrought by unitary transformations of arbitrary operators, diagonalizable (or normal) operators are also derived operators.
+But the fundamental operators unitary and positive are themselve normal. _Contradiction!_. What gives?
+
+= Classical bit ot quantum bit
+Understanding why a Hilbert Space is ncessary and sufficient to model an isolated quantum system
+1. Wat dow a quantum bit do that a classical bit doesn't
+To understand this, let's list the properties of a vector space as reference
+
+1. Set of elements
+   a. linear independence of elements
+   b. orthogonality of the linearly independent elements #footnote[Orthogonality is not necessary for quantum mechanics. Orthogonality is necessary for quantum computation. Orthogonality helps distinguish states, and is thus necessary for any level of computation with isolated quantum systems or closed, composite quantum systems]
+2. set of scalars that form a field
+3. a binary multiplication on the set of scalars and the set of elements
+4. a binary addition on the set of elements with
+   a. closure
+   b. associativity
+   c. commutativity
+   d. existence of zero element for the set of elements
+   e. existence of additive inverses for each element in the set of elements
+   f. uniqueness of zero element for the set of elements
+   g. uniqueness of additive inverse for each element in the set of elements
+5. a unary operation on the set of elements to itself with the following property:
+   a. action on sum of elements is equal to sum of actions on each element
+
+#v(1in)
+
+= Understanding the need for a Hilbert Space to model an isolated quantum system
+Consider the stern gerlach experiment that generates the same qubits; (quantum state tomography).
+Let's use this experiment to build our understanding of how we go from something as simple as a classical bit to something as heavy as a Hilbert space and a quantum bit.
+
+
+*Figure: Stern Gerlach experiment without observable X*
+
+
+*Figure: Stern Gerlach experiment with observable X*
+
+In this experiment, the X operator is changing half the paricles to spin down and half it keeps as spin up. this would explain the set up classically as well.
+
+*Independence of observables:* If observables X and Z are inpendent, $Z_2$ would only give 0. Defend this.
+
+If 0 and 1 were independent, we may justify using a Hilbert space.
+1. Why do we need 0 and 1 to be indpendent?
+2. Why do we need 0 and 1 to be linearly independent?
+
+= quantum mechanics
+Is quantum mechanics a complete theory?
+
+= 'Non-linearity' in quantum mechanics
+1. Entanglement introduces non-linearity
+2. Measuremnet introduces non-linearity
+
+Does entaglement cause Measurement? Does Measurement cause enetanglement? To answer either questions, you would need to defined Measurement.
+Quantum Mechanics deos not define what measurement is though. It does define what happens to a given isolated system [as specified before measurement], post-measurement.
+
+= Operator - sum formulation
+1.
+
+= Understanding the Measurement Postulates and the limitation of our knowledge on Measurement
+= Understanding Measurement Statistics of Qubits
+If the dynamics and the state of a system are the same for two systems, both described by $ket(psi)$, why do they yield different values upon measurement. Since they are yielding different resutls,
+1. the states must be different. If not then,
+2. the dynamics must be different.
+
+If you disagree, disprove one of the above two. Or resolve the contradiction by noting the assumption that went wrong.
+
+I need to come back with more knowledge and flair, for this. For now, note that Measurement is not defined by quantum mechanics, but what measurmenet does to a state is defined: collapse (for physicists) or projection (for mathematicians).
+
+
+Answer to this question might emerge upon completion of the chapter noting the transition of mathematical framework from classical bits to quantum bits.
+
+== Measurement breaks unitary evolution
+The transition from the pre-measurement to the post-measurement state cannot be described a unitary transformation of the vector state. What about unitarity is breaking then? Unitary operations are surjective isometries. Let's see which of the two breaks:
+1. Surjectivity. If we were to take the Copenhagen interpretation of quantum mechanics, then surjectivity certainly breaks because, we see a projection onto a basis state. Note that the perception of a projection here is because of a fixed basis. The so called projected state is still in superposition if you were to look at the state in some other basis. This is certainly true for any non-zero vector in the vector space. Any given vector is a superposition vector [in some basis].
+2. Isometry: Show that the inner product of any vector with the null vector is 0. If you can show this, then the inner products of the vectors are preserved, since in a projection, the orthogonal subspace is just the singleton set of null vector.
+
+But measurement cannot necessarily break unitarity, since there exist operators that are both unitary and isometry, viz. the Pauli operators $sigma_X, sigma_Y, sigma_Z, sigma_I$.
+
+Resolve the contradiction and show that measurement does not break unitarity. Subsequently show that unitarity and Hermiticity are independent properties of a normal operator. Having one neither guarantees, nor precludes the other.
+
+= POVM formalism
+1. Are measurement non-surjective in the POVM formalism?
+
+= Measurement of an isolated quantum system
+1. An isolated quantum system is modelled by a Hilbert space
+2. Is the system still isolated upon measurement?
+   a. on the one hand, by one of the postulates of quantum mechanics, the post measurement state of a given state is an eigenvector of the hermitian operator that describes the observable measured.
+   b. on the other hand, It is observed, meaning it is interfered with. Meaning the system is not isolated anymore.
+
+The resolution to this dilemma comes in many forms. The two most common ones are the Copenhagen interpretation and the Many-Worlds interpretation of quantum mechanics
+1. Copenhagen interpretation: Takes the measuring device as a classical object
+2. Many-Worlds interpretation: takes the measuring device as a quantum mechanical object
+
+But this whole shebang can also be resolved by looking at the system together with the measurement apparatus as composite system. The system of interest and the measuring device are supposed to be in tensor product state before measurement and in entangled state after measurement.
+
+How does this comply with Copenhagen interpretation? \
+How does it comply with Many-Worlds interpretation?
+
+Does the Many-Worlds interpretation not adhere to the notion that the system post measurement is still described by the same Hilbert Space? Does the mathematical formulation differ in Many-Worlds interpretation as compared to Copenhagen interpretation.
+
+I will have to learn more to come back to this question. Enough thinking.

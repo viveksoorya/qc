@@ -1,0 +1,92 @@
+
+***
+\newpage
+\section*{Ex 2.51}
+Verify that $H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$ is unitary. 
+Sol: To show see: $HH^{\dagger}=H^{\dagger}H=I$  
+$HH^{\dagger} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \frac{1}{2}\begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} = I$
+
+\newpage
+\section*{Ex 2.52}
+Verify that $H^2=I$  
+Sol: $H^2 = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = I$
+
+\newpage
+\section*{Ex 2.53}
+Find eigenvalues and eigenvectors of $H$  
+Sol: $H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$  
+Consider $\begin{vmatrix} 1-\lambda & 1 \\ 1 & -1-\lambda \end{vmatrix}=0$  
+$\implies (1-\lambda)(-1-\lambda)-1=0$  
+$\implies -1-\lambda+\lambda+\lambda^2=1$  
+$\implies \lambda^2=2 \implies \lambda=\pm\sqrt{2}$  
+$H$ has eigenvalues $\pm\sqrt{2}$  
+$H$ has eigenvalues $\frac{1}{\sqrt{2}}\pm\sqrt{2}$  
+$\implies H$ has eigenvalues $\pm 1$
+
+
+***
+\newpage
+\section*{Ex 2.54}
+$(A,B)=0$, i.e., $AB=BA$.  
+Show that $e^{A}e^{B}=e^{A+B}$  
+$e^A e^B = \left(\sum_i e^{\lambda_i} |i\rangle\langle i|\right)\left(\sum_j e^{\lambda_j} |j\rangle\langle j|\right) = \sum_i e^{\lambda_A}e^{\lambda_B} |i\rangle\langle i| = \sum_i e^{\lambda_A+\lambda_B} |i\rangle\langle i| = e^{A+B}$
+
+\newpage
+\section*{Ex 2.55: } 
+
+Show that $U(t,t_0) = e^{\frac{-iH(t_2-t_1)}{\hbar}}$ is unitary.  
+Consider $U(t_2, t_1)U^{\dagger}(t_2, t_1) = e^{\frac{-iH(t_2-t_1)}{\hbar}}e^{[\frac{-iH(t_2-t_1)}{\hbar}]^{\dagger}} = e^0 = I $  
+Consider $U^{\dagger}(t_2, t_1) U(t_2,t_1) = e^{\frac{-iH^{\dagger}(t_2-t_1)}{\hbar}} e^{\frac{-iH(t_2-t_1)}{\hbar}} = e^0 = I$
+
+
+***
+
+Eigenvectors of $H$:  
+i) $\frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \sqrt{2}\begin{pmatrix} a \\ b \end{pmatrix}$  
+$\frac{1}{\sqrt{2}}(a+b) = \sqrt{2}a$  
+$\frac{1}{\sqrt{2}}(a-b) = \sqrt{2}b$  
+$\implies a+b=2a \implies a=b$  
+$a-b=2b \implies a=3b$  
+$\implies b = (\sqrt{2}-1)b, \ a = (\sqrt{2}+1)b, \ b=a(\sqrt{2}-1) \frac{\sqrt{2}+1}{\sqrt{2}+1} \implies a=2-1 \implies a=1$  
+$\implies (\sqrt{2}-1)a = b$  
+Set $a=1$, $b = \sqrt{2}-1$  
+$|1\rangle = \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix}$  
+Normalized:  
+$\frac{1}{\sqrt{1^2 + (\sqrt{2}-1)^2}} \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix} = \frac{1}{\sqrt{1 + 2 - 2\sqrt{2} + 1}} \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix} = \frac{1}{\sqrt{4 - 2\sqrt{2}}} \begin{pmatrix} 1 \\ \sqrt{2}-1 \end{pmatrix}$
+
+ii) $\frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} a \\ b \end{pmatrix} = -\sqrt{2} \begin{pmatrix} a \\ b \end{pmatrix}$  
+$\frac{1}{\sqrt{2}}(a+b) = -\sqrt{2} a$  
+$\implies a+b=-2a \implies a=-b$  
+Set $a=1$: $|1\rangle = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$  
+Normalized: $\frac{1}{\sqrt{1^2 + (-1)^2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix}$
+
+Consider: $\frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = 0 \begin{pmatrix} a \\ b \end{pmatrix}$  
+$\implies a+b=a$, $a-b=b$, $b=a-a$, and $a=2b$  Incomplete  
+
+***
+
+\section{List of Problems}
+
+Before going further, let me see. What all problems need I need help with.  
+Ex 2.1 to 2.7 solved.  
+Ex 2.8, I need help.  
+Ex 2.9 to 2.19 solved.  
+Ex 2.20 I need help.  
+Ex 2.21 I need help.  
+Ex 2.22 to Ex 2.30 solved.  
+Ex 2.31 I need help  
+Ex 2.32 solved  
+Ex 2.33 I need help  
+Ex 2.34 I need help  
+Ex 2.35 I need help  
+Ex 2.36 solved  
+Ex 2.37 to Ex 2.38 solved  
+Ex 2.39 I need help  
+Ex 2.40 to 2.47 solved  
+Ex 2.48 I need help  
+Ex 2.49 to 2.52 solved  
+Ex 2.53 I need help  
+Ex 2.54 to Ex 2.55 solved  
+Ex 2.56 I need help
+
+

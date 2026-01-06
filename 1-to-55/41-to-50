@@ -1,0 +1,227 @@
+
+\newpage
+\section*{Ex 2.41 } 
+Verify that $\sigma_i \sigma_j + \sigma_j \sigma_i = 2 \delta_{ij} I$.  
+
+For $i=j$: $\sigma_i^2 = I$.  
+$$
+\sigma_x^2 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I,
+$$
+$$
+\sigma_y^2 = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I,
+$$
+$$
+\sigma_z^2 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I.
+$$
+
+For $i \neq j$: $\sigma_i \sigma_j + \sigma_j \sigma_i = 0$.  
+
+Examples:  
+- For $i=1, j=2$:  
+$$
+XY + YX = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} + \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} + \begin{bmatrix} -i & 0 \\ 0 & i \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0.
+$$
+
+- For $i=2, j=3$:  
+$$
+YZ + ZY = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = \begin{bmatrix} 0 & i \\ i & 0 \end{bmatrix} + \begin{bmatrix} 0 & -i \\ -i & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0.
+$$
+
+- For $i=1, j=3$:  
+$$
+XZ + ZX = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = 0.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.42 } 
+Verify that  
+$$
+AB = \frac{1}{2}([A,B] + \{A,B\}).
+$$  
+Consider the RHS:  
+$$
+\frac{1}{2}([A,B] + \{A,B\}) = \frac{1}{2}((AB - BA) + (AB + BA)) = \frac{1}{2}(AB - BA + AB + BA) = \frac{1}{2}(2AB) = AB.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.43 } 
+Show that for $j,k=1,2,3$,  
+$$
+\sigma_j \sigma_k = \delta_{jk} I + i \sum_{l=1}^3 \epsilon_{jkl} \sigma_l.
+$$
+
+a) For $j=k=1$:  
+$$
+\sigma_1 \sigma_1 = \sigma_x \sigma_x = I,
+$$
+RHS:  
+$$
+\delta_{11} I + i \sum_{l=1}^3 \epsilon_{11l} \sigma_l = I + i(0+0+0) = I.
+$$
+This holds.
+
+b) For $j=1, k=2$:  
+$$
+\sigma_1 \sigma_2 = \sigma_x \sigma_y = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} = i \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = i \sigma_z,
+$$
+RHS:  
+$$
+\delta_{12} I + i \sum_{l=1}^3 \epsilon_{12l} \sigma_l = 0 + i(\epsilon_{123} \sigma_3) = i \sigma_3 = i \sigma_z.
+$$
+This holds.
+
+c) For $j=1, k=3$:  
+$$
+\sigma_1 \sigma_3 = \sigma_x \sigma_z = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = i \begin{bmatrix} 0 & i \\ -i & 0 \end{bmatrix} = -i \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} = -i \sigma_y,
+$$
+RHS:  
+$$
+\delta_{13} I + i \sum_{l=1}^3 \epsilon_{13l} \sigma_l = 0 + i(\epsilon_{132} \sigma_2) = i(-1) \sigma_2 = -i \sigma_y.
+$$
+This holds.
+
+***
+
+\newpage
+\section*{Ex 2.44 } 
+If $[A,B] = 0$ and $\{A,B\} = 0$, show that $B=0$ if $A \neq 0$.  
+$$
+AB - BA = 0 \implies AB = BA,
+$$
+$$
+AB + BA = 0 \implies AB = -BA.
+$$
+Combining the two equations, we get  
+$$
+AB = -AB \implies 2AB = 0 \implies AB = 0.
+$$  
+Since $A$ is an invertible matrix and $A \neq 0$, we can multiply by $A^{-1}$ to get  
+$$
+A^{-1} A B = A^{-1} 0 \implies B = 0.
+$$
+
+***
+
+\newpage
+\section*{Ex 2.45 } 
+Show that  
+$$
+[A,B]^\dagger = [B^\dagger, A^\dagger].
+$$
+Proof:  
+$$
+[A,B]^\dagger = (AB - BA)^\dagger = (AB)^\dagger - (BA)^\dagger = B^\dagger A^\dagger - A^\dagger B^\dagger = [B^\dagger, A^\dagger].
+$$
+
+***
+
+\newpage
+\section*{Ex 2.46 } 
+Show that  
+$$
+[A,B] = -[B,A].
+$$
+Proof:  
+$$
+[A,B] = AB - BA = -(BA - AB) = -[B,A].
+$$
+
+***
+
+\newpage
+\section*{Ex 2.47 } 
+For $A = A^\dagger$ and $B = B^\dagger$, show that $i[A,B]$ is Hermitian.  
+$$
+(i [A,B])^\dagger = i^\dagger [A,B]^\dagger = -i [B^\dagger, A^\dagger] = -i [B,A] = i [A,B].
+$$  
+Thus, $i[A,B]$ is Hermitian.
+
+
+\newpage
+\section*{Ex 2.48}
+Polar decomposition of a normal matrix
+in the outer product representation. Let A
+$$
+A.AA^\dagger = A^\dagger A
+$$
+be a normal matrix.
+$$
+A=PU = (AA^\dagger)^{0.5} U \\
+= (A^\dagger A)^{0.5} U = UP
+$$
+$$
+\implies A=PU=UP,
+$$
+where U is unitary
+and P is positive
+$$
+\forall A \exists U \exists P.
+$$
+$$
+UU^\dagger=U^\dagger U=I
+$$
+$$
+(\forall v \in V. \langle v | P| v \rangle \ge 0) \\
+A=UP=PU \text{ for } AA^\dagger = A^\dagger A.
+$$
+
+\newpage
+\newpage
+\section*{Ex 2.49 }
+a) A=PU
+let the positive operator P be A.
+$$
+\implies A=AU \implies U=I.
+$$
+$$
+\implies A=AI \text{ is the right polar decomposition.}
+$$
+$$
+\& A=IA \text{ is the left polar decomposition.}
+$$
+
+b) find PU=A for $AA^\dagger = A^\dagger A = I$
+$$
+A = \sqrt{AA^\dagger} U = \sqrt{I} U = IU
+$$
+$$
+A = U\sqrt{A^\dagger A} = U\sqrt{I} = UI
+$$
+$$
+\implies A = IU = UI, \text{ where } I
+$$
+is the identity operator that
+is positive.
+
+c) A=$A^\dagger$; find P \& U for A=PU
+$$
+A=\sqrt{AA^\dagger} U = \sqrt{A^2} U = \pm AU
+$$
+$$
+A=U\sqrt{A^\dagger A} = U\sqrt{A^2} = U(\pm A)
+$$
+$$
+\implies A = AU = UA=A^\dagger = U(\pm A)
+$$
+where A is
+the positive operator
+But this shows that all hermitian operators
+are positive. Contradiction!
+
+
+\newpage
+\section*{Ex 2.50}
+Polar Decomposition  
+$50)$ $A=\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}$  
+$A$ is positive. $(\langle\psi|A|\psi\rangle = A_{ij} \geq 0)$  
+$\implies A=AU \implies U=I$  
+Thus, left polar decomposition:  
+$\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$  
+right polar decomposition:  
+$\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}$
+
+

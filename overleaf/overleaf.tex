@@ -30,9 +30,9 @@ Exercixes 3 and 5 are incomplete
 \subsection*{Exercise 2.5: Inner Product on $\mathbb{C}^n$}
 We need to show that $\langle \phi | \psi \rangle = \sum_{i=1}^n \phi_i^* \psi_i$ is a valid inner product on $\mathbb{C}^n$. An inner product must satisfy three properties:
 \begin{enumerate}
-                  \item \textbf{Conjugate symmetry}: $\langle \phi | \psi \rangle = \langle \psi | \phi \rangle^*$.
-                  \item \textbf{Linearity in the second argument}: $\langle \phi | \alpha \psi + \beta \chi \rangle = \alpha \langle \phi | \psi \rangle + \beta \langle \phi | \chi \rangle$.
-                  \item \textbf{Positive-definiteness}: $\langle \phi | \phi \rangle \ge 0$, and $\langle \phi | \phi \rangle = 0$ if and only if $\ket{\phi}$ is the zero vector.
+    \item \textbf{Conjugate symmetry}: $\langle \phi | \psi \rangle = \langle \psi | \phi \rangle^*$.
+    \item \textbf{Linearity in the second argument}: $\langle \phi | \alpha \psi + \beta \chi \rangle = \alpha \langle \phi | \psi \rangle + \beta \langle \phi | \chi \rangle$.
+    \item \textbf{Positive-definiteness}: $\langle \phi | \phi \rangle \ge 0$, and $\langle \phi | \phi \rangle = 0$ if and only if $\ket{\phi}$ is the zero vector.
 \end{enumerate}
 Let $\ket{\phi} = \begin{pmatrix} \phi_1 \\ \vdots \\ \phi_n \end{pmatrix}$ and $\ket{\psi} = \begin{pmatrix} \psi_1 \\ \vdots \\ \psi_n \end{pmatrix}$.
 
@@ -60,91 +60,83 @@ Let $\ket{\phi} = \begin{pmatrix} \phi_1 \\ \vdots \\ \phi_n \end{pmatrix}$ and 
 \end{enumerate}
 
 \section{open threads in thinking}
-                                                                                                                                                                                            \subsection*{working on these}
-                                                                                                                                                                                            \begin{enumerate}
-                                                                                                                                                                                                    \item Show that Given a transformation in finite dimensions from a vector space to itself, and the input basis $e_i$, the matrix columns are the output bases are the matrix columns.
-                                                                                                                                                                                                            \item SHow that given a matrix transformation in terms of input bases $e_i$, and output bases; the output bases become the matrix's columns. How can I systematically explore the prove for this
-                                                                                                                                                                                                                    \item A + B + C = inner product where 
-                                                                                                                                                                                                                                \subitem A: $ \langle v_1 | v_2 \rangle = \langle v_2 | v_1 \rangle^*$ 
-                                                                                                                                                                                                                                        \subitem B: $ \langle v_1 | v_1 \rangle \ge 0 $ and is equal to 0 iff $ v_1 = 0 $
-                                                                                                                                                                                                                                                \subitem B: projection of a vector with itself are always positive complex values.
-                                                                                                                                                                                                                                                        \subitem C: $ \langle v_1 | (\lambda v_2)\rangle = \lambda \langle v_1 | v_2 \rangle = $ linearity 
+\subsection*{working on these}
+\begin{enumerate}
+    \item Show that Given a transformation in finite dimensions from a vector space to itself, and the input basis $e_i$, the matrix columns are the output bases are the matrix columns.
+    \item SHow that given a matrix transformation in terms of input bases $e_i$, and output bases; the output bases become the matrix's columns. How can I systematically explore the prove for this
+    \item A + B + C = inner product where 
+    \subitem A: $ \langle v_1 | v_2 \rangle = \langle v_2 | v_1 \rangle^*$ 
+    \subitem B: $ \langle v_1 | v_1 \rangle \ge 0 $ and is equal to 0 iff $ v_1 = 0 $
+    \subitem B: projection of a vector with itself are always positive complex values.
+    \subitem C: $ \langle v_1 | (\lambda v_2)\rangle = \lambda \langle v_1 | v_2 \rangle = $ linearity
+\end{enumerate}
 
-                                                                                                                                                                                                                                                \end{enumerate}
-                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                \subsection*{attempted these}
-                                                                                                                                                                                                                                                \begin{enumerate}
-                                                                                                                                                                                                                                                        \item Is the outer product like a projection onto the vector space itself, with the vector that outer product vector being a sort of light source and the vector being operated on being the object \& the resultant vector being the projection? It is essentially an additional left multiplication with the dual.
-                                                                                                                                                                                                                                                                \item For quantum mechanics, we only need the vector space made of vectors whose norm is $\le 1$. Can we discard the rest of the vector space? (i.e. where the norm is $> 1$)
-                                                                                                                                                                                                                                                                        \item Given an isolated physical system, what is the state space?
-                                                                                                                                                                                                                                                                                \item Is negative like eigenvalue interpreted as phase?
-                                                                                                                                                                                                                                                                                        \item What is a determinant, physically? Cuz they are used in characteristic equation to extract eigenvalues and eigenvectors
-                                                                                                                                                                                                                                                                                    \end{enumerate}
+\subsection*{attempted these}
+\begin{enumerate}
+    \item Is the outer product like a projection onto the vector space itself, with the vector that outer product vector being a sort of light source and the vector being operated on being the object \& the resultant vector being the projection? It is essentially an additional left multiplication with the dual.
+    \item For quantum mechanics, we only need the vector space made of vectors whose norm is $\le 1$. Can we discard the rest of the vector space? (i.e. where the norm is $> 1$)
+    \item Given an isolated physical system, what is the state space?
+    \item Is negative like eigenvalue interpreted as phase?
+    \item What is a determinant, physically? Cuz they are used in characteristic equation to extract eigenvalues and eigenvectors
+\end{enumerate}
                                                                                                                                                                                                                                                                                         
 
-                                                                                                                                                                                                                                                                                    \subsection*{Proof cycle and related stuff}
+\subsection*{Proof cycle and related stuff}
 
-                                                                                                                                                                                                                                                                                    How do I prove this? How do I approach thinking about this in terms of proof; How do I go from this conjecture to thinking; we need to start from things we know to be true and arrive here; this method is known as direct proof; there are other methods too, but a proof generally needs an idea;
-                                                                                                                                                                                                                                                                                    \begin{enumerate}
-                                                                                                                                                                                                                                                                                            \item Understand every term of the proof at a cursory level.
-                                                                                                                                                                                                                                                                                                    \item Understand what is being asked in those terms?
-                                                                                                                                                                                                                                                                                                            \item Now you understand the task at this point.
-                                                                                                                                                                                                                                                                                                                    \item Ideate and attempt; sketch out promising avenues that look hopeful.
-                                                                                                                                                                                                                                                                                                                            \item Once you have a promising sketch, write it in better detail.
-                                                                                                                                                                                                                                                                                                                                    \item Cycle until you reach a satisfactory proof.
-                                                                                                                                                                                                                                                                                                                                            \item Write down ideas while Ideating. Think on paper.
-                                                                                                                                                                                                                                                                                                                                        \end{enumerate}
+How do I prove this? How do I approach thinking about this in terms of proof; How do I go from this conjecture to thinking; we need to start from things we know to be true and arrive here; this method is known as direct proof; there are other methods too, but a proof generally needs an idea;
 
-
-                                                                                                                                                                                                                                                                                                                                        \subsection{unitary operator}
-                                                                                                                                                                                                                                                                                                                                            \begin{enumerate}    
-                                                                                                                                                                                                                                                                                                                                                    \item Unitary transformation depends only on initial and final state.
-                                                                                                                                                                                                                                                                                                                                                            \item why does it not depend on the intermediary at time stamps or states? How do we know that it doesn't? Is it odd that it doesn't?
-
-                                                                                                                                                                                                                                                                                                                                                                    \item Does the unitary operator depend on the initial timestamp or does it depend on the initial state vector and the final state vector?
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                            \item How to find all unitary operators of a given dimension.
-                                                                                                                                                                                                                                                                                                                                                                                    \end{enumerate}
+\begin{enumerate}
+    \item Understand every term of the proof at a cursory level.
+    \item Understand what is being asked in those terms?
+    \item Now you understand the task at this point.
+    \item Ideate and attempt; sketch out promising avenues that look hopeful.
+    \item Once you have a promising sketch, write it in better detail.
+    \item Cycle until you reach a satisfactory proof.
+    \item Write down ideas while Ideating. Think on paper.
+\end{enumerate}
 
 
-                                                                                                                                                                                                                                                                                                                                                                                    \section{recurrables}
-                                                                                                                                                                                                                                                                                                                                                                                    \subsection{Pauli Gates}
-                                                                                                                                                                                                                                                                                                                                                                                    Quantum gates are simply operators. But since we are doing quantum computation, we adapt the term gate instead of operators.
-
-                                                                                                                                                                                                                                                                                                                                                                                    \[
-                                                                                                                                                                                                                                                                                                                                                                                        I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \quad
-                                                                                                                                                                                                                                                                                                                                                                                        X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \quad
-                                                                                                                                                                                                                                                                                                                                                                                        Y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \quad
-                                                                                                                                                                                                                                                                                                                                                                                        Z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
-                                                                                                                                                                                                                                                                                                                                                                                    \]
-                                                                                                                                                                                                                                                                                                                                                                                    \begin{center}
-                                                                                                                                                                                                                                                                                                                                                                                        \begin{tabular}{cccc}
-                                                                                                                                                                                                                                                                                                                                                                                            I & X & Y & Z \\
-                                                                                                                                                                                                                                                                                                                                                                                              & bit flip    &   & phase flip \\
-                                                                                                                                                                                                                                                                                                                                                                                                & quantum not &   &            \\
-                                                                                                                                                                                                                                                                                                                                                                                        \end{tabular}
-                                                                                                                                                                                                                                                                                                                                                                                    \end{center}
+\subsection{unitary operator}
+\begin{enumerate}    
+    \item Unitary transformation depends only on initial and final state.
+    \item why does it not depend on the intermediary at time stamps or states? How do we know that it doesn't? Is it odd that it doesn't?
+    \item Does the unitary operator depend on the initial timestamp or does it depend on the initial state vector and the final state vector?
+    \item How to find all unitary operators of a given dimension.
+\end{enumerate}
 
 
+\section{recurrables}
+\subsection{Pauli Gates}
+Quantum gates are simply operators. But since we are doing quantum computation, we adapt the term gate instead of operators.
+\[
+I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \quad
+X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \quad
+Y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \quad
+Z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+\]
+\begin{center}
+\begin{tabular}{cccc}
+I & X & Y & Z \\
+& bit flip    &   & phase flip \\
+& quantum not &   &            \\
+\end{tabular}
+\end{center}
 
-                                                                                                                                                                                                                                                                                                                                                                                    \subsubsection{Pauli gates on $e_i$}
 
-                                                                                                                                                                                                                                                                                                                                                                                    \begin{align*}
-                                                                                                                                                                                                                                                                                                                                                                                        I |0\rangle &= |0\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        I |1\rangle &= |1\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        X |0\rangle &= |1\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        X |1\rangle &= |0\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        Y |0\rangle &= -i |1\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        Y |1\rangle &= i |0\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        Z |0\rangle &= |0\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                        Z |1\rangle &= -|1\rangle \\
-                                                                                                                                                                                                                                                                                                                                                                                    \end{align*}
+\subsubsection{Pauli gates on $e_i$}
+\begin{align*}
+I |0\rangle &= |0\rangle \\
+I |1\rangle &= |1\rangle \\
+X |0\rangle &= |1\rangle \\
+X |1\rangle &= |0\rangle \\
+Y |0\rangle &= -i |1\rangle \\
+Y |1\rangle &= i |0\rangle \\
+Z |0\rangle &= |0\rangle \\
+Z |1\rangle &= -|1\rangle \\
+\end{align*}
 
-                                                                                                                                                                                                                                                                                                                                                                                        \subsection{More Notes}
-
-                                                                                                                                                                                                                                                                                                                                                                                        \begin{enumerate}
-                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                
+\subsection{More Notes}
+\begin{enumerate}
     \item A coordinate transformation is a linear operation.
     \item That a matrix can be composed of output bases is a property of input bases $e_i$, and that the requires input bases $e_i$ and the transformation to be into the same vector space.
     \item In matrix multiplication, the number of columns out of the left matrix and the number of rows in the right matrix have to be equal.
@@ -162,7 +154,7 @@ Let $\ket{\phi} = \begin{pmatrix} \phi_1 \\ \vdots \\ \phi_n \end{pmatrix}$ and 
    \item linear means matrix (scalar (vector)) = scalar (matrix (vector))
    \item inner product needs linearity 
    
-  \end{enumerate}
+\end{enumerate}
 
 \begin{enumerate}
       \item Unitary evolution is essentially basis change. When not measured, the quantum system changes its basis continuously. When measured, the quantum system fixes its basis. 
@@ -200,28 +192,25 @@ $matrix representation of $A$ in the basis $\{\ket{0}, \ket{1}\}$ is found by de
 \item $A\ket{1} = A \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} b \\ d \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \implies b=1, d=0$.
 \end{itemize}
 Thus, the matrix representation of $A$ is:
-                                                                                                                                                                                                                                                                                                                                                                                        $$ A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $$
-                                                                                                                                                                                                                                                                                                                                                                                        This matrix is known as the Pauli-X matrix, often denoted by $\sigma_x$.
-
-                                                                                                                                                                                                                                                                                                                                                                                        \subsubsection*{Exercise 2.2, rabbithole: Change of Basis}
-                                                                                                                                                                                                                                                                                                                                                                                        We have the same operator $A$ (the Pauli-X matrix), but we want to find a new output basis such that its matrix representation is diagonal, specifically:
-                                                                                                                                                                                                                                                                                                                                                                                        $$ A' = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $$
-                                                                                                                                                                                                                                                                                                                                                                                        This new basis, the eigenbasis of $A$, is composed of the eigenvectors of $A$. We can find them by solving the eigenvalue equation $A\ket{v} = \lambda\ket{v}$.
-                                                                                                                                                                                                                                                                                                                                                                                        $$ \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \lambda \begin{pmatrix} a \\ b \end{pmatrix} $$
-                                                                                                                                                                                                                                                                                                                                                                                        The characteristic equation is $\det(A - \lambda I) = 0$:
-                                                                                                                                                                                                                                                                                                                                                                                        $$ \det \begin{pmatrix} -\lambda & 1 \\ 1 & -\lambda \end{pmatrix} = \lambda^2 - 1 = 0 \implies \lambda = \pm 1 $$
-                                                                                                                                                                                                                                                                                                                                                                                        The eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = -1$.
-                                                                                                                                                                                                                                                                                                                                                                                        \begin{itemize}
-                                                                                                                                                                                                                                                                                                                                                                                                \item For $\lambda_1 = 1$:
-                                                                                                                                                                                                                                                                                                                                                                                                        $$ \begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies -a+b=0 \implies b=a $$
-                                                                                                                                                                                                                                                                                                                                                                                                            The normalized eigenvector is $\ket{v_1} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$.
-                                                                                                                                                                                                                                                                                                                                                                                                                \item For $\lambda_2 = -1$:
-                                                                                                                                                                                                                                                                                                                                                                                                                        $$ \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies a+b=0 \implies b=-a $$
-                                                                                                                                                                                                                                                                                                                                                                                                                            The normalized eigenvector is $\ket{v_2} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$.
-                                                                                                                                                                                                                                                                                                                                                                                                                \end{itemize}
-                                                                                                                                                                                                                                                                                                                                                                                                                The new output basis is the set of eigenvectors $\{\ket{v_1}, \ket{v_2}\}$. The action of $A$ on these basis vectors is:
-                                                                                                                                                                                                                                                                                                                                                                                                                $$ A\ket{v_1} = 1\ket{v_1} \quad \text{and} \quad A\ket{v_2} = -1\ket{v_2} $$
-                                                                                                                                                                                                                                                                                                                                                                                        In this new basis, the matrix representation of $A$ is indeed $ \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
-
-
-                                                                                                                                                                                                                                                                                                                                                                                        \end{document}
+$$ A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $$
+This matrix is known as the Pauli-X matrix, often denoted by $\sigma_x$.
+\subsubsection*{Exercise 2.2, rabbithole: Change of Basis}
+We have the same operator $A$ (the Pauli-X matrix), but we want to find a new output basis such that its matrix representation is diagonal, specifically:
+$$ A' = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $$
+This new basis, the eigenbasis of $A$, is composed of the eigenvectors of $A$. We can find them by solving the eigenvalue equation $A\ket{v} = \lambda\ket{v}$.
+$$ \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \lambda \begin{pmatrix} a \\ b \end{pmatrix} $$
+The characteristic equation is $\det(A - \lambda I) = 0$:
+$$ \det \begin{pmatrix} -\lambda & 1 \\ 1 & -\lambda \end{pmatrix} = \lambda^2 - 1 = 0 \implies \lambda = \pm 1 $$
+The eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = -1$.
+\begin{itemize}
+    \item For $\lambda_1 = 1$:
+    $$ \begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies -a+b=0 \implies b=a $$
+    The normalized eigenvector is $\ket{v_1} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$.
+    \item For $\lambda_2 = -1$:
+    $$ \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies a+b=0 \implies b=-a $$
+    The normalized eigenvector is $\ket{v_2} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$.
+\end{itemize}
+The new output basis is the set of eigenvectors $\{\ket{v_1}, \ket{v_2}\}$. The action of $A$ on these basis vectors is:
+$$ A\ket{v_1} = 1\ket{v_1} \quad \text{and} \quad A\ket{v_2} = -1\ket{v_2} $$
+In this new basis, the matrix representation of $A$ is indeed $ \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
+\end{document}
